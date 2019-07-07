@@ -7,6 +7,7 @@
 
         <title>@yield('title')</title>
 
+        <link rel="shortcut icon" href="{{ asset('img/favicon.png') }}">
         <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
         @yield('styles')
     </head>
@@ -26,6 +27,8 @@
         @endif --}}
 
         @yield('content')
+
+        @include('partials/cookie-bar')
 
         <script src="{{ asset('js/app.js') }}"></script>
         @yield('scripts')
