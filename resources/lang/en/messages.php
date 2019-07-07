@@ -11,6 +11,7 @@ return [
     'sign_in_placeholder_username' => 'E-mail',
     'sign_in_placeholder_password' => 'Password',
     'sign_in_remember_me' => 'Remember Me',
+    'sign_in_forgot_password' => 'Forgot your password?',
     'sign_in_button' => 'Login',
 
     'sign_up_tab' => 'Sign Up',
@@ -19,5 +20,6 @@ return [
     'sign_up_placeholder_lastname' => 'Lastname',
     'sign_up_placeholder_username' => 'E-mail',
     'sign_up_placeholder_password' => 'Password',
+    'sign_up_placeholder_password_confirm' => 'Confirm Password',
     'sign_up_button' => 'Register',
 ];

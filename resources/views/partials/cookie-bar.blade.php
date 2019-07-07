@@ -1,4 +1,4 @@
-<div id="cookie-bar" class="container d-flex">
+<div id="cookie-bar" class="d-flex">
     <div id="cookie-bar-content" class="row">
         <div class="col-sm-10 align-self-center">
             <p>@lang('messages.cookie_bar')</p>

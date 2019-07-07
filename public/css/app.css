@@ -11116,7 +11116,7 @@ html {
   left: 0px;
   right: 0px;
   bottom: 0px;
-  background-color: rgba(0, 0, 0, 0.6) !important;
+  background-color: rgba(0, 0, 0, 0.5) !important;
   padding: 0;
   width: 100%;
   z-index: 10;
@@ -11163,7 +11163,7 @@ html {
 }
 
 #introduction .card {
-  height: 370px;
+  height: 420px;
   margin-top: auto;
   margin-bottom: auto;
   width: 400px;

@@ -11,6 +11,7 @@ return [
     'sign_in_placeholder_username' => 'E-mail',
     'sign_in_placeholder_password' => 'Heslo',
     'sign_in_remember_me' => 'Zapamatuj si mě',
+    'sign_in_forgot_password' => 'Zapomněli jste své heslo?',
     'sign_in_button' => 'Přihlásit se',
 
     'sign_up_tab' => 'Zaregistrovat se',
@@ -19,5 +20,6 @@ return [
     'sign_up_placeholder_lastname' => 'Příjmení',
     'sign_up_placeholder_username' => 'E-mail',
     'sign_up_placeholder_password' => 'Heslo',
+    'sign_up_placeholder_password_confirm' => 'Heslo znovu',
     'sign_up_button' => 'Zaregistrovat se',
 ];

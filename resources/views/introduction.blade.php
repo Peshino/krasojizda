@@ -24,54 +24,11 @@
 
                 <div class="tab-content">
                     <div id="sign-in" class="container tab-pane active"><br>
-                        <div class="card-header">
-                            <h3>@lang('messages.sign_in_header')</h3>
-                        </div>
-
-                        <div class="card-body">
-                            <form>
-                                <div class="input-group form-group">
-                                    <input type="text" class="form-control" placeholder="@lang('messages.sign_in_placeholder_username')">
-                                </div>
-                                <div class="input-group form-group">
-                                    <input type="password" class="form-control" placeholder="@lang('messages.sign_in_placeholder_password')">
-                                </div>
-                                <div class="row align-items-center remember">
-                                    <input type="checkbox" class="form-control" id="remember-me"><label for="remember-me">@lang('messages.sign_in_remember_me')</label>
-                                </div>
-                                <div class="form-group">
-                                    <button type="submit" class="btn float-right introduction-btn">@lang('messages.sign_in_button')</button>
-                                </div>
-                            </form>
-                        </div>
+                        @include('auth.login')
                     </div>
 
                     <div id="sign-up" class="container tab-pane fade"><br>
-                        <div class="card-header">
-                            <h3>@lang('messages.sign_up_header')</h3>
-                        </div>
-
-                        <div class="card-body">
-                            <form>
-                                <div class="row form-group">
-                                    <div class="sign-up-firstname col">
-                                        <input type="text" class="form-control" placeholder="@lang('messages.sign_up_placeholder_firstname')">
-                                    </div>
-                                    <div class="sign-up-lastname col">
-                                        <input type="text" class="form-control" placeholder="@lang('messages.sign_up_placeholder_lastname')">
-                                    </div>
-                                </div>
-                                <div class="input-group form-group">
-                                    <input type="text" class="form-control" placeholder="@lang('messages.sign_up_placeholder_username')">
-                                </div>
-                                <div class="input-group form-group">
-                                    <input type="password" class="form-control" placeholder="@lang('messages.sign_up_placeholder_password')">
-                                </div>
-                                <div class="form-group">
-                                    <button type="submit" class="btn float-right introduction-btn">@lang('messages.sign_up_button')</button>
-                                </div>
-                            </form>
-                        </div>
+                        @include('auth.register')
                     </div>
                 </div>
             </div>
