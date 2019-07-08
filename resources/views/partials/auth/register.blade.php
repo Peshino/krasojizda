@@ -20,7 +20,7 @@
             </div>
             <div class="sign-up-lastname col">
                 <input id="lastname" type="text" class="form-control @error('lastname') is-invalid @enderror"
-                    name="lastname" value="{{ old('lastname') }}" required autocomplete="lastname" autofocus
+                    name="lastname" value="{{ old('lastname') }}" required autocomplete="lastname"
                     placeholder="@lang('messages.sign_up_placeholder_lastname')">
 
                 @error('lastname')
@@ -31,26 +31,26 @@
             </div>
         </div>
         <div class="input-group form-group">
-            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email"
-                value="{{ old('email') }}" required autocomplete="email"
+            <input id="email-sign-up" type="email" class="form-control @error('email') is-invalid @enderror"
+                name="email" value="{{ old('email') }}" required autocomplete="email"
                 placeholder="@lang('messages.sign_up_placeholder_username')">
 
-            @error('email')
+            @if ($errors->has('email') && Session::get('last_auth_attempt') === 'register')
             <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
+                <strong>{{ $errors->first('email') }}</strong>
             </span>
-            @enderror
+            @endif
         </div>
         <div class="input-group form-group">
-            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror"
+            <input id="password-sign-up" type="password" class="form-control @error('password') is-invalid @enderror"
                 name="password" required autocomplete="new-password"
                 placeholder="@lang('messages.sign_up_placeholder_password')">
 
-            @error('password')
+            @if ($errors->has('password') && Session::get('last_auth_attempt') === 'register')
             <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
+                <strong>{{ $errors->first('password') }}</strong>
             </span>
-            @enderror
+            @endif
         </div>
         <div class="input-group form-group">
             <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required
