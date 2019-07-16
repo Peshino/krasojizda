@@ -11298,3 +11298,14 @@ html {
   background: #ffffff;
 }
 
+#app .card-header {
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 0;
+  /* background-color: rgba(0, 0, 0, 0.03); */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  background: #ed007e;
+  background: linear-gradient(135deg, #ed007e 0%, #ea3c96 30%, #3eafe0 70%, #3eafe0 70%, #009be2 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ed007e", endColorstr="#009be2", GradientType=1);
+  color: white;
+}
+

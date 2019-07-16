@@ -22,4 +22,7 @@ return [
     'sign_up_placeholder_password' => 'Password',
     'sign_up_placeholder_password_confirm' => 'Confirm Password',
     'sign_up_button' => 'Register',
+
+    'user_profile' => 'Profile',
+    'user_logout' => 'Logout',
 ];

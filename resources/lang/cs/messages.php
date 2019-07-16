@@ -22,4 +22,7 @@ return [
     'sign_up_placeholder_password' => 'Heslo',
     'sign_up_placeholder_password_confirm' => 'Heslo znovu',
     'sign_up_button' => 'Zaregistrovat se',
+
+    'user_profile' => 'Profil',
+    'user_logout' => 'Odhlásit se',
 ];

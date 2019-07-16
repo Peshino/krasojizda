@@ -7,30 +7,29 @@
 
         <title>@yield('title')</title>
 
+        <link rel="dns-prefetch" href="//fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
         <link href="{{ asset('img/favicon.png') }}" rel="shortcut icon">
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         @yield('styles')
     </head>
+
     <body>
-        {{-- @if (Route::has('login'))
-            <div class="top-right links">
-                @auth
-                    <a href="{{ url('/home') }}">Home</a>
-                @else
-                    <a href="{{ route('login') }}">Login</a>
+        <div id="app">
+            @include('partials/navbar')
 
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}">Register</a>
-                    @endif
-                @endauth
-            </div>
-        @endif --}}
+            <main class="py-4">
+                <div class="container">
+                    @yield('content')
+                </div>
+            </main>
 
-        @yield('content')
+            @include('partials/cookie-bar')
 
-        @include('partials/cookie-bar')
-
-        <script src="{{ asset('js/app.js') }}"></script>
-        @yield('scripts')
+            <script src="{{ asset('js/app.js') }}" defer></script>
+            @yield('scripts')
+        </div>
     </body>
+
 </html>
