@@ -1,10 +1,12 @@
+@auth
 <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
             Krasojízda
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="@lang('messages.toggle_navigation')">
+            aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="@lang('messages.toggle_navigation')">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -57,3 +59,4 @@
         </div>
     </div>
 </nav>
+@endauth

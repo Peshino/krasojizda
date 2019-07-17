@@ -35,11 +35,11 @@
 
                     <div class="tab-content">
                         <div id="sign-in" class="tab-pane {{ count($errors) > 0 && Session::get('last_auth_attempt') === 'register' ? '' : 'active' }}"><br>
-                            @include('partials.auth.login')
+                            @include('auth.login')
                         </div>
 
                         <div id="sign-up" class="tab-pane fade {{ count($errors) > 0 && Session::get('last_auth_attempt') === 'register' ? 'active show' : '' }}"><br>
-                            @include('partials.auth.register')
+                            @include('auth.register')
                         </div>
                     </div>
                 </div>
