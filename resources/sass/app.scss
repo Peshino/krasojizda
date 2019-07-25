@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 @import 'variables';
 @import '~bootstrap/scss/bootstrap';
 
@@ -15,4 +16,5 @@ html {
 
 @import 'cookie-bar';
 @import 'introduction';
+@import 'navbar';
 @import 'main';

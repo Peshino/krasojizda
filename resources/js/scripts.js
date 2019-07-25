@@ -11,4 +11,9 @@ $(document).ready(function () {
         Cookies.set('gdpr_cookie_bar', '1');
         $('#cookie-bar').addClass('d-none').removeClass('d-flex');
     });
+
+    $('.navbar-nav .nav-link').click(function () {
+        $('.navbar-nav .nav-link').removeClass('active');
+        $(this).addClass('active');
+    });
 });

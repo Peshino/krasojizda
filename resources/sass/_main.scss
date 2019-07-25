@@ -8,5 +8,26 @@
     background: -webkit-linear-gradient(-45deg, #ed007e 0%, #ea3c96 30%, #3eafe0 70%, #3eafe0 70%, #009be2 100%);
     background: linear-gradient(135deg, #ed007e 0%, #ea3c96 30%, #3eafe0 70%, #3eafe0 70%, #009be2 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ed007e', endColorstr='#009be2', GradientType=1);
-    color: white;
+    color: #ffffff;
+}
+
+#app .dropdown-menu {
+    color: #ffffff;
+    background-color: #343A40;
+    border: 0px solid rgba(0, 0, 0, 0.15);
+}
+
+#app .dropdown-item {
+    color: #dddddd;
+}
+
+#app .dropdown-item:hover,
+#app .dropdown-item:focus {
+    color: #ffffff;
+    background-color: #414850;
+}
+
+#app button:focus {
+    outline: 0px dotted;
+    outline: 0px auto -webkit-focus-ring-color;
 }
