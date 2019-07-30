@@ -17107,7 +17107,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
   var undefined;
 
   /** Used as the semantic version number. */
-  var VERSION = '4.17.14';
+  var VERSION = '4.17.15';
 
   /** Used as the size to enable large array optimizations. */
   var LARGE_ARRAY_SIZE = 200;
@@ -37079,6 +37079,38 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./resources/js/ajax.js":
+/*!******************************!*\
+  !*** ./resources/js/ajax.js ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$.ajaxSetup({
+  headers: {
+    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+  }
+});
+$('form#search-partner-form').submit(function (e) {
+  e.preventDefault();
+  var searchPartnerInputValue = $('input[name=search_partner_input]').val();
+  $.ajax({
+    type: 'POST',
+    url: '/searchPartnerAjaxPost',
+    data: {
+      search_partner_input: searchPartnerInputValue
+    },
+    success: function success(data) {
+      $('#search-partner-result').html(data.success.firstname);
+    },
+    error: function error(errorMessage) {
+      $('#search-partner-result').html('Error: ' + errorMessage);
+    }
+  });
+});
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -37089,6 +37121,8 @@ module.exports = function(module) {
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Cookies = __webpack_require__(/*! js-cookie */ "./node_modules/js-cookie/src/js.cookie.js");
+
+__webpack_require__(/*! ./ajax */ "./resources/js/ajax.js");
 
 __webpack_require__(/*! ./scripts */ "./resources/js/scripts.js");
 

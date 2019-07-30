@@ -1,0 +1,1 @@
+<p>aktuální Krasojízda: {{ $krasojizda }}</p>

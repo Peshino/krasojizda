@@ -25,4 +25,11 @@ return [
 
     'user_profile' => 'Profile',
     'user_logout' => 'Logout',
+
+    'our_places' => 'Our places',
+    'life_events' => 'Life events',
+    'important_days' => 'Important days',
+    'my_corner' => 'My corner',
+
+    'search_partner_placeholder' => 'Your partner\'s email',
 ];

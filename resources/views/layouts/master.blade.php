@@ -13,6 +13,7 @@
 
     <link href="{{ asset('img/favicon.png') }}" rel="shortcut icon">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @yield('styles')
 </head>
 
@@ -33,6 +34,8 @@
         <script src="{{ asset('js/app.js') }}" defer></script>
         @yield('scripts')
     </div>
+
+    @include('partials/footer')
 </body>
 
 </html>

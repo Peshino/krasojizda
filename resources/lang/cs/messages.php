@@ -25,4 +25,11 @@ return [
 
     'user_profile' => 'Profil',
     'user_logout' => 'Odhlásit se',
+
+    'our_places' => 'Naše místa',
+    'life_events' => 'Životní události',
+    'important_days' => 'Důležité dny',
+    'my_corner' => 'Můj koutek',
+
+    'search_partner_placeholder' => 'E-mail Vašeho partnera',
 ];

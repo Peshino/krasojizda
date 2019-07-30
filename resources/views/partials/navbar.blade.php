@@ -2,7 +2,7 @@
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
             <img src="{{ asset('img/logo_small_navbar.png') }}" alt="logo">
-            Krasojízda
+            @lang('messages.krasojizda_name')
         </a>
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -16,53 +16,20 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Místa</a>
+                    <a class="nav-link" href="#"><i class="fas fa-map-marker-alt"></i>&nbsp;
+                        @lang('messages.our_places')</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Životní události</a>
+                    <a class="nav-link" href="#"><i class="far fa-heart"></i>&nbsp;
+                        @lang('messages.life_events')</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Důležité dny</a>
+                    <a class="nav-link" href="{{ route('important-days.index') }}"><i class="far fa-calendar-alt"></i>&nbsp;
+                        @lang('messages.important_days')</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Můj prostor</a>
-                </li>
-            </ul>
-
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">
-                        <i class="fa fa-home"></i>
-                        Home
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fa fa-envelope-o">
-                            <span class="badge badge-danger">11</span>
-                        </i>
-                        Link
-                    </a>
-                </li>
-            </ul>
-
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fa fa-bell">
-                            <span class="badge badge-info">11</span>
-                        </i>
-                        Test
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fa fa-globe">
-                            <span class="badge badge-success">11</span>
-                        </i>
-                        Test
-                    </a>
+                    <a class="nav-link" href="#"><i class="far fa-clipboard"></i>&nbsp;
+                        @lang('messages.my_corner')</a>
                 </li>
             </ul>
 
@@ -71,16 +38,17 @@
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        {{ Auth::user()->firstname }} {{ Auth::user()->lastname }}<span class="caret"></span>
+                        <i class="far fa-user"></i>&nbsp; {{ Auth::user()->firstname }}
+                        {{ Auth::user()->lastname }}<span class="caret"></span>
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{ route('profile') }}">
-                            @lang('messages.user_profile')
+                            <i class="far fa-user-circle"></i>&nbsp; @lang('messages.user_profile')
                         </a>
                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
-                            @lang('messages.user_logout')
+                            <i class="fas fa-power-off"></i>&nbsp; @lang('messages.user_logout')
                         </a>
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use \App\User;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,23 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('krasojizda.home');
+        $hasLoggedUserKrasojizda = Auth::user()->krasojizda_id !== null ? true : false;
+        return view('krasojizda.home', compact('hasLoggedUserKrasojizda'));
+    }
+
+    public function welcome()
+    {
+        return view('krasojizda.welcome');
+    }
+
+    public function searchPartnerAjaxPost(Request $request)
+    {
+        $inputs = $request->all();
+
+        $searchPartnerInput = $inputs['search_partner_input'] ?? null;
+
+        $user = User::where('email', $searchPartnerInput)->first();
+
+        return response()->json(['success' => $user]);
     }
 }

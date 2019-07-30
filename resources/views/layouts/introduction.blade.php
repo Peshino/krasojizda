@@ -46,6 +46,8 @@
             </div>
         </div>
 
+        @include('partials/footer')
+
         @include('partials/cookie-bar')
 
         <script src="{{ asset('js/app.js') }}" defer></script>
