@@ -37202,7 +37202,9 @@ $(document).ready(function () {
 
   $('[data-toggle="tooltip"]').tooltip();
   $('#cookie-bar-button').click(function () {
-    Cookies.set('gdpr_cookie_bar', '1');
+    Cookies.set('gdpr_cookie_bar', '1', {
+      expires: 365
+    });
     $('#cookie-bar').addClass('d-none').removeClass('d-flex');
   });
   $('.navbar-nav .nav-link').click(function () {

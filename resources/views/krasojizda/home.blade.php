@@ -15,7 +15,7 @@
         @if ($hasLoggedUserKrasojizda)
         mám Krasojízdu
         @else
-        <p>Nyní musíte vytvořit Krasojízdu se svou drahou druhou polovičkou.</p>
+        <p>Nyní je třeba vytvořit Krasojízdu se svou drahou druhou polovičkou.</p>
         <p>Vyhledejte partnera dle emailu, na který má registrovaný svůj profil:</p>
 
         <form id="search-partner-form">
