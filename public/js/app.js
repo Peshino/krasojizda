@@ -37101,7 +37101,11 @@ $('form#search-partner-form').submit(function (e) {
       search_partner_input: searchPartnerInputValue
     },
     success: function success(data) {
-      $('#search-partner-result').html(data.success.firstname);
+      var partnerName = data.user.firstname + ' ' + data.user.lastname;
+      var partnerEmail = data.user.email;
+      $('#search-partner-result').addClass('d-block').removeClass('d-none');
+      $('#search-partner-name').html(partnerName);
+      $('#search-partner-email').html(partnerEmail);
     },
     error: function error(errorMessage) {
       $('#search-partner-result').html('Error: ' + errorMessage);

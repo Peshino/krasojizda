@@ -42,6 +42,9 @@ class HomeController extends Controller
 
         $user = User::where('email', $searchPartnerInput)->first();
 
-        return response()->json(['success' => $user]);
+        return response()->json([
+            'status' => 'success',
+            'user' => $user
+        ]);
     }
 }

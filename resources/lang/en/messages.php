@@ -6,6 +6,8 @@ return [
     'krasojizda_name' => 'Krasojízda',
     'krasojizda_description' => 'App for couples',
 
+    'footer_rights' => 'All rights reserved',
+
     'sign_in_tab' => 'Sign In',
     'sign_in_header' => 'Sign In',
     'sign_in_placeholder_username' => 'E-mail',
@@ -26,9 +28,11 @@ return [
     'user_profile' => 'Profile',
     'user_logout' => 'Logout',
 
+    'homepage' => 'Homepage',
     'our_places' => 'Our places',
     'life_events' => 'Life events',
     'important_days' => 'Important days',
+    'blog' => 'Blog',
     'my_corner' => 'My corner',
 
     'search_partner_placeholder' => 'Your partner\'s email',

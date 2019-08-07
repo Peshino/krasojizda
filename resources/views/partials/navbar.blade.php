@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-icon-top navbar-dark bg-dark shadow-sm">
+<nav class="navbar navbar-expand-md navbar-icon-top navbar-dark shadow-sm">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
             <img src="{{ asset('img/logo_small_navbar.png') }}" alt="logo">
@@ -26,6 +26,10 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('important-days.index') }}"><i class="far fa-calendar-alt"></i>&nbsp;
                         @lang('messages.important_days')</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-pencil-alt"></i>&nbsp;
+                        @lang('messages.blog')</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"><i class="far fa-clipboard"></i>&nbsp;

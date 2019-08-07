@@ -7,9 +7,6 @@
 
         <title>@lang('messages.krasojizda_name')</title>
 
-        <link rel="dns-prefetch" href="//fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
         <link href="{{ asset('img/favicon.png') }}" rel="shortcut icon">
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         @yield('styles')

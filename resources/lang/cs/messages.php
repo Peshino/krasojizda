@@ -6,6 +6,8 @@ return [
     'krasojizda_name' => 'Krasojízda',
     'krasojizda_description' => 'Appka pro páry',
 
+    'footer_rights' => 'Všechna práva vyhrazena',
+
     'sign_in_tab' => 'Přihlásit se',
     'sign_in_header' => 'Přihlášení',
     'sign_in_placeholder_username' => 'E-mail',
@@ -26,9 +28,11 @@ return [
     'user_profile' => 'Profil',
     'user_logout' => 'Odhlásit se',
 
+    'homepage' => 'Domovská stránka',
     'our_places' => 'Naše místa',
     'life_events' => 'Životní události',
     'important_days' => 'Důležité dny',
+    'blog' => 'Blog',
     'my_corner' => 'Můj koutek',
 
     'search_partner_placeholder' => 'E-mail Vašeho partnera',
