@@ -12,6 +12,12 @@ Route::resource('krasojizda', 'KrasojizdaController');
 
 Route::resource('important-days', 'ImportantDayController');
 
+Route::resource('posts', 'PostController');
+
+Route::prefix('posts/{post}')->group(function () {
+    Route::resource('comments', 'CommentController');
+});
+
 Route::prefix('user')->group(function () {
     Route::get('profile', 'UserController@getProfile')->name('profile');
 });

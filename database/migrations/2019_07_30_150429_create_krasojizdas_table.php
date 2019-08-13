@@ -17,6 +17,7 @@ class CreateKrasojizdasTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('red_user_id')->nullable();
             $table->unsignedBigInteger('blue_user_id')->nullable();
+            $table->string('name')->nullable();
             $table->foreign('red_user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('blue_user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();

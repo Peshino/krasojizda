@@ -11024,6 +11024,15 @@ input:-webkit-autofill {
   border: 1px solid #dddddd;
 }
 
+#main input:focus {
+  outline: 0 0 0 0 !important;
+  box-shadow: 0 0 0 0 !important;
+}
+
+#main input:checked {
+  background: white;
+}
+
 #main ::-webkit-input-placeholder {
   color: #aaaaaa;
   opacity: 1;
@@ -11054,15 +11063,6 @@ input:-webkit-autofill {
   color: #aaaaaa;
 }
 
-#main input:focus {
-  outline: 0 0 0 0 !important;
-  box-shadow: 0 0 0 0 !important;
-}
-
-#main input:checked {
-  background: white;
-}
-
 #main .btn {
   color: #ffffff;
   background: transparent;
@@ -11080,6 +11080,10 @@ input:-webkit-autofill {
 
 #main label:hover {
   cursor: pointer;
+}
+
+#main .list-group-item {
+  background-color: transparent;
 }
 
 footer {

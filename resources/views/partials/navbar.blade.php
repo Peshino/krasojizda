@@ -28,7 +28,7 @@
                         @lang('messages.important_days')</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-pencil-alt"></i>&nbsp;
+                    <a class="nav-link" href="{{ route('posts.index') }}"><i class="fas fa-pencil-alt"></i>&nbsp;
                         @lang('messages.blog')</a>
                 </li>
                 <li class="nav-item">

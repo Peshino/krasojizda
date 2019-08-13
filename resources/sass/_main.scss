@@ -1,77 +1,81 @@
 #main {
     min-height: 100vh;
-}
 
-#main .krasojizda-bg {
-    background: #ed2f65;
-    background: -moz-linear-gradient(-45deg, #ed2f65 0%, #2bbcff 100%);
-    background: -webkit-linear-gradient(-45deg, #ed2f65 0%, #2bbcff 100%);
-    background: linear-gradient(135deg, #ed2f65 0%, #2bbcff 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ed2f65', endColorstr='#2bbcff', GradientType=1);
-}
+    .krasojizda-bg {
+        background: #ed2f65;
+        background: -moz-linear-gradient(-45deg, #ed2f65 0%, #2bbcff 100%);
+        background: -webkit-linear-gradient(-45deg, #ed2f65 0%, #2bbcff 100%);
+        background: linear-gradient(135deg, #ed2f65 0%, #2bbcff 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ed2f65', endColorstr='#2bbcff', GradientType=1);
+    }
 
-#main .card {
-    color: #dddddd;
-    background-color: #2a2f33;
-    background-clip: border-box;
-    border: 0px solid rgba(0, 0, 0, 0.125);
-    border-radius: 0.25rem;
-}
+    .card {
+        color: #dddddd;
+        background-color: #2a2f33;
+        background-clip: border-box;
+        border: 0px solid rgba(0, 0, 0, 0.125);
+        border-radius: 0.25rem;
+    }
 
-#main .card-header {
-    padding: 0.65rem 1.25rem;
-    margin-bottom: 0;
-    /* background-color: rgba(0, 0, 0, 0.03); */
-    color: #ffffff;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
-}
+    .card-header {
+        padding: 0.65rem 1.25rem;
+        margin-bottom: 0;
+        /* background-color: rgba(0, 0, 0, 0.03); */
+        color: #ffffff;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    }
 
-#main button:focus {
-    outline: 0px dotted;
-    outline: 0px auto -webkit-focus-ring-color;
-}
+    button:focus {
+        outline: 0px dotted;
+        outline: 0px auto -webkit-focus-ring-color;
+    }
 
-#main input {
-    color: #ffffff;
-    background: transparent;
-    border: 1px solid #dddddd;
-}
+    input {
+        color: #ffffff;
+        background: transparent;
+        border: 1px solid #dddddd;
+    }
 
-#main ::placeholder {
-    color: #aaaaaa;
-    opacity: 1;
-}
+    input:focus {
+        outline: 0 0 0 0 !important;
+        box-shadow: 0 0 0 0 !important;
+    }
 
-#main :-ms-input-placeholder,
-#main ::-ms-input-placeholder {
-    color: #aaaaaa;
-}
+    input:checked {
+        background: rgba(255, 255, 255, 1);
+    }
 
-#main input:focus {
-    outline: 0 0 0 0 !important;
-    box-shadow: 0 0 0 0 !important;
-}
+    ::placeholder {
+        color: #aaaaaa;
+        opacity: 1;
+    }
 
-#main input:checked {
-    background: rgba(255, 255, 255, 1);
-}
+    :-ms-input-placeholder,
+    ::-ms-input-placeholder {
+        color: #aaaaaa;
+    }
 
-#main .btn {
-    color: #ffffff;
-    background: transparent;
-    border: 1px solid #dddddd;
-}
+    .btn {
+        color: #ffffff;
+        background: transparent;
+        border: 1px solid #dddddd;
+    }
 
-#main .btn:hover {
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.10);
-}
+    .btn:hover {
+        color: #ffffff;
+        background: rgba(255, 255, 255, 0.10);
+    }
 
 
-#main label {
-    height: 13px;
-}
+    label {
+        height: 13px;
+    }
 
-#main label:hover {
-    cursor: pointer;
+    label:hover {
+        cursor: pointer;
+    }
+
+    .list-group-item {
+        background-color: transparent;
+    }
 }
