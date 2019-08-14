@@ -11,6 +11,8 @@
         </div>
         @endif
 
+        <a href="{{ route('posts.create') }}">Vytvoř článek</a>
+
         <div class="blog-main">
             @foreach ($posts as $post)
             @include('posts.post')

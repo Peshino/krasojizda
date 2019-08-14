@@ -22,7 +22,9 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->unsignedBigInteger('krasojizda_id')->nullable();
+            $table->unsignedBigInteger('color_id')->nullable();
             $table->foreign('krasojizda_id')->references('id')->on('krasojizdas')->onDelete('cascade');
+            $table->foreign('color_id')->references('id')->on('colors')->onDelete('cascade');
             $table->timestamps();
         });
     }

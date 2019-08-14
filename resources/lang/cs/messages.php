@@ -32,6 +32,7 @@ return [
     'our_places' => 'Naše místa',
     'life_events' => 'Životní události',
     'important_days' => 'Důležité dny',
+    'conversations' => 'Rozhovory',
     'blog' => 'Blog',
     'my_corner' => 'Můj koutek',
 

@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-md navbar-icon-top navbar-dark shadow-sm">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
-            <img src="{{ asset('img/logo_small_navbar.png') }}" alt="logo">
-            @lang('messages.krasojizda_name')
+            <img src="{{ asset('img/logo_small_navbar.png') }}" class="align-middle" alt="logo">
+            <span class="align-middle">@lang('messages.krasojizda_name')</span>
         </a>
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -16,24 +16,30 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-map-marker-alt"></i>&nbsp;
-                        @lang('messages.our_places')</a>
+                    <a class="nav-link" href="#"><i class="fas fa-map-marker-alt align-middle"></i>&nbsp;
+                        <span class="align-middle">@lang('messages.our_places')</a></span>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="far fa-heart"></i>&nbsp;
-                        @lang('messages.life_events')</a>
+                    <a class="nav-link" href="#"><i class="far fa-heart align-middle"></i>&nbsp;
+                        <span class="align-middle">@lang('messages.life_events')</a></span>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('important-days.index') }}"><i class="far fa-calendar-alt"></i>&nbsp;
-                        @lang('messages.important_days')</a>
+                    <a class="nav-link" href="{{ route('important-days.index') }}"><i
+                            class="far fa-calendar-alt align-middle"></i>&nbsp;
+                        <span class="align-middle">@lang('messages.important_days')</a></span>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('posts.index') }}"><i class="fas fa-pencil-alt"></i>&nbsp;
-                        @lang('messages.blog')</a>
+                    <a class="nav-link" href="#"><i class="far fa-comments align-middle"></i>&nbsp;
+                        <span class="align-middle">@lang('messages.conversations')</a></span>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="far fa-clipboard"></i>&nbsp;
-                        @lang('messages.my_corner')</a>
+                    <a class="nav-link" href="{{ route('posts.index') }}"><i
+                            class="fas fa-pencil-alt align-middle"></i>&nbsp;
+                        <span class="align-middle">@lang('messages.blog')</a></span>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="far fa-clipboard align-middle"></i>&nbsp;
+                        <span class="align-middle">@lang('messages.my_corner')</a></span>
                 </li>
             </ul>
 

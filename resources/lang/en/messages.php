@@ -32,6 +32,7 @@ return [
     'our_places' => 'Our places',
     'life_events' => 'Life events',
     'important_days' => 'Important days',
+    'conversations' => 'Conversations',
     'blog' => 'Blog',
     'my_corner' => 'My corner',
 

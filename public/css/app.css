@@ -11018,15 +11018,18 @@ input:-webkit-autofill {
   outline: 0px auto -webkit-focus-ring-color;
 }
 
-#main input {
-  color: #ffffff;
+#main input,
+#main textarea {
+  color: #dddddd;
   background: transparent;
-  border: 1px solid #dddddd;
+  border: 1px solid #cccccc;
 }
 
-#main input:focus {
+#main input:focus,
+#main textarea:focus {
   outline: 0 0 0 0 !important;
   box-shadow: 0 0 0 0 !important;
+  border: 1px solid #ffffff;
 }
 
 #main input:checked {
