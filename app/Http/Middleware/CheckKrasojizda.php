@@ -3,7 +3,6 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Illuminate\Support\Facades\Auth;
 
 class CheckKrasojizda
 {
@@ -16,7 +15,7 @@ class CheckKrasojizda
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::user()->krasojizda_id === null) {
+        if (auth()->user()->krasojizda_id === null) {
             return redirect('home');
         }
 

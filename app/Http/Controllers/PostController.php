@@ -5,13 +5,13 @@ namespace App\Http\Controllers;
 use App\Post;
 use App\Repositories\Posts;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
     public function __construct()
     {
         $this->middleware(['auth', 'check.krasojizda']);
+        $this->middleware('can:manipulate,post')->except(['index', 'store', 'create']);
     }
 
     /**
@@ -21,10 +21,7 @@ class PostController extends Controller
      */
     public function index(Posts $posts)
     {
-        // $posts = Post::latest()
-        //   ->filter(request(['month', 'year']))
-        //   ->get();
-        $posts = $posts->all();
+        $posts = $posts->getKrasojizdaPosts();
 
         return view('posts.index', compact('posts'));
     }
@@ -52,7 +49,7 @@ class PostController extends Controller
             'body' => 'required|max:200',
         ]);
 
-        Auth::user()->publish(new Post($request->all()));
+        auth()->user()->publish(new Post($request->all()));
 
         session()->flash('message', 'Článek byl vytvořen.');
 

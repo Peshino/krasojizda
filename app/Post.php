@@ -3,7 +3,6 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 
 class Post extends Model
@@ -22,7 +21,7 @@ class Post extends Model
 
     public function addComment($body)
     {
-        $user_id = Auth::user()->id;
+        $user_id = auth()->user()->id;
         $this->comments()->create(compact('body', 'user_id'));
     }
 
@@ -39,7 +38,7 @@ class Post extends Model
 
     public static function archives()
     {
-        return static::selectRaw('year(created_at) as year, monthname(created_at) month,   count(*) published')
+        return static::selectRaw('year(created_at) as year, monthname(created_at) month, count(*) published')
             ->groupBy('year', 'month')
             ->orderByRaw('min(created_at) desc')
             ->get()
