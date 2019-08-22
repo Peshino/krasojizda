@@ -14,6 +14,8 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
+
+            @if (Auth::user()->krasojizda_id !== null)
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="#"><i class="fas fa-map-marker-alt align-middle"></i>&nbsp;
@@ -42,6 +44,7 @@
                         <span class="align-middle">@lang('messages.my_corner')</a></span>
                 </li>
             </ul>
+            @endif
 
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">

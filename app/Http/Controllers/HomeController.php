@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use \App\User;
+use \App\Invitation;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -24,8 +25,30 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $invitationReceiver = null;
+        $invitationInviter = null;
         $hasLoggedUserKrasojizda = auth()->user()->krasojizda_id !== null ? true : false;
-        return view('krasojizda.home', compact('hasLoggedUserKrasojizda'));
+        $loggedUserInviterInvitation = Invitation::where('inviter_id', auth()->user()->id)->whereNull('result')->first();
+        $loggedUserReceiverInvitation = Invitation::where('receiver_id', auth()->user()->id)->whereNull('result')->first();
+
+        if ($loggedUserInviterInvitation !== null) {
+            $invitationReceiver = User::where('id', $loggedUserInviterInvitation->receiver_id)->first();
+        }
+
+        if ($loggedUserReceiverInvitation !== null) {
+            $invitationInviter = User::where('id', $loggedUserReceiverInvitation->inviter_id)->first();
+        }
+
+        return view(
+            'krasojizda.home',
+            compact(
+                'hasLoggedUserKrasojizda',
+                'loggedUserInviterInvitation',
+                'invitationReceiver',
+                'loggedUserReceiverInvitation',
+                'invitationInviter'
+            )
+        );
     }
 
     public function welcome()

@@ -16,12 +16,12 @@ $('form#search-partner-form').submit(function (e) {
             search_partner_input: searchPartnerInputValue
         },
         success: function (data) {
+            let partnerId = data.user.id;
             let partnerName = data.user.firstname + ' ' + data.user.lastname;
-            let partnerEmail = data.user.email;
 
             $('#search-partner-result').addClass('d-block').removeClass('d-none');
-            $('#search-partner-name').html(partnerName);
-            $('#search-partner-email').html(partnerEmail);
+            $('#receiver-id').val(partnerId);
+            $('#receiver-name').html(partnerName);
         },
         error: function (errorMessage) {
             $('#search-partner-result').html('Error: ' + errorMessage);

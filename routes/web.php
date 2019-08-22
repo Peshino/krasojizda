@@ -10,6 +10,8 @@ Route::post('searchPartnerAjaxPost', 'HomeController@searchPartnerAjaxPost');
 
 Route::resource('krasojizda', 'KrasojizdaController');
 
+Route::resource('invitations', 'InvitationController');
+
 Route::resource('important-days', 'ImportantDayController');
 
 Route::resource('posts', 'PostController');

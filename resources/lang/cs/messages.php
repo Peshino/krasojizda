@@ -37,4 +37,5 @@ return [
     'my_corner' => 'Můj koutek',
 
     'search_partner_placeholder' => 'E-mail Vašeho partnera',
+    'invite_partner_to_krasojizda' => 'Pozvat do Krasojízdy',
 ];

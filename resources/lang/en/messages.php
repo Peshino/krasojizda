@@ -37,4 +37,5 @@ return [
     'my_corner' => 'My corner',
 
     'search_partner_placeholder' => 'Your partner\'s email',
+    'search_partner_placeholder' => 'Invite to Krasojizda',
 ];
