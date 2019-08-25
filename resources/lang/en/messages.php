@@ -37,5 +37,10 @@ return [
     'my_corner' => 'My corner',
 
     'search_partner_placeholder' => 'Your partner\'s email',
-    'search_partner_placeholder' => 'Invite to Krasojizda',
+    'invite_partner_to_krasojizda' => 'Invite to Krasojizda',
+    'search_partner_not_found' => 'Partner not found',
+    'search_myself_error' => 'Don\'t look for yourself',
+    'search_partner_found' => 'Partner found',
+
+    'blog_post_created' => 'Post created',
 ];

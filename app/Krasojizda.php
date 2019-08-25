@@ -18,11 +18,17 @@ class Krasojizda extends Model
      */
     public function getUserIdsArray()
     {
+        $userObjects = null;
         $userIdsArray = [];
-        $userObjects = Krasojizda::find(auth()->user()->krasojizda_id)->users;
 
-        foreach ($userObjects as $userObject) {
-            $userIdsArray[] = $userObject->id;
+        if (($krasojizda = Krasojizda::find(auth()->user()->krasojizda_id)) !== null) {
+            $userObjects = $krasojizda->users;
+        }
+
+        if ($userObjects !== null) {
+            foreach ($userObjects as $userObject) {
+                $userIdsArray[] = $userObject->id;
+            }
         }
 
         return $userIdsArray;

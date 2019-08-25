@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use \App\User;
 use \App\Invitation;
+use \App\Krasojizda;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -27,9 +28,13 @@ class HomeController extends Controller
     {
         $invitationReceiver = null;
         $invitationInviter = null;
-        $hasLoggedUserKrasojizda = auth()->user()->krasojizda_id !== null ? true : false;
+        $loggedUserKrasojizdaId = auth()->user()->krasojizda_id;
         $loggedUserInviterInvitation = Invitation::where('inviter_id', auth()->user()->id)->whereNull('result')->first();
         $loggedUserReceiverInvitation = Invitation::where('receiver_id', auth()->user()->id)->whereNull('result')->first();
+
+        if ($loggedUserKrasojizdaId !== null) {
+            $loggedUserKrasojizdaName = (Krasojizda::find($loggedUserKrasojizdaId))->name;
+        }
 
         if ($loggedUserInviterInvitation !== null) {
             $invitationReceiver = User::where('id', $loggedUserInviterInvitation->receiver_id)->first();
@@ -42,7 +47,8 @@ class HomeController extends Controller
         return view(
             'krasojizda.home',
             compact(
-                'hasLoggedUserKrasojizda',
+                'loggedUserKrasojizdaId',
+                'loggedUserKrasojizdaName',
                 'loggedUserInviterInvitation',
                 'invitationReceiver',
                 'loggedUserReceiverInvitation',
@@ -64,8 +70,20 @@ class HomeController extends Controller
 
         $user = User::where('email', $searchPartnerInput)->first();
 
+        if ($user === null) {
+            $status = 'error';
+            $message = __('messages.search_partner_not_found');
+        } elseif ($user->email === auth()->user()->email) {
+            $status = 'error';
+            $message = __('messages.search_myself_error');
+        } else {
+            $status = 'success';
+            $message = __('messages.search_partner_found');
+        }
+
         return response()->json([
-            'status' => 'success',
+            'status' => $status,
+            'message' => $message,
             'user' => $user
         ]);
     }

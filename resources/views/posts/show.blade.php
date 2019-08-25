@@ -49,7 +49,7 @@
                         <button type="submit" class="btn btn-primary">Add comment</button>
                     </div>
                 </form>
-                @include('layouts.errors')
+                @include('partials.errors')
             </div>
         </div>
     </div>

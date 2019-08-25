@@ -16,12 +16,19 @@ $('form#search-partner-form').submit(function (e) {
             search_partner_input: searchPartnerInputValue
         },
         success: function (data) {
-            let partnerId = data.user.id;
-            let partnerName = data.user.firstname + ' ' + data.user.lastname;
+            let partnerId = data.user.id,
+                partnerName = data.user.fullname,
+                status = data.status,
+                message = data.message;
 
             $('#search-partner-result').addClass('d-block').removeClass('d-none');
-            $('#receiver-id').val(partnerId);
-            $('#receiver-name').html(partnerName);
+
+            if (status === 'success') {
+                $('#receiver-id').val(partnerId);
+                $('#receiver-name').html(partnerName);
+            } else {
+                $('#receiver-name').html(message);
+            }
         },
         error: function (errorMessage) {
             $('#search-partner-result').html('Error: ' + errorMessage);

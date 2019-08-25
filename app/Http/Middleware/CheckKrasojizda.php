@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use App\Krasojizda;
 
 class CheckKrasojizda
 {
@@ -15,7 +16,7 @@ class CheckKrasojizda
      */
     public function handle($request, Closure $next)
     {
-        if (auth()->user()->krasojizda_id === null) {
+        if (auth()->user()->krasojizda_id === null || Krasojizda::find(auth()->user()->krasojizda_id) === null) {
             return redirect('home');
         }
 

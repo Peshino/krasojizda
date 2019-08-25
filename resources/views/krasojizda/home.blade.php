@@ -12,8 +12,8 @@
             </div>
             @endif
 
-            @if ($hasLoggedUserKrasojizda)
-            <h2>Krasojízda Jíři a Máši</h2>
+            @if ($loggedUserKrasojizdaId !== null)
+            <h2>{{ $loggedUserKrasojizdaName }}</h2>
 
             <div class="container mt-3">
                 <div class="row">
@@ -86,8 +86,8 @@
 
             <div id="search-partner-result" class="card d-none m-auto m-10">
                 <div class="card-body">
-                    <img class="img-fluid" src="{{ asset('img/me_2.jpg') }}" alt="Card image cap">
-                    <h5 class="card-title" id="receiver-name"></h5>
+                    {{-- <img class="img-fluid" src="{{ asset('img/me_2.jpg') }}" alt="Card image cap"> --}}
+                    <h4 class="card-title" id="receiver-name"></h4>
                     <form method="POST" action="{{ route('invitations.store') }}"
                         id="invite-partner-to-krasojizda-form">
                         @csrf

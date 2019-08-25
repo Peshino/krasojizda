@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Invitation;
+use App\Krasojizda;
+use App\User;
 use Illuminate\Http\Request;
 
 class InvitationController extends Controller
@@ -80,6 +82,17 @@ class InvitationController extends Controller
             $invitation->update([
                 'result' => $request->input('result')
             ]);
+
+            $inviter = User::find($invitation->inviter_id);
+            $receiver = User::find($invitation->receiver_id);
+
+            $krasojizda = new Krasojizda;
+            $krasojizda->name = 'Krasojízda ' . $inviter->firstname . ' & ' . $receiver->firstname;
+            $krasojizda->save();
+
+            $inviter->krasojizda_id = $receiver->krasojizda_id = $krasojizda->id;
+            $inviter->save();
+            $receiver->save();
         }
 
         return redirect('home');

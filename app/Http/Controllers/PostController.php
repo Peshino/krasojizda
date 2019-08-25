@@ -51,7 +51,9 @@ class PostController extends Controller
 
         auth()->user()->publish(new Post($request->all()));
 
-        session()->flash('message', 'Článek byl vytvořen.');
+        $message = __('messages.blog_post_created');
+
+        session()->flash('flash_message_success', $message);
 
         return redirect('posts');
     }
