@@ -18,8 +18,10 @@ class CreateInvitationsTable extends Migration
             $table->unsignedBigInteger('inviter_id');
             $table->unsignedBigInteger('receiver_id');
             $table->enum('result', ['accepted', 'rejected', 'withdrawn'])->nullable();
+            $table->unsignedBigInteger('confirmator_id')->nullable();
             $table->foreign('inviter_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('receiver_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('confirmator_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

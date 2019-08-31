@@ -81,4 +81,54 @@
     .list-group-item {
         background-color: transparent;
     }
+
+    .close:hover {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .alert {
+        border: 0px solid transparent;
+        margin-bottom: 1.25rem;
+    }
+
+    .alert-danger {
+        color: #ffffff;
+        border-color: transparent;
+        background: rgb(52, 58, 64);
+        background: -moz-linear-gradient(left, rgb(52, 58, 64) 0%, rgb(155, 31, 33) 50%, rgb(52, 58, 64) 100%);
+        background: -webkit-linear-gradient(left, rgb(52, 58, 64) 0%, rgb(155, 31, 33) 50%, rgb(52, 58, 64) 100%);
+        background: linear-gradient(to right, rgb(52, 58, 64) 0%, rgb(155, 31, 33) 50%, rgb(52, 58, 64) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#343a40', endColorstr='#343a40', GradientType=1);
+    }
+
+    .alert-warning {
+        color: #ffffff;
+        border-color: transparent;
+        background: rgb(52, 58, 64);
+        background: -moz-linear-gradient(left, rgb(52, 58, 64) 0%, rgb(107, 82, 21) 50%, rgb(52, 58, 64) 100%);
+        background: -webkit-linear-gradient(left, rgb(52, 58, 64) 0%, rgb(107, 82, 21) 50%, rgb(52, 58, 64) 100%);
+        background: linear-gradient(to right, rgb(52, 58, 64) 0%, rgb(107, 82, 21) 50%, rgb(52, 58, 64) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#343a40', endColorstr='#343a40', GradientType=1);
+    }
+
+    .alert-success {
+        color: #ffffff;
+        border-color: transparent;
+        background: rgb(52, 58, 64);
+        background: -moz-linear-gradient(left, rgb(52, 58, 64) 0%, rgb(29, 96, 19) 50%, rgb(52, 58, 64) 100%);
+        background: -webkit-linear-gradient(left, rgb(52, 58, 64) 0%, rgb(29, 96, 19) 50%, rgb(52, 58, 64) 100%);
+        background: linear-gradient(to right, rgb(52, 58, 64) 0%, rgb(29, 96, 19) 50%, rgb(52, 58, 64) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#343a40', endColorstr='#343a40', GradientType=1);
+    }
+
+    .alert-info {
+        color: #ffffff;
+        border-color: transparent;
+        background: rgb(52, 58, 64);
+        background: -moz-linear-gradient(left, rgb(52, 58, 64) 0%, rgb(30, 87, 153) 50%, rgb(52, 58, 64) 100%);
+        background: -webkit-linear-gradient(left, rgb(52, 58, 64) 0%, rgb(30, 87, 153) 50%, rgb(52, 58, 64) 100%);
+        background: linear-gradient(to right, rgb(52, 58, 64) 0%, rgb(30, 87, 153) 50%, rgb(52, 58, 64) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#343a40', endColorstr='#343a40', GradientType=1);
+    }
 }

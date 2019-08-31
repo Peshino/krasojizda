@@ -42,5 +42,13 @@ return [
     'search_myself_error' => 'Nehledejte sebe',
     'search_partner_found' => 'Partner nalezen',
 
-    'blog_post_created' => 'Článek vytvořen',
+
+    'flash_error' => 'Něco se pokazilo',
+    'flash_krasojizda_created' => 'Krasojízda vytvořena',
+    'flash_krasojizda_create_error' => 'Při vytváření Krasojízdy došlo k chybě',
+    'flash_post_created' => 'Článek vytvořen',
+    'flash_invitation_created' => 'Pozvánka vytvořena',
+    'flash_invitation_rejected' => 'Pozvánka odmítnuta',
+    'flash_invitation_withdrawn' => 'Pozvánka stažena',
+    'flash_invitation_update_error' => 'Při úpravě pozvánky došlo k chybě',
 ];

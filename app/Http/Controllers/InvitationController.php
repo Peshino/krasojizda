@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Invitation;
 use App\Krasojizda;
-use App\User;
 use Illuminate\Http\Request;
 
 class InvitationController extends Controller
@@ -42,7 +41,7 @@ class InvitationController extends Controller
             'receiver_id' => 'required|min:1',
         ]));
 
-        session()->flash('message', 'Článek byl vytvořen.');
+        session()->flash('flash_message_info', __('messages.flash_invitation_created'));
 
         return redirect('home');
     }
@@ -79,20 +78,43 @@ class InvitationController extends Controller
     public function update(Request $request, Invitation $invitation)
     {
         if ($request->has('result')) {
-            $invitation->update([
-                'result' => $request->input('result')
+            $resultValue = $request->input('result');
+
+            switch ($resultValue) {
+                case 'accepted':
+                    $invitation->update(['result' => $resultValue]);
+                    $krasojizda = new Krasojizda;
+
+                    if ($krasojizda->create($invitation)) {
+                        session()->flash('flash_message_info', __('messages.flash_krasojizda_created'));
+                    } else {
+                        session()->flash('flash_message_danger', __('messages.flash_krasojizda_create_error'));
+                    }
+                    break;
+                case 'rejected':
+                    $invitation->update(['result' => $resultValue]);
+                    session()->flash('flash_message_info', __('messages.flash_invitation_rejected'));
+                    break;
+                case 'withdrawn':
+                    $invitation->update(['result' => $resultValue]);
+                    session()->flash('flash_message_info', __('messages.flash_invitation_withdrawn'));
+                    break;
+                default:
+                    session()->flash('flash_message_danger', __('messages.flash_error'));
+                    break;
+            }
+        }
+
+        if ($request->has('confirmator_id')) {
+            if ($invitation->update(['confirmator_id' => $request->input('confirmator_id')])) {
+                $status = 'success';
+            } else {
+                $status = 'error';
+            }
+
+            return response()->json([
+                'status' => $status,
             ]);
-
-            $inviter = User::find($invitation->inviter_id);
-            $receiver = User::find($invitation->receiver_id);
-
-            $krasojizda = new Krasojizda;
-            $krasojizda->name = 'Krasojízda ' . $inviter->firstname . ' & ' . $receiver->firstname;
-            $krasojizda->save();
-
-            $inviter->krasojizda_id = $receiver->krasojizda_id = $krasojizda->id;
-            $inviter->save();
-            $receiver->save();
         }
 
         return redirect('home');

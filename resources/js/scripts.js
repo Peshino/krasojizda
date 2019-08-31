@@ -8,7 +8,9 @@ $(document).ready(function () {
     $('[data-toggle="tooltip"]').tooltip();
 
     $('#cookie-bar-button').click(function () {
-        Cookies.set('gdpr_cookie_bar', '1', { expires: 365 });
+        Cookies.set('gdpr_cookie_bar', '1', {
+            expires: 365
+        });
         $('#cookie-bar').addClass('d-none').removeClass('d-flex');
     });
 
@@ -16,4 +18,8 @@ $(document).ready(function () {
         $('.navbar-nav .nav-link').removeClass('active');
         $(this).addClass('active');
     });
+
+    setTimeout(function () {
+        $('.alert').fadeOut(750);
+    }, 2500);
 });

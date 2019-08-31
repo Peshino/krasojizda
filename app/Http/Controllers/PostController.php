@@ -51,9 +51,7 @@ class PostController extends Controller
 
         auth()->user()->publish(new Post($request->all()));
 
-        $message = __('messages.blog_post_created');
-
-        session()->flash('flash_message_success', $message);
+        session()->flash('flash_message_success', __('messages.flash_post_created'));
 
         return redirect('posts');
     }

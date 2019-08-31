@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\User;
+use App\Invitation;
 use Illuminate\Database\Eloquent\Model;
 
 class Krasojizda extends Model
@@ -32,5 +34,30 @@ class Krasojizda extends Model
         }
 
         return $userIdsArray;
+    }
+
+    /**
+     * Creates new Krasojizda based on accepted invitation
+     *
+     * @return bool
+     */
+    public function create(Invitation $invitation)
+    {
+        $inviter = User::find($invitation->inviter_id);
+        $receiver = User::find($invitation->receiver_id);
+
+        if ($inviter !== null && $receiver !== null) {
+            $this->name = 'Krasojízda ' . $inviter->firstname . ' & ' . $receiver->firstname;
+
+            if ($this->save()) {
+                $inviter->krasojizda_id = $receiver->krasojizda_id = $this->id;
+
+                if ($inviter->save() && $receiver->save()) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 }

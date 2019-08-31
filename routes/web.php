@@ -6,7 +6,7 @@ Route::get('/', 'IntroductionController@index');
 
 Route::get('home', 'HomeController@index')->name('home');
 Route::get('welcome', 'HomeController@welcome')->name('welcome');
-Route::post('searchPartnerAjaxPost', 'HomeController@searchPartnerAjaxPost');
+Route::post('searchPartnerAjaxPost', 'HomeController@searchPartnerAjaxPost')->name('searchPartnerAjaxPost');
 
 Route::resource('krasojizda', 'KrasojizdaController');
 

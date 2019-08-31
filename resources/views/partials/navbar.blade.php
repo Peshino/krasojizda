@@ -19,29 +19,29 @@
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="#"><i class="fas fa-map-marker-alt align-middle"></i>&nbsp;
-                        <span class="align-middle">@lang('messages.our_places')</a></span>
+                        <span class="align-middle">@lang('messages.our_places')</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"><i class="far fa-heart align-middle"></i>&nbsp;
-                        <span class="align-middle">@lang('messages.life_events')</a></span>
+                        <span class="align-middle">@lang('messages.life_events')</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('important-days.index') }}"><i
                             class="far fa-calendar-alt align-middle"></i>&nbsp;
-                        <span class="align-middle">@lang('messages.important_days')</a></span>
+                        <span class="align-middle">@lang('messages.important_days')</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"><i class="far fa-comments align-middle"></i>&nbsp;
-                        <span class="align-middle">@lang('messages.conversations')</a></span>
+                        <span class="align-middle">@lang('messages.conversations')</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('posts.index') }}"><i
                             class="fas fa-pencil-alt align-middle"></i>&nbsp;
-                        <span class="align-middle">@lang('messages.blog')</a></span>
+                        <span class="align-middle">@lang('messages.blog')</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"><i class="far fa-clipboard align-middle"></i>&nbsp;
-                        <span class="align-middle">@lang('messages.my_corner')</a></span>
+                        <span class="align-middle">@lang('messages.my_corner')</span></a>
                 </li>
             </ul>
             @endif

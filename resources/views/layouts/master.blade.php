@@ -20,11 +20,10 @@
         @include('partials/navbar')
         @endauth
 
-        @include('partials/flash-messages')
-
         <main class="py-4">
             <div class="container">
                 @yield('content')
+                @include('partials/flash-messages')
             </div>
         </main>
 

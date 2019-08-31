@@ -6,9 +6,20 @@
 
     <div class="card-body">
         <div class="content">
-            @if (session('status'))
-            <div class="alert alert-success" role="alert">
-                {{ session('status') }}
+            @if ($loggedUserInviterResultInvitation !== null)
+            <div id="invitation-result" class="mb-3">
+                {{ $loggedUserInviterResultInvitation->id }}
+                {{ $loggedUserInviterResultInvitation->result }}
+
+                <form id="invitation-result-form" action="{{ route('invitations.update', $loggedUserInviterResultInvitation->id) }}">
+                    @method('PATCH')
+                    @csrf
+                    <div class="input-group">
+                        <button id="confirmator-id" name="confirmator_id" type="submit" value="{{ Auth::user()->id }}" class="btn btn-primary">
+                            Rozumím
+                        </button>
+                    </div>
+                </form>
             </div>
             @endif
 
@@ -37,7 +48,7 @@
             </div>
             @else
             @if ($invitationReceiver !== null)
-            Poslal jsem pozvánku na {{ $invitationReceiver->fullname }} s IDčkem pozvánky
+            Pozvánka odeslána na uživatele {{ $invitationReceiver->fullname }} s IDčkem pozvánky
             {{ $loggedUserInviterInvitation->id }}
             <form method="POST" action="{{ route('invitations.update', $loggedUserInviterInvitation->id) }}">
                 @method('PATCH')
@@ -49,7 +60,7 @@
                 </div>
             </form>
             @elseif ($invitationInviter !== null)
-            Dostal jsem pozvánku od {{ $invitationInviter->fullname }} s IDčkem pozvánky
+            Obdržena pozvánka od uživatele {{ $invitationInviter->fullname }} s IDčkem pozvánky
             {{ $loggedUserReceiverInvitation->id }}
 
             <form method="POST" action="{{ route('invitations.update', $loggedUserReceiverInvitation->id) }}">
@@ -69,7 +80,7 @@
             <p>Nyní je třeba vytvořit Krasojízdu se svou drahou druhou polovičkou.</p>
             <p>Vyhledejte partnera dle emailu, na který má registrovaný svůj profil:</p>
 
-            <form id="search-partner-form">
+            <form id="search-partner-form" action="{{ route('searchPartnerAjaxPost') }}">
                 @csrf
                 <div class="input-group">
                     <input type="email" name="search_partner_input"
@@ -88,13 +99,13 @@
                 <div class="card-body">
                     {{-- <img class="img-fluid" src="{{ asset('img/me_2.jpg') }}" alt="Card image cap"> --}}
                     <h4 class="card-title" id="receiver-name"></h4>
-                    <form method="POST" action="{{ route('invitations.store') }}"
-                        id="invite-partner-to-krasojizda-form">
+                    <form id="invite-partner-to-krasojizda-form" method="POST"
+                        action="{{ route('invitations.store') }}">
                         @csrf
                         <div class="input-group">
                             <input id="inviter-id" name="inviter_id" type="hidden" value="{{ Auth::user()->id }}" />
                             <input id="receiver-id" name="receiver_id" type="hidden" value="" />
-                            <button type="submit" class="btn btn-primary">
+                            <button id="invite-partner-to-krasojizda-button" type="submit" class="btn btn-primary">
                                 @lang('messages.invite_partner_to_krasojizda')
                             </button>
                         </div>

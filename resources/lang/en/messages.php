@@ -3,7 +3,7 @@
 return [
     'cookie_bar' => 'Use of this website expresses your consent to the use of cookies.',
 
-    'krasojizda_name' => 'Krasojízda',
+    'krasojizda_name' => 'Krasojizda',
     'krasojizda_description' => 'App for couples',
 
     'footer_rights' => 'All rights reserved',
@@ -42,5 +42,13 @@ return [
     'search_myself_error' => 'Don\'t look for yourself',
     'search_partner_found' => 'Partner found',
 
-    'blog_post_created' => 'Post created',
+
+    'flash_error' => 'Something went wrong',
+    'flash_krasojizda_created' => 'Krasojizda vytvořena',
+    'flash_krasojizda_create_error' => 'There was an error creating Krasojizda',
+    'flash_post_created' => 'Post created',
+    'flash_invitation_created' => 'Invitation created',
+    'flash_invitation_rejected' => 'Invitation rejected',
+    'flash_invitation_withdrawn' => 'Invitation withdrawn',
+    'flash_invitation_update_error' => 'There was an error updating invitation',
 ];

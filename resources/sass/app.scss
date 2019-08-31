@@ -32,22 +32,22 @@ html {
     src: url('/fonts/KoHo/KoHo-Regular.ttf');
 }
 
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 30px #2a2f33 inset !important;
-}
+// input:-webkit-autofill,
+// input:-webkit-autofill:hover,
+// input:-webkit-autofill:focus,
+// input:-webkit-autofill:active {
+//     -webkit-box-shadow: 0 0 0 30px #2a2f33 inset !important;
+// }
 
-input:-internal-autofill-selected {
-    background-color: rgb(0, 0, 0) !important;
-    background-image: none !important;
-    color: rgb(255, 255, 255) !important;
-}
+// input:-internal-autofill-selected {
+//     background-color: rgb(0, 0, 0) !important;
+//     background-image: none !important;
+//     color: rgb(255, 255, 255) !important;
+// }
 
-input:-webkit-autofill {
-    -webkit-text-fill-color: #ffffff !important;
-}
+// input:-webkit-autofill {
+//     -webkit-text-fill-color: #ffffff !important;
+// }
 
 @import 'cookie-bar';
 @import 'introduction';

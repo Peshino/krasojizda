@@ -31,6 +31,7 @@ class HomeController extends Controller
         $loggedUserKrasojizdaId = auth()->user()->krasojizda_id;
         $loggedUserInviterInvitation = Invitation::where('inviter_id', auth()->user()->id)->whereNull('result')->first();
         $loggedUserReceiverInvitation = Invitation::where('receiver_id', auth()->user()->id)->whereNull('result')->first();
+        $loggedUserInviterResultInvitation = Invitation::where('inviter_id', auth()->user()->id)->whereNull('confirmator_id')->whereNotNull('result')->latest('created_at')->first();
 
         if ($loggedUserKrasojizdaId !== null) {
             $loggedUserKrasojizdaName = (Krasojizda::find($loggedUserKrasojizdaId))->name;
@@ -52,7 +53,8 @@ class HomeController extends Controller
                 'loggedUserInviterInvitation',
                 'invitationReceiver',
                 'loggedUserReceiverInvitation',
-                'invitationInviter'
+                'invitationInviter',
+                'loggedUserInviterResultInvitation'
             )
         );
     }
