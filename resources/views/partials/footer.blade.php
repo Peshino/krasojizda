@@ -1,5 +1,5 @@
 <footer class="page-footer font-small fixed-bottom">
-    <div class="footer-copyright text-center py-2">
+    <div class="footer-copyright text-center py-1">
         <small>
             &copy; {{ now()->year }}
             <a href="{{ url('/') }}">

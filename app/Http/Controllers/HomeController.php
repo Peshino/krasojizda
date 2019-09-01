@@ -28,10 +28,11 @@ class HomeController extends Controller
     {
         $invitationReceiver = null;
         $invitationInviter = null;
+        $invitation = new Invitation();
         $loggedUserKrasojizdaId = auth()->user()->krasojizda_id;
         $loggedUserInviterInvitation = Invitation::where('inviter_id', auth()->user()->id)->whereNull('result')->first();
         $loggedUserReceiverInvitation = Invitation::where('receiver_id', auth()->user()->id)->whereNull('result')->first();
-        $loggedUserInviterResultInvitation = Invitation::where('inviter_id', auth()->user()->id)->whereNull('confirmator_id')->whereNotNull('result')->latest('created_at')->first();
+        $loggedUserInviterResultInvitation = $invitation->getLastNotConfirmedInvitation();
 
         if ($loggedUserKrasojizdaId !== null) {
             $loggedUserKrasojizdaName = (Krasojizda::find($loggedUserKrasojizdaId))->name;

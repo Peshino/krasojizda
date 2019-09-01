@@ -20,7 +20,7 @@
             </div>
 
             <div class="d-flex justify-content-center h-100">
-                <div class="card">
+                <div class="card mb-5">
                     <ul class="nav nav-tabs" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link {{ count($errors) > 0 && Session::get('last_auth_attempt') === 'register' ? '' : 'active' }}" data-toggle="tab" href="#sign-in">@lang('messages.sign_in_tab')</a>

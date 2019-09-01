@@ -10730,20 +10730,27 @@ html {
 }
 
 #introduction .card {
-  height: 420px;
+  height: 400px;
   margin-top: auto;
   margin-bottom: auto;
   width: 400px;
   background-color: rgba(0, 0, 0, 0.5) !important;
 }
 
-#introduction .card-header h3 {
+#introduction .card-header h4 {
   color: #ffffff;
 }
 
+#introduction .card-header {
+  padding: 0rem 1.25rem;
+  margin-bottom: 0;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
 #introduction .card-footer {
-  margin-top: 2.75rem;
-  padding: 0.75rem 1.25rem;
+  margin-top: 3rem;
+  padding: 0.55rem 1.25rem;
   background-color: rgba(0, 0, 0, 0.03);
   border-top: 1px solid rgba(0, 0, 0, 0.125);
 }
@@ -11001,11 +11008,14 @@ html {
   outline: 0px auto -webkit-focus-ring-color;
 }
 
-#main input,
+#main input[type=text],
+#main input[type=button],
+#main input[type=email],
+#main input[type=password],
 #main textarea {
   color: #dddddd;
   background: transparent;
-  border: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
 }
 
 #main input:focus,
@@ -11068,6 +11078,11 @@ html {
   cursor: pointer;
 }
 
+#main option {
+  color: #dddddd;
+  background-color: #2a2f33;
+}
+
 #main .list-group-item {
   background-color: transparent;
 }
@@ -11114,8 +11129,96 @@ html {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#343a40", endColorstr="#343a40", GradientType=1);
 }
 
+#main .floating-label {
+  padding-top: 0.75rem;
+  position: relative;
+}
+
+#main .floating-label label {
+  -webkit-transform-origin: 0 0;
+  color: #aaaaaa;
+  display: block;
+  font-size: 1rem;
+  left: 0;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 1.125rem;
+  transform-origin: 0 0;
+  transition-duration: 0.3s;
+  transition-property: color, top, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#main .floating-label .custom-select,
+#main .floating-label .form-control,
+#main .floating-label .form-control-file {
+  position: relative;
+}
+
+#main .custom-select,
+#main .form-control,
+#main .form-control-file {
+  background-clip: padding-box;
+  background-color: transparent;
+  border: 1px solid #cccccc;
+  border-radius: 0;
+  border-width: 0 0 1px;
+  box-shadow: none;
+  color: inherit;
+  display: block;
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 0.375rem 0 calc(.375rem - 1px);
+  width: 100%;
+}
+
+#main button,
+#main input {
+  overflow: visible;
+}
+
+#main .floating-label label {
+  transition-duration: 0.2s;
+}
+
+#main :focus {
+  outline: -webkit-focus-ring-color auto 1px;
+}
+
+#main .floating-label.is-focused label {
+  color: #dddddd;
+}
+
+#main .floating-label.has-value label,
+#main .floating-label.is-focused label {
+  top: 0;
+  transform: scale(0.75);
+}
+
+#main .custom-select:focus,
+#main .form-control-file:focus,
+#main .form-control:focus {
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-color: #ffffff;
+  box-shadow: none;
+  outline: 0;
+}
+
+#main .custom-select:hover,
+#main .form-control-file:hover,
+#main .form-control:hover {
+  border-color: #ffffff;
+  box-shadow: none;
+}
+
 footer {
   color: #bbbbbb;
+  background: linear-gradient(to right, rgba(33, 33, 33, 0) 0%, rgba(33, 33, 33, 0.75) 35%, rgba(33, 33, 33, 0.75) 65%, rgba(33, 33, 33, 0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00212121", endColorstr="#00212121", GradientType=1);
 }
 
 footer a {

@@ -3,137 +3,144 @@
     background-image: url('/img/bg_logo.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
-}
 
-#introduction .introduction-header {
-    text-align: center;
-    padding: 24px 0;
-}
+    .introduction-header {
+        text-align: center;
+        padding: 24px 0;
+    }
 
-#introduction .introduction-header h1,
-#introduction .introduction-header h2 {
-    color: #ffffff;
-}
+    .introduction-header h1,
+    .introduction-header h2 {
+        color: #ffffff;
+    }
 
-#introduction .card {
-    height: 420px;
-    margin-top: auto;
-    margin-bottom: auto;
-    width: 400px;
-    background-color: rgba(0, 0, 0, 0.5) !important;
-}
+    .card {
+        height: 400px;
+        margin-top: auto;
+        margin-bottom: auto;
+        width: 400px;
+        background-color: rgba(0, 0, 0, 0.5) !important;
+    }
 
-#introduction .card-header h3 {
-    color: #ffffff;
-}
+    .card-header h4 {
+        color: #ffffff;
+    }
 
-#introduction .card-footer {
-    margin-top: 2.75rem;
-    padding: 0.75rem 1.25rem;
-    background-color: rgba(0, 0, 0, 0.03);
-    border-top: 1px solid rgba(0, 0, 0, 0.125);
-}
+    .card-header {
+        padding: 0rem 1.25rem;
+        margin-bottom: 0;
+        background-color: rgba(0, 0, 0, 0.03);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    }
 
-#introduction input {
-    color: #ffffff;
-    background: transparent;
-    border: 2px solid #ffffff;
-}
+    .card-footer {
+        margin-top: 3rem;
+        padding: 0.55rem 1.25rem;
+        background-color: rgba(0, 0, 0, 0.03);
+        border-top: 1px solid rgba(0, 0, 0, 0.125);
+    }
 
-#introduction ::placeholder {
-    color: #cccccc;
-    opacity: 1;
-}
+    input {
+        color: #ffffff;
+        background: transparent;
+        border: 2px solid #ffffff;
+    }
 
-#introduction :-ms-input-placeholder,
-#introduction ::-ms-input-placeholder {
-    color: #cccccc;
-}
+    ::placeholder {
+        color: #cccccc;
+        opacity: 1;
+    }
 
-#introduction input:focus {
-    outline: 0 0 0 0 !important;
-    box-shadow: 0 0 0 0 !important;
-}
+    :-ms-input-placeholder,
+    ::-ms-input-placeholder {
+        color: #cccccc;
+    }
 
-#introduction .remember {
-    color: #ffffff;
-}
+    input:focus {
+        outline: 0 0 0 0 !important;
+        box-shadow: 0 0 0 0 !important;
+    }
 
-#introduction .remember input {
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    background: rgba(40, 40, 40, 0.2);
-    color: #000000;
-    border: 2px solid #ffffff;
-    border-radius: 0.25rem;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    left: -5px;
-    top: -5px;
-    margin-left: 15px;
-    margin-right: 5px;
-}
+    .remember {
+        color: #ffffff;
+    }
 
-#introduction .remember input:checked {
-    background: rgba(255, 255, 255, 1);
-}
+    .remember input {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        background: rgba(40, 40, 40, 0.2);
+        color: #000000;
+        border: 2px solid #ffffff;
+        border-radius: 0.25rem;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        left: -5px;
+        top: -5px;
+        margin-left: 15px;
+        margin-right: 5px;
+    }
 
-#introduction .remember label {
-    height: 13px;
-}
+    .remember input:checked {
+        background: rgba(255, 255, 255, 1);
+    }
 
-#introduction .remember label:hover {
-    cursor: pointer;
-}
+    .remember label {
+        height: 13px;
+    }
 
-#introduction a {
-    color: #ffffff;
-}
+    .remember label:hover {
+        cursor: pointer;
+    }
 
-#introduction a:hover {
-    color: #ffffff;
-}
+    a {
+        color: #ffffff;
+    }
 
-#introduction .nav-tabs {
-    background-color: rgba(0, 0, 0, 0.03);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
-}
+    a:hover {
+        color: #ffffff;
+    }
 
-#introduction .nav-tabs .nav-link.active,
-#introduction .nav-tabs .nav-item.show .nav-link {
-    color: #ffffff;
-    background: transparent;
-    border-top: 2px solid #ffffff;
-}
+    .nav-tabs {
+        background-color: rgba(0, 0, 0, 0.03);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    }
 
-#introduction .nav-tabs .nav-link {
-    border: 1px solid transparent;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-}
+    .nav-tabs .nav-link.active,
+    .nav-tabs .nav-item.show .nav-link {
+        color: #ffffff;
+        background: transparent;
+        border-top: 2px solid #ffffff;
+    }
 
-#introduction .nav-item {
-    width: 50%;
-}
+    .nav-tabs .nav-link {
+        border: 1px solid transparent;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
 
-#introduction .sign-up-firstname.col {
-    padding-right: 4px;
-}
+    .nav-item {
+        width: 50%;
+    }
 
-#introduction .sign-up-lastname.col {
-    padding-left: 4px;
-}
+    .sign-up-firstname.col {
+        padding-right: 4px;
+    }
 
-#introduction .introduction-btn {
-    color: #ffffff;
-    background: transparent;
-    border: 2px solid #ffffff;
-    width: 50%;
-}
+    .sign-up-lastname.col {
+        padding-left: 4px;
+    }
 
-#introduction .introduction-btn:hover {
-    color: #000000;
-    background: #ffffff;
+    .introduction-btn {
+        color: #ffffff;
+        background: transparent;
+        border: 2px solid #ffffff;
+        width: 50%;
+    }
+
+    .introduction-btn:hover {
+        color: #000000;
+        background: #ffffff;
+    }
 }

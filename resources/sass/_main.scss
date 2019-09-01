@@ -30,11 +30,14 @@
         outline: 0px auto -webkit-focus-ring-color;
     }
 
-    input,
+    input[type="text"],
+    input[type="button"],
+    input[type="email"],
+    input[type="password"],
     textarea {
         color: #dddddd;
         background: transparent;
-        border: 1px solid #cccccc;
+        border-bottom: 1px solid #cccccc;
     }
 
     input:focus,
@@ -76,6 +79,11 @@
 
     label:hover {
         cursor: pointer;
+    }
+
+    option {
+        color: #dddddd;
+        background-color: #2a2f33;
     }
 
     .list-group-item {
@@ -130,5 +138,95 @@
         background: -webkit-linear-gradient(left, rgb(52, 58, 64) 0%, rgb(30, 87, 153) 50%, rgb(52, 58, 64) 100%);
         background: linear-gradient(to right, rgb(52, 58, 64) 0%, rgb(30, 87, 153) 50%, rgb(52, 58, 64) 100%);
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#343a40', endColorstr='#343a40', GradientType=1);
+    }
+
+    .floating-label {
+        padding-top: .75rem;
+        position: relative;
+    }
+
+    .floating-label label {
+        -webkit-transform-origin: 0 0;
+        color: #aaaaaa;
+        display: block;
+        font-size: 1rem;
+        left: 0;
+        line-height: 1.5;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        top: 1.125rem;
+        transform-origin: 0 0;
+        transition-duration: .3s;
+        transition-property: color, top, -webkit-transform;
+        transition-property: color, top, transform;
+        transition-property: color, top, transform, -webkit-transform;
+        transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+    }
+
+
+
+    .floating-label .custom-select,
+    .floating-label .form-control,
+    .floating-label .form-control-file {
+        position: relative;
+    }
+
+    .custom-select,
+    .form-control,
+    .form-control-file {
+        background-clip: padding-box;
+        background-color: transparent;
+        border: 1px solid #cccccc;
+        border-radius: 0;
+        border-width: 0 0 1px;
+        box-shadow: none;
+        color: inherit;
+        display: block;
+        font-size: 1rem;
+        line-height: 1.5;
+        padding: .375rem 0 calc(.375rem - 1px);
+        width: 100%;
+    }
+
+    button,
+    input {
+        overflow: visible;
+    }
+
+    .floating-label label {
+        transition-duration: .2s;
+    }
+
+    :focus {
+        outline: -webkit-focus-ring-color auto 1px;
+    }
+
+    .floating-label.is-focused label {
+        color: #dddddd;
+    }
+
+    .floating-label.has-value label,
+    .floating-label.is-focused label {
+        top: 0;
+        transform: scale(.75);
+    }
+
+    .custom-select:focus,
+    .form-control-file:focus,
+    .form-control:focus {
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+        border-color: #ffffff;
+        box-shadow: none;
+        outline: 0;
+    }
+
+    .custom-select:hover,
+    .form-control-file:hover,
+    .form-control:hover {
+        border-color: #ffffff;
+        box-shadow: none;
     }
 }

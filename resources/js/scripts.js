@@ -22,4 +22,6 @@ $(document).ready(function () {
     setTimeout(function () {
         $('.alert').fadeOut(750);
     }, 2500);
+
+    $('.floating-label .custom-select, .floating-label .form-control').floatinglabel();
 });

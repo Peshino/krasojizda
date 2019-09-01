@@ -1,5 +1,5 @@
 <div class="card-header">
-    <h3>@lang('messages.sign_in_header')</h3>
+    <h4>@lang('messages.sign_in_header')</h4>
 </div>
 
 <div class="card-body">
@@ -34,7 +34,7 @@
                 @lang('messages.sign_in_remember_me')
             </label>
         </div>
-        <div class="form-group">
+        <div class="form-group mt-2">
             <button type="submit" class="btn float-right introduction-btn">
                 @lang('messages.sign_in_button')
             </button>

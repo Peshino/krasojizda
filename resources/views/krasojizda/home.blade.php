@@ -1,21 +1,23 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="card">
+<div class="card mb-3">
     <div class="card-header krasojizda-bg">@lang('messages.homepage')</div>
 
     <div class="card-body">
-        <div class="content">
+        <div class="content text-center">
             @if ($loggedUserInviterResultInvitation !== null)
             <div id="invitation-result" class="mb-3">
                 {{ $loggedUserInviterResultInvitation->id }}
                 {{ $loggedUserInviterResultInvitation->result }}
 
-                <form id="invitation-result-form" action="{{ route('invitations.update', $loggedUserInviterResultInvitation->id) }}">
+                <form id="invitation-result-form"
+                    action="{{ route('invitations.update', $loggedUserInviterResultInvitation->id) }}">
                     @method('PATCH')
                     @csrf
                     <div class="input-group">
-                        <button id="confirmator-id" name="confirmator_id" type="submit" value="{{ Auth::user()->id }}" class="btn btn-primary">
+                        <button id="confirmator-id" name="confirmator_id" type="submit" value="{{ Auth::user()->id }}"
+                            class="btn btn-primary">
                             Rozumím
                         </button>
                     </div>
@@ -50,6 +52,9 @@
             @if ($invitationReceiver !== null)
             Pozvánka odeslána na uživatele {{ $invitationReceiver->fullname }} s IDčkem pozvánky
             {{ $loggedUserInviterInvitation->id }}
+            @if ($invitationReceiver->krasojizda_id !== null)
+            - Uživatel už má svoji Krasojízdu
+            @endif
             <form method="POST" action="{{ route('invitations.update', $loggedUserInviterInvitation->id) }}">
                 @method('PATCH')
                 @csrf

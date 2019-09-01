@@ -1,5 +1,5 @@
 <div class="card-header">
-    <h3>@lang('messages.sign_up_header')</h3>
+    <h4>@lang('messages.sign_up_header')</h4>
 </div>
 
 <div class="card-body">
