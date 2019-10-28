@@ -7,21 +7,23 @@
     <div class="card-body">
         <div class="content text-center">
             <div class="blog-main">
-                <h1>Publish a Post</h1>
-
                 <form method="POST" action="{{ route('posts.store') }}">
                     @csrf
                     <div class="form-group">
-                        <label for="title">Title</label>
-                        <input type="text" class="form-control" id="title" name="title">
+                        <div class="floating-label">
+                            <label for="post-title">Titulek</label>
+                            <input type="text" class="form-control" id="post-title" name="title" required />
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="body">Body</label>
-                        <textarea id="body" name="body" class="form-control"></textarea>
+                        <div class="floating-label">
+                            <label for="post-body">Text</label>
+                            <textarea class="form-control" id="post-body" name="body" required></textarea>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Publish</button>
+                    <div class="form-group text-center">
+                        <button type="submit" class="btn btn-primary">Vytvoř článek</button>
                     </div>
 
                     @include('partials.errors')

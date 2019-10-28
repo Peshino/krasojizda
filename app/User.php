@@ -42,6 +42,11 @@ class User extends Authenticatable
         return $this->hasMany('App\Post');
     }
 
+    public function color()
+    {
+        return $this->belongsTo(Color::class);
+    }
+
     public function publish(Post $post)
     {
         $this->posts()->save($post);

@@ -2,12 +2,19 @@
 
 @section('content')
 <div class="card mb-3">
-    <div class="card-header krasojizda-bg">Články</div>
+    <div class="card-header krasojizda-bg">
+        <div class="row">
+            <div class="col text-left">
+                Články
+            </div>
+            <div class="col text-right">
+                <a href="{{ route('posts.create') }}"><i class="far fa-plus-square plus-to-add"></i></a>
+            </div>
+        </div>
+    </div>
 
     <div class="card-body">
         <div class="content text-center">
-            <a href="{{ route('posts.create') }}">Vytvoř článek</a>
-
             <div class="blog-main">
                 @foreach ($posts as $post)
                 @include('posts.post')

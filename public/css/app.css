@@ -11548,6 +11548,7 @@ html {
 
 #main .list-group-item {
   background-color: transparent;
+  border: 0px solid rgba(0, 0, 0, 0.125);
 }
 
 #main .close:hover {
@@ -11686,6 +11687,15 @@ html {
 #main .form-control:hover {
   border-color: #ffffff;
   box-shadow: none;
+}
+
+#main a .plus-to-add {
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+#main a:hover .plus-to-add {
+  color: #dddddd;
 }
 
 footer {

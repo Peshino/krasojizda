@@ -5,44 +5,43 @@
     <div class="card-header krasojizda-bg">Článek</div>
 
     <div class="card-body">
-        <div class="content text-center">
+        <div class="content">
             <div class="blog-main">
-                <h1>
+                <h2 class="text-center" style="color: {{ $post->user->color->hex_code }};">
                     {{ $post->title }}
-                </h1>
-                {{ $post->body }}
+                </h2>
+
+                <p class="text-justify">{{ $post->body }}</p>
 
                 <hr />
 
-                <div class="comments">
+                <div class="comments text-justify">
                     <ul class="list-group">
                         @foreach ($post->comments as $comment)
-                        <li class="list-group-item">
-                            <strong>
-                                {{ $comment->user->firstname }} {{ $comment->user->lastname }}
-                                {{ $comment->created_at->diffForHumans() }}: &nbsp;
-                            </strong>
+                        <li class="list-group-item"
+                            style="border-bottom: 1px solid {{ $comment->user->color->hex_code }};">
                             {{ $comment->body }}
                         </li>
+                        <p class="text-right"><small>{{ $comment->created_at->isoFormat('D. MMMM YYYY H:mm') }}</small>
+                        </p>
                         @endforeach
                     </ul>
                 </div>
 
-                {{-- Add a comment --}}
                 <hr />
 
-                <p>
-                    Comment as {{ Auth::user()->firstname }} {{ Auth::user()->lastname }}
-                </p>
                 <div class="card-block">
                     <form method="POST" action="{{ route('comments.store', $post->id) }}">
                         @csrf
                         <div class="form-group">
-                            <textarea name="body" placeholder="Tvůj komentář" class="form-control" required></textarea>
+                            <div class="floating-label">
+                                <label for="comment-body">Tvůj komentář</label>
+                                <textarea class="form-control" id="comment-body" name="body" required></textarea>
+                            </div>
                         </div>
 
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-primary">Add comment</button>
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn btn-primary">Přidej komentář</button>
                         </div>
                     </form>
                     @include('partials.errors')

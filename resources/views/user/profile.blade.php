@@ -13,7 +13,7 @@
                             alt="avatar">
                     </div>
                     <div class="mt-3 text-center">
-                        <input type="file" class="text-center center-block file-upload">
+                        <input type="file" class="text-center center-block file-upload" />
                     </div>
                 </div>
                 <div class="col-sm-9">
@@ -21,7 +21,7 @@
                         <div class="floating-label">
                             <label for="exampleFloatingLabel9">Email</label>
                             <input class="form-control" id="exampleFloatingLabel9" type="email"
-                                value="{{ Auth::user()->email }}" disabled>
+                                value="{{ Auth::user()->email }}" disabled />
                         </div>
                     </div>
                     <div class="row">
@@ -30,7 +30,7 @@
                                 <div class="floating-label">
                                     <label for="exampleFloatingLabel9">Jméno</label>
                                     <input class="form-control" id="exampleFloatingLabel9" type="text"
-                                        value="{{ Auth::user()->firstname }}">
+                                        value="{{ Auth::user()->firstname }}" />
                                 </div>
                             </div>
                         </div>
@@ -39,7 +39,7 @@
                                 <div class="floating-label">
                                     <label for="exampleFloatingLabel9">Příjmení</label>
                                     <input class="form-control" id="exampleFloatingLabel9" type="text"
-                                        value="{{ Auth::user()->lastname }}">
+                                        value="{{ Auth::user()->lastname }}" />
                                 </div>
                             </div>
                         </div>

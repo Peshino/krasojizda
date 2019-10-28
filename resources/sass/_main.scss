@@ -87,6 +87,7 @@
 
     .list-group-item {
         background-color: transparent;
+        border: 0px solid rgba(0, 0, 0, 0.125);
     }
 
     .close:hover {
@@ -226,5 +227,14 @@
     .form-control:hover {
         border-color: #ffffff;
         box-shadow: none;
+    }
+
+    a .plus-to-add {
+        color: #ffffff;
+        font-size: 1rem;
+    }
+
+    a:hover .plus-to-add {
+        color: #dddddd;
     }
 }
