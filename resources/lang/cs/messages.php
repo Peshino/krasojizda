@@ -36,7 +36,8 @@ return [
     'blog' => 'Blog',
     'my_corner' => 'Můj koutek',
 
-    'search_partner_placeholder' => 'E-mail Vašeho partnera',
+    'search_partner' => 'Vyhledej partnera',
+    'search_partner_label' => 'E-mail Vašeho partnera',
     'invite_partner_to_krasojizda' => 'Pozvat do Krasojízdy',
     'search_partner_not_found' => 'Partner nenalezen',
     'search_myself_error' => 'Nehledejte sebe',

@@ -15,7 +15,7 @@
                     action="{{ route('invitations.update', $loggedUserInviterResultInvitation->id) }}">
                     @method('PATCH')
                     @csrf
-                    <div class="input-group">
+                    <div class="form-group text-center">
                         <button id="confirmator-id" name="confirmator_id" type="submit" value="{{ Auth::user()->id }}"
                             class="btn btn-primary">
                             Rozumím
@@ -50,28 +50,28 @@
             </div>
             @else
             @if ($invitationReceiver !== null)
-            Pozvánka odeslána na uživatele {{ $invitationReceiver->fullname }} s IDčkem pozvánky
-            {{ $loggedUserInviterInvitation->id }}
+            <p>Pozvánka odeslána na uživatele {{ $invitationReceiver->fullname }} s IDčkem pozvánky
+            {{ $loggedUserInviterInvitation->id }}</p>
             @if ($invitationReceiver->krasojizda_id !== null)
             - Uživatel už má svoji Krasojízdu
             @endif
             <form method="POST" action="{{ route('invitations.update', $loggedUserInviterInvitation->id) }}">
                 @method('PATCH')
                 @csrf
-                <div class="input-group">
+                <div class="form-group text-center">
                     <button name="result" type="submit" value="withdrawn" class="btn btn-primary">
                         Stáhnout pozvánku
                     </button>
                 </div>
             </form>
             @elseif ($invitationInviter !== null)
-            Obdržena pozvánka od uživatele {{ $invitationInviter->fullname }} s IDčkem pozvánky
-            {{ $loggedUserReceiverInvitation->id }}
+            <p>Obdržena pozvánka od uživatele {{ $invitationInviter->fullname }} s IDčkem pozvánky
+            {{ $loggedUserReceiverInvitation->id }}</p>
 
             <form method="POST" action="{{ route('invitations.update', $loggedUserReceiverInvitation->id) }}">
                 @method('PATCH')
                 @csrf
-                <div class="input-group">
+                <div class="form-group text-center">
                     <button name="result" type="submit" value="accepted" class="btn btn-primary">
                         Přijmout
                     </button>
@@ -87,16 +87,17 @@
 
             <form id="search-partner-form" action="{{ route('searchPartnerAjaxPost') }}">
                 @csrf
-                <div class="input-group">
-                    <input type="email" name="search_partner_input"
-                        class="form-control @error('email') is-invalid @enderror"
-                        value="{{ old('search_partner_input') }}" required
-                        placeholder="@lang('messages.search_partner_placeholder')">
-                    <div class="input-group-append">
-                        <button type="submit" class="btn float-right introduction-btn">
-                            <i class="fa fa-search"></i>
-                        </button>
+                <div class="form-group">
+                    <div class="floating-label">
+                        <label for="search-partner-input">@lang('messages.search_partner_label')</label>
+                        <input type="email" name="search_partner_input"
+                            class="form-control @error('email') is-invalid @enderror" id="search-partner-input"
+                            value="{{ old('search_partner_input') }}" required />
                     </div>
+                </div>
+
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-primary">@lang('messages.search_partner')</button>
                 </div>
             </form>
 
@@ -107,10 +108,10 @@
                     <form id="invite-partner-to-krasojizda-form" method="POST"
                         action="{{ route('invitations.store') }}">
                         @csrf
-                        <div class="input-group">
+                        <div class="form-group text-center">
                             <input id="inviter-id" name="inviter_id" type="hidden" value="{{ Auth::user()->id }}" />
                             <input id="receiver-id" name="receiver_id" type="hidden" value="" />
-                            <button id="invite-partner-to-krasojizda-button" type="submit" class="btn btn-primary">
+                            <button id="invite-partner-to-krasojizda-button" type="submit" class="btn btn-primary mx-auto">
                                 @lang('messages.invite_partner_to_krasojizda')
                             </button>
                         </div>

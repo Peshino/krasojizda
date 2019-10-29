@@ -22,8 +22,8 @@
                             style="border-bottom: 1px solid {{ $comment->user->color->hex_code }};">
                             {{ $comment->body }}
                         </li>
-                        <p class="text-right"><small>{{ $comment->created_at->isoFormat('D. MMMM YYYY H:mm') }}</small>
-                        </p>
+                        <span class="text-right"><small>{{ $comment->created_at->isoFormat('D. MMMM YYYY H:mm') }}</small>
+                        </span>
                         @endforeach
                     </ul>
                 </div>
