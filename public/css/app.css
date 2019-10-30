@@ -11552,6 +11552,17 @@ html {
   padding: 0.5rem 0.75rem 0.25rem 0.75rem;
 }
 
+#main .list-group-item:last-child {
+  margin-bottom: 0;
+  border-bottom-right-radius: 0rem;
+  border-bottom-left-radius: 0.25rem;
+}
+
+#main .list-group-item:first-child {
+  border-top-right-radius: 0rem;
+  border-top-left-radius: 0.25rem;
+}
+
 #main .close:hover {
   color: #fff;
   text-decoration: none;
@@ -11697,6 +11708,10 @@ html {
 
 #main a:hover .plus-to-add {
   color: #dddddd;
+}
+
+#main .w-90 {
+  width: 90% !important;
 }
 
 footer {

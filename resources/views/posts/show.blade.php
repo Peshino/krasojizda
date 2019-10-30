@@ -15,15 +15,18 @@
 
                 <hr />
 
-                <div class="comments text-justify">
+                <div class="comments">
                     <ul class="list-group">
                         @foreach ($post->comments as $comment)
-                        <li class="list-group-item"
-                            style="border-bottom: 1px solid {{ $comment->user->color->hex_code }};">
-                            {{ $comment->body }}
-                        </li>
-                        <span class="text-right"><small>{{ $comment->created_at->isoFormat('D. MMMM YYYY H:mm') }}</small>
-                        </span>
+                        <div class="d-flex">
+                            <li class="list-group-item w-90 {{ Auth::user()->id === $comment->user->id ? 'ml-auto' : '' }}"
+                                style="border-bottom: 1px solid {{ $comment->user->color->hex_code }};">
+                                {{ $comment->body }}
+                            </li>
+                        </div>
+                            <span
+                                class="text-right {{ Auth::user()->id === $comment->user->id ? '' : 'w-90' }}"><small>{{ $comment->created_at->isoFormat('D. MMMM YYYY H:mm') }}</small>
+                            </span>
                         @endforeach
                     </ul>
                 </div>
