@@ -4,11 +4,17 @@
 <div class="card mb-3">
     <div class="card-header krasojizda-bg">
         <div class="row">
-            <div class="col text-left">
+            <div class="col">
                 Články
             </div>
-            <div class="col text-right">
-                <a href="{{ route('posts.create') }}"><i class="far fa-plus-square plus-to-add"></i></a>
+            <div class="col">
+                <ul class="list-inline justify-content-end">
+                    <li class="list-inline-item">
+                        <a class="plus-to-add" href="{{ route('posts.create') }}">
+                            <div class="plus"></div>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>

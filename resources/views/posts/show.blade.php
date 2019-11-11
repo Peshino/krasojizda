@@ -24,9 +24,9 @@
                                 {{ $comment->body }}
                             </li>
                         </div>
-                            <span
-                                class="text-right {{ Auth::user()->id === $comment->user->id ? '' : 'w-90' }}"><small>{{ $comment->created_at->isoFormat('D. MMMM YYYY H:mm') }}</small>
-                            </span>
+                        <span
+                            class="text-right unimportant-text {{ Auth::user()->id === $comment->user->id ? '' : 'w-90' }}"><small>{{ $comment->created_at->isoFormat('D. MMMM YYYY H:mm') }}</small>
+                        </span>
                         @endforeach
                     </ul>
                 </div>

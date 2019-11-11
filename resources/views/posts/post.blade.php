@@ -5,6 +5,6 @@
         </a>
     </h2>
 </div>
-<p class="blog-post-meta text-right">
+<p class="blog-post-meta text-right unimportant-text">
     <small>{{ $post->updated_at->isoFormat('D. MMMM YYYY H:mm') }}</small>
 </p>
