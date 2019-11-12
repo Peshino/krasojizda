@@ -26,13 +26,13 @@
             </div>
         </main>
 
+        @include('partials/footer')
+
         @include('partials/cookie-bar')
 
         <script src="{{ asset('js/app.js') }}" defer></script>
         @yield('scripts')
     </div>
-
-    @include('partials/footer')
 </body>
 
 </html>

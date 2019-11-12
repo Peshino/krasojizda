@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="card mb-3">
+<div class="card mb-4">
     <div class="card-header krasojizda-bg">Profil uživatele</div>
 
     <div class="card-body">

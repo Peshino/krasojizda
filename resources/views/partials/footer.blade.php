@@ -1,4 +1,4 @@
-<footer class="page-footer font-small fixed-bottom">
+<footer class="page-footer font-small">
     <div class="footer-copyright text-center py-1">
         <small>
             &copy; {{ now()->year }}
