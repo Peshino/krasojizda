@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class ColorController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth', 'check.krasojizda']);
+    }
+
     /**
      * Display a listing of the resource.
      *

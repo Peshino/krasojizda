@@ -37,7 +37,7 @@ return [
     'my_corner' => 'My corner',
 
     'search_partner' => 'Search partner',
-    'search_partner_label' => 'Your partner\'s email',
+    'search_partner_label' => 'Partner\'s email',
     'invite_partner_to_krasojizda' => 'Invite to Krasojizda',
     'search_partner_not_found' => 'Partner not found',
     'search_myself_error' => 'Don\'t look for yourself',
@@ -51,5 +51,10 @@ return [
     'flash_invitation_created' => 'Invitation created',
     'flash_invitation_rejected' => 'Invitation rejected',
     'flash_invitation_withdrawn' => 'Invitation withdrawn',
+    'flash_created' => 'Created',
+    'flash_updated' => 'Updated',
+    'flash_deleted' => 'Deleted',
+    'flash_rejected' => 'Rejected',
+    'flash_withdrawn' => 'Withdrawn',
     'flash_invitation_update_error' => 'There was an error updating invitation',
 ];

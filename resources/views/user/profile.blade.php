@@ -2,7 +2,13 @@
 
 @section('content')
 <div class="card mb-4">
-    <div class="card-header krasojizda-bg">Profil uživatele</div>
+    <div class="card-header krasojizda-bg">
+        <div class="row">
+            <div class="col col-left">
+                Profil uživatele
+            </div>
+        </div>
+    </div>
 
     <div class="card-body">
         <div class="content">

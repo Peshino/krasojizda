@@ -37,7 +37,7 @@ return [
     'my_corner' => 'Můj koutek',
 
     'search_partner' => 'Vyhledej partnera',
-    'search_partner_label' => 'E-mail Vašeho partnera',
+    'search_partner_label' => 'E-mail partnera',
     'invite_partner_to_krasojizda' => 'Pozvat do Krasojízdy',
     'search_partner_not_found' => 'Partner nenalezen',
     'search_myself_error' => 'Nehledejte sebe',
@@ -51,5 +51,10 @@ return [
     'flash_invitation_created' => 'Pozvánka vytvořena',
     'flash_invitation_rejected' => 'Pozvánka odmítnuta',
     'flash_invitation_withdrawn' => 'Pozvánka stažena',
+    'flash_created' => 'Vytvořeno',
+    'flash_updated' => 'Upraveno',
+    'flash_deleted' => 'Smazáno',
+    'flash_rejected' => 'Odmítnuto',
+    'flash_withdrawn' => 'Staženo',
     'flash_invitation_update_error' => 'Při úpravě pozvánky došlo k chybě',
 ];

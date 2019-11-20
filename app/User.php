@@ -47,8 +47,8 @@ class User extends Authenticatable
         return $this->belongsTo(Color::class);
     }
 
-    public function publish(Post $post)
+    public function addPost($post)
     {
-        $this->posts()->save($post);
+        return $this->posts()->create($post) !== null ? true : false;
     }
 }

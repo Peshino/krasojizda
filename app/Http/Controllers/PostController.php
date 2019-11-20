@@ -44,14 +44,16 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $attributes = $request->validate([
             'title' => 'required|max:100',
-            'body' => 'required|max:200',
+            'body' => 'required|max:1000',
         ]);
 
-        auth()->user()->publish(new Post($request->all()));
-
-        session()->flash('flash_message_success', __('messages.flash_post_created'));
+        if (auth()->user()->addPost($attributes)) {
+            session()->flash('flash_message_success', __('messages.flash_created'));
+        } else {
+            session()->flash('flash_message_danger', __('messages.flash_error'));
+        }
 
         return redirect('posts');
     }
@@ -75,7 +77,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        return view('posts.edit', compact('post'));
     }
 
     /**
@@ -87,7 +89,18 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        $attributes = $request->validate([
+            'title' => 'required|max:100',
+            'body' => 'required|max:1000',
+        ]);
+
+        if ($post->update($attributes)) {
+            session()->flash('flash_message_success', __('messages.flash_updated'));
+        } else {
+            session()->flash('flash_message_danger', __('messages.flash_error'));
+        }
+
+        return redirect()->route('posts.show', ['post' => $post->id]);
     }
 
     /**
@@ -98,6 +111,12 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        if ($post->delete()) {
+            session()->flash('flash_message_success', __('messages.flash_deleted'));
+        } else {
+            session()->flash('flash_message_danger', __('messages.flash_error'));
+        }
+
+        return redirect('posts');
     }
 }

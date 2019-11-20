@@ -19,11 +19,28 @@
     }
 
     .card-header {
-        padding: 0.70rem 1.25rem;
+        padding: 0;
         margin-bottom: 0;
         /* background-color: rgba(0, 0, 0, 0.03); */
         color: #ffffff;
         border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    }
+
+    .card-header .row {
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .card-header .col-left {
+        padding: 0.7rem 1.25rem;
+    }
+
+    .modal-content {
+        background-color: #2a2f33;
+    }
+
+    .modal-header {
+        border-bottom: none;
     }
 
     footer {
@@ -110,9 +127,13 @@
         border-top-left-radius: 0.25rem;
     }
 
-    .close:hover {
-        color: #fff;
+    .close {
+        color: #dddddd;
         text-decoration: none;
+    }
+
+    .close:hover {
+        color: #ffffff;
     }
 
     .alert {
@@ -262,16 +283,19 @@
         background-repeat: no-repeat;
     }
 
-    a.plus-to-add {
+    .crud-button {
         color: #ffffff;
         background-color: rgba(0, 0, 0, 0.1);
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         text-decoration: none;
         font-family: serif;
-        padding: 1.06rem 1.1rem 0.96rem 1.1rem;
+        width: 2.9rem;
+        padding: 0.7rem 1rem;
+        border: none;
+        display: inline-block;
     }
 
-    a:hover.plus-to-add {
+    .crud-button:hover {
         text-decoration: none;
         background-color: rgba(0, 0, 0, 0.2);
     }
