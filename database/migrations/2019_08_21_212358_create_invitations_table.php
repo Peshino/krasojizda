@@ -23,6 +23,8 @@ class CreateInvitationsTable extends Migration
             $table->foreign('receiver_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('confirmator_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
+
+            $table->engine = 'InnoDB'; // if foreign keys are in use
         });
     }
 

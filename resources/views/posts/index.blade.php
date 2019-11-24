@@ -22,9 +22,13 @@
     <div class="card-body">
         <div class="content text-center">
             <div class="blog-main">
+                @if (count($posts) > 0)
                 @foreach ($posts as $post)
                 @include('posts.post')
                 @endforeach
+                @else
+                Žádné články
+                @endif
             </div>
         </div>
     </div>

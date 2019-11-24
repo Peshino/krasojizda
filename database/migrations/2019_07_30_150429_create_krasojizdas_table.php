@@ -17,6 +17,8 @@ class CreateKrasojizdasTable extends Migration
             $table->bigIncrements('id');
             $table->string('name')->nullable();
             $table->timestamps();
+
+            $table->engine = 'InnoDB'; // if foreign keys are in use
         });
     }
 

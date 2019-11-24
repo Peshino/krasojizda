@@ -19,6 +19,8 @@ class CreateColorsTable extends Migration
             $table->string('hex_code')->nullable();
             $table->string('rgb_code')->nullable();
             $table->timestamps();
+
+            $table->engine = 'InnoDB'; // if foreign keys are in use
         });
     }
 

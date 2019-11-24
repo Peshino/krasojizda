@@ -16,6 +16,8 @@ class CreateImportantDaysTable extends Migration
         Schema::create('important_days', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
+
+            $table->engine = 'InnoDB'; // if foreign keys are in use
         });
     }
 

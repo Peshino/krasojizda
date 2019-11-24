@@ -29,6 +29,8 @@ class CreateUsersTable extends Migration
             $table->foreign('color_id')->references('id')->on('colors')->onDelete('cascade');
             $table->foreign('image_id')->references('id')->on('images')->onDelete('cascade');
             $table->timestamps();
+
+            $table->engine = 'InnoDB'; // if foreign keys are in use
         });
     }
 
