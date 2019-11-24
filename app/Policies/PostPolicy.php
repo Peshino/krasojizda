@@ -23,6 +23,6 @@ class PostPolicy
 
         $users = $krasojizda->getUserIdsArray();
 
-        return in_array($post->user_id, $users);
+        return in_array($post->user_id, $users) && $post->user_id === $user->id;
     }
 }

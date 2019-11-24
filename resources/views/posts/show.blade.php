@@ -2,12 +2,12 @@
 
 @section('content')
 <div class="card mb-4">
-    @if (Auth::user()->id === $post->user->id)
     <div class="card-header krasojizda-bg">
         <div class="row">
             <div class="col col-left">
                 Článek
             </div>
+            @can('manipulate', $post)
             <div class="col">
                 <ul class="list-inline justify-content-end">
                     <li class="list-inline-item">
@@ -42,17 +42,9 @@
                     </li>
                 </ul>
             </div>
+            @endcan
         </div>
     </div>
-    @else
-    <div class="card-header krasojizda-bg">
-        <div class="row">
-            <div class="col col-left">
-                Článek
-            </div>
-        </div>
-    </div>
-    @endif
 
     <div class="card-body">
         <div class="content">

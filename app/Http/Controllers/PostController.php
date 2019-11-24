@@ -11,7 +11,7 @@ class PostController extends Controller
     public function __construct()
     {
         $this->middleware(['auth', 'check.krasojizda']);
-        $this->middleware('can:manipulate,post')->except(['index', 'store', 'create']);
+        $this->middleware('can:manipulate,post')->except(['index', 'show', 'store', 'create']);
     }
 
     /**
