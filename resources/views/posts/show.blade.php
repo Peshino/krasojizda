@@ -49,9 +49,9 @@
     <div class="card-body">
         <div class="content">
             <div class="blog-main">
-                <h2 class="text-center" style="color: {{ $post->user->color->hex_code }};">
+                <h3 class="text-center" style="color: {{ $post->user->color->hex_code }};">
                     {{ $post->title }}
-                </h2>
+                </h3>
 
                 <p class="text-justify">{{ $post->body }}</p>
 

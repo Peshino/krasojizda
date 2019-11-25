@@ -10,6 +10,8 @@ Route::post('searchPartnerAjaxPost', 'HomeController@searchPartnerAjaxPost')->na
 
 Route::resource('krasojizda', 'KrasojizdaController');
 
+Route::resource('users', 'UserController');
+
 Route::resource('invitations', 'InvitationController');
 
 Route::resource('important-days', 'ImportantDayController');
@@ -18,8 +20,4 @@ Route::resource('posts', 'PostController');
 
 Route::prefix('posts/{post}')->group(function () {
     Route::resource('comments', 'CommentController');
-});
-
-Route::prefix('user')->group(function () {
-    Route::get('profile', 'UserController@getProfile')->name('profile');
 });
