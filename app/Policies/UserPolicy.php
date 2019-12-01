@@ -3,6 +3,7 @@
 namespace App\Policies;
 
 use App\User;
+use App\Krasojizda;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class UserPolicy
@@ -10,18 +11,19 @@ class UserPolicy
     use HandlesAuthorization;
 
     /**
-     * Determine whether the user can view any models.
-     *
+     * Determine whether the logged in user can manipulate the model (User).
+     * 
      * @param  \App\User  $user
+     * @param  \App\User  $model
      * @return mixed
      */
-    public function viewAny(User $user)
+    public function manipulate(User $user, User $model)
     {
-        //
+        return $model->id === $user->id;
     }
 
     /**
-     * Determine whether the user can view the model.
+     * Determine whether the logged in user can view the model (User).
      *
      * @param  \App\User  $user
      * @param  \App\User  $model
@@ -29,65 +31,10 @@ class UserPolicy
      */
     public function view(User $user, User $model)
     {
-        return $model->id === $user->id; // id of viewed user equals to id of logged in user
-    }
+        $krasojizda = new Krasojizda();
 
-    /**
-     * Determine whether the user can create models.
-     *
-     * @param  \App\User  $user
-     * @return mixed
-     */
-    public function create(User $user)
-    {
-        //
-    }
+        $users = $krasojizda->getUserIdsArray();
 
-    /**
-     * Determine whether the user can update the model.
-     *
-     * @param  \App\User  $user
-     * @param  \App\User  $model
-     * @return mixed
-     */
-    public function update(User $user, User $model)
-    {
-        //
-    }
-
-    /**
-     * Determine whether the user can delete the model.
-     *
-     * @param  \App\User  $user
-     * @param  \App\User  $model
-     * @return mixed
-     */
-    public function delete(User $user, User $model)
-    {
-        //
-    }
-
-    /**
-     * Determine whether the user can restore the model.
-     *
-     * @param  \App\User  $user
-     * @param  \App\User  $model
-     * @return mixed
-     */
-    public function restore(User $user, User $model)
-    {
-        //
-    }
-
-    /**
-     * Determine whether the user can permanently delete the model.
-     *
-     * @param  \App\User  $user
-     * @param  \App\User  $model
-     * @return mixed
-     */
-    public function forceDelete(User $user, User $model)
-    {
-        //
+        return ($user->krasojizda_id === null && $model->id === $user->id) || in_array($model->id, $users);
     }
 }

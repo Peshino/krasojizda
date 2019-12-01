@@ -14,6 +14,7 @@ class PostPolicy
     /**
      * Determine whether the logged in user can manipulate the post.
      *
+     * @param  \App\User  $user
      * @param  \App\Post  $post
      * @return mixed
      */

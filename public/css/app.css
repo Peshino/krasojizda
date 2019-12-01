@@ -11453,6 +11453,16 @@ html {
   min-height: 100vh;
 }
 
+#main a {
+  color: #dddddd;
+  text-decoration: none;
+}
+
+#main a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
 #main .krasojizda-bg {
   background: #ed2f65;
   background: linear-gradient(135deg, #ed2f65 0%, #2bbcff 100%);

@@ -2,6 +2,16 @@
     position: relative;
     min-height: 100vh;
 
+    a {
+        color: #dddddd;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #ffffff;
+        text-decoration: none;
+    }
+
     .krasojizda-bg {
         background: #ed2f65;
         background: -moz-linear-gradient(-45deg, #ed2f65 0%, #2bbcff 100%);
