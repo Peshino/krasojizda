@@ -16,7 +16,7 @@
         <div id="introduction">
             <div class="introduction-header">
                 <h1>@lang('messages.krasojizda_name')</h1>
-                <h2>@lang('messages.krasojizda_description')</h2>
+                {{-- <h2>@lang('messages.krasojizda_description')</h2> --}}
             </div>
 
             <div class="d-flex justify-content-center h-100">
