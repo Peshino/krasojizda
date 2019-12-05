@@ -11442,7 +11442,8 @@ html {
 }
 
 @media (min-width: 1200px) {
-  .navbar-expand-md .navbar-nav .nav-link {
+  .navbar-expand-md .navbar-nav .nav-link,
+  .navbar-expand-lg .navbar-nav .nav-link {
     padding-right: 1rem;
     padding-left: 1rem;
   }
@@ -11803,6 +11804,14 @@ html {
 #main .blog-post-title a:hover {
   color: #ffffff;
   text-decoration: none;
+}
+
+#main .img-thumbnail {
+  padding: 0.25rem;
+  background-color: transparent;
+  border: none;
+  max-width: 100%;
+  height: auto;
 }
 
 footer {

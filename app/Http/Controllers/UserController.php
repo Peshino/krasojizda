@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Color;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -64,7 +65,12 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        return view('users.edit', compact('user'));
+        $colors = Color::all();
+
+        return view('users.edit', compact(
+            'user',
+            'colors'
+        ));
     }
 
     /**
@@ -76,7 +82,22 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        $attributes = $request->validate([
+            'firstname' => 'required|min:2|max:20',
+            'lastname' => 'required|min:2|max:20',
+            'nickname' => 'min:2|max:20',
+            'color_id' => 'required',
+        ]);
+
+        $attributes['fullname'] = $request['firstname'] . ' ' . $request['lastname'];
+
+        if ($user->update($attributes)) {
+            session()->flash('flash_message_success', __('messages.flash_updated'));
+        } else {
+            session()->flash('flash_message_danger', __('messages.flash_error'));
+        }
+
+        return redirect()->route('users.show', ['user' => $user->id]);
     }
 
     /**
