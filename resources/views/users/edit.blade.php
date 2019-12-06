@@ -5,7 +5,7 @@
     <div class="card-header krasojizda-bg">
         <div class="row">
             <div class="col col-left">
-                Upravit uživatele
+                Upravit profil
             </div>
         </div>
     </div>
@@ -62,23 +62,20 @@
                                 </div>
                             </div>
                             <div class="col-sm">
-                                <div class="form-group">
-                                    <div class="floating-label">
-                                        <label for="user-color_id">Barva</label>
-                                        <input class="form-control" id="user-color_id" name="color_id" type="text"
-                                            value="{{ $user->color_id }}" required />
-
-                                            @foreach ($colors as $color)
-                                            {{ $color->name }} - {{ $color->hex_code }}
-                                            @endforeach
-                                    </div>
+                                <div class="form-group color-radio-buttons mt-2">
+                                    @foreach ($colors as $color)
+                                    <input type="radio" class="color-radio" id="color-radio-{{ $color->id }}"
+                                        name="color_id" value="{{ $color->id }}" {{ $user->color_id === $color->id ? ' checked' : '' }} />
+                                    <label for="color-radio-{{ $color->id }}"
+                                        style="background-color: {{ $color->hex_code }}"></label>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="form-group text-center mt-1">
-                    <button type="submit" class="btn btn-primary">Uprav uživatele</button>
+                    <button type="submit" class="btn btn-primary">Uprav profil</button>
                 </div>
 
                 @include('partials.errors')
