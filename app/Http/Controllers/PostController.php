@@ -46,7 +46,7 @@ class PostController extends Controller
     {
         $attributes = $request->validate([
             'title' => 'required|max:100',
-            'body' => 'required|max:1000',
+            'body' => 'required|max:2000',
         ]);
 
         if (auth()->user()->addPost($attributes)) {

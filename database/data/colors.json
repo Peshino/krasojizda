@@ -1,0 +1,32 @@
+[
+    {
+        "id": "1",
+        "name": "blue",
+        "hex_code": "#47b8f8",
+        "rgb_code": "rgb(71, 184, 248)"
+    },
+    {
+        "id": "2",
+        "name": "red",
+        "hex_code": "#e73b68",
+        "rgb_code": "rgb(231, 59, 104)"
+    },
+    {
+        "id": "3",
+        "name": "green",
+        "hex_code": "#34c759",
+        "rgb_code": "rgb(52, 199, 89)"
+    },
+    {
+        "id": "4",
+        "name": "orange",
+        "hex_code": "#ff9500",
+        "rgb_code": "rgb(255, 149, 0)"
+    },
+    {
+        "id": "5",
+        "name": "purple",
+        "hex_code": "#af52de",
+        "rgb_code": "rgb(175, 82, 222)"
+    }
+]

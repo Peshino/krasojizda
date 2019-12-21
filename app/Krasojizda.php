@@ -51,6 +51,13 @@ class Krasojizda extends Model
 
             if ($this->save()) {
                 $inviter->krasojizda_id = $receiver->krasojizda_id = $this->id;
+                if ($inviter->color_id === null) {
+                    $inviter->color_id = 1;
+                }
+
+                if ($receiver->color_id === null) {
+                    $receiver->color_id = 2;
+                }
 
                 if ($inviter->save() && $receiver->save()) {
                     return true;

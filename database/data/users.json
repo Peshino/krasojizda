@@ -1,0 +1,38 @@
+[
+    {
+        "id": "1",
+        "firstname": "Jiří",
+        "lastname": "Pešek",
+        "fullname": "Jiří Pešek",
+        "nickname": "Peshino",
+        "email": "jiri@test.cz",
+        "color_id": 1
+    },
+    {
+        "id": "2",
+        "firstname": "Marie",
+        "lastname": "Drahošová",
+        "fullname": "Marie Drahošová",
+        "nickname": "Máša",
+        "email": "masa@test.cz",
+        "color_id": 2
+    },
+    {
+        "id": "3",
+        "firstname": "John",
+        "lastname": "Doe",
+        "fullname": "John Doe",
+        "nickname": "",
+        "email": "john@doe.cz",
+        "color_id": 3
+    },
+    {
+        "id": "4",
+        "firstname": "Jane",
+        "lastname": "Doe",
+        "fullname": "Jane Doe",
+        "nickname": "",
+        "email": "jane@doe.cz",
+        "color_id": 4
+    }
+]
