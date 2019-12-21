@@ -39,7 +39,12 @@ class User extends Authenticatable
 
     public function posts()
     {
-        return $this->hasMany('App\Post');
+        return $this->hasMany(Post::class);
+    }
+
+    public function conversations()
+    {
+        return $this->hasMany(Conversation::class);
     }
 
     public function color()
@@ -50,5 +55,10 @@ class User extends Authenticatable
     public function addPost($post)
     {
         return $this->posts()->create($post) !== null ? true : false;
+    }
+
+    public function addConversation($conversation)
+    {
+        return $this->conversations()->create($conversation) !== null ? true : false;
     }
 }

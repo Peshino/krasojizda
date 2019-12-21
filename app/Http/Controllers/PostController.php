@@ -17,6 +17,7 @@ class PostController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param  \App\Repositories\Posts  $posts
      * @return \Illuminate\Http\Response
      */
     public function index(Posts $posts)
@@ -45,8 +46,8 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $attributes = $request->validate([
-            'title' => 'required|max:100',
-            'body' => 'required|max:2000',
+            'title' => 'required|min:2|max:100',
+            'body' => 'required|min:2|max:2000',
         ]);
 
         if (auth()->user()->addPost($attributes)) {
@@ -90,8 +91,8 @@ class PostController extends Controller
     public function update(Request $request, Post $post)
     {
         $attributes = $request->validate([
-            'title' => 'required|max:100',
-            'body' => 'required|max:1000',
+            'title' => 'required|min:2|max:100',
+            'body' => 'required|min:2|max:2000',
         ]);
 
         if ($post->update($attributes)) {

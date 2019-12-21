@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Comment;
 use App\Post;
+use App\Conversation;
 use Illuminate\Http\Request;
 
 class CommentController extends Controller
@@ -39,15 +40,31 @@ class CommentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Post $post, Request $request)
+    public function store(Post $post, Conversation $conversation, Request $request)
     {
         $request->validate([
-            'body' => 'required|min:2',
+            'body' => 'required|min:2|max:500',
         ]);
 
-        $post->addComment($request->input('body'));
+        if ($post->id !== null) {
+            if ($post->addComment($request->input('body'))) {
+                session()->flash('flash_message_success', __('messages.flash_created'));
+            } else {
+                session()->flash('flash_message_danger', __('messages.flash_error'));
+            }
 
-        return back();
+            return redirect()->route('posts.show', ['post' => $post->id]);
+        } elseif ($conversation->id !== null) {
+            if ($conversation->addComment($request->input('body'))) {
+                session()->flash('flash_message_success', __('messages.flash_created'));
+            } else {
+                session()->flash('flash_message_danger', __('messages.flash_error'));
+            }
+
+            return redirect()->route('conversations.show', ['conversation' => $conversation->id]);
+        } else {
+            return back();
+        }
     }
 
     /**

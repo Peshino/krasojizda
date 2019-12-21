@@ -15,7 +15,13 @@ class CreateConversationsTable extends Migration
     {
         Schema::create('conversations', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('title');
+            $table->text('body');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
+
+            $table->engine = 'InnoDB'; // if foreign keys are in use
         });
     }
 

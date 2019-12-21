@@ -3,18 +3,28 @@
 namespace App\Http\Controllers;
 
 use App\Conversation;
+use App\Repositories\Conversations;
 use Illuminate\Http\Request;
 
 class ConversationController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth', 'check.krasojizda']);
+        $this->middleware('can:manipulate,conversation')->except(['index', 'show', 'store', 'create']);
+    }
+
     /**
      * Display a listing of the resource.
      *
+     * @param  \App\Repositories\Conversations  $conversations
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Conversations $conversations)
     {
-        //
+        $conversations = $conversations->getKrasojizdaConversations();
+
+        return view('conversations.index', compact('conversations'));
     }
 
     /**
@@ -24,7 +34,7 @@ class ConversationController extends Controller
      */
     public function create()
     {
-        //
+        return view('conversations.create');
     }
 
     /**
@@ -35,7 +45,18 @@ class ConversationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $attributes = $request->validate([
+            'title' => 'required|min:2|max:100',
+            'body' => 'required|min:2|max:1000',
+        ]);
+
+        if (auth()->user()->addConversation($attributes)) {
+            session()->flash('flash_message_success', __('messages.flash_created'));
+        } else {
+            session()->flash('flash_message_danger', __('messages.flash_error'));
+        }
+
+        return redirect('conversations');
     }
 
     /**
@@ -46,7 +67,7 @@ class ConversationController extends Controller
      */
     public function show(Conversation $conversation)
     {
-        //
+        return view('conversations.show', compact('conversation'));
     }
 
     /**
@@ -57,7 +78,7 @@ class ConversationController extends Controller
      */
     public function edit(Conversation $conversation)
     {
-        //
+        return view('conversations.edit', compact('conversation'));
     }
 
     /**
@@ -69,7 +90,18 @@ class ConversationController extends Controller
      */
     public function update(Request $request, Conversation $conversation)
     {
-        //
+        $attributes = $request->validate([
+            'title' => 'required|min:2|max:100',
+            'body' => 'required|min:2|max:1000',
+        ]);
+
+        if ($conversation->update($attributes)) {
+            session()->flash('flash_message_success', __('messages.flash_updated'));
+        } else {
+            session()->flash('flash_message_danger', __('messages.flash_error'));
+        }
+
+        return redirect()->route('conversations.show', ['conversation' => $conversation->id]);
     }
 
     /**
@@ -80,6 +112,12 @@ class ConversationController extends Controller
      */
     public function destroy(Conversation $conversation)
     {
-        //
+        if ($conversation->delete()) {
+            session()->flash('flash_message_success', __('messages.flash_deleted'));
+        } else {
+            session()->flash('flash_message_danger', __('messages.flash_error'));
+        }
+
+        return redirect('conversations');
     }
 }

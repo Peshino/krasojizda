@@ -18,6 +18,12 @@ Route::resource('important-days', 'ImportantDayController');
 
 Route::resource('posts', 'PostController');
 
+Route::resource('conversations', 'ConversationController');
+
 Route::prefix('posts/{post}')->group(function () {
-    Route::resource('comments', 'CommentController');
+    Route::resource('post-comments', 'CommentController');
+});
+
+Route::prefix('conversations/{conversation}')->group(function () {
+    Route::resource('conversation-comments', 'CommentController');
 });

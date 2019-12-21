@@ -31,7 +31,8 @@
                         <span class="align-middle">@lang('messages.important_days')</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="far fa-comments align-middle"></i>&nbsp;
+                    <a class="nav-link" href="{{ route('conversations.index') }}"><i
+                            class="far fa-comments align-middle"></i>&nbsp;
                         <span class="align-middle">@lang('messages.conversations')</span></a>
                 </li>
                 <li class="nav-item">

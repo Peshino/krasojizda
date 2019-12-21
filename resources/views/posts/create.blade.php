@@ -18,13 +18,15 @@
                     <div class="form-group">
                         <div class="floating-label">
                             <label for="post-title">Titulek</label>
-                            <input type="text" class="form-control" id="post-title" name="title" value="{{ old('title') }}" required />
+                            <input type="text" class="form-control" id="post-title" name="title"
+                                value="{{ old('title') }}" required />
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="floating-label">
                             <label for="post-body">Text</label>
-                            <textarea class="form-control" rows="10" id="post-body" name="body" value="{{ old('body') }}" required></textarea>
+                            <textarea class="form-control" rows="10" id="post-body" name="body"
+                                required>{{ old('body') }}</textarea>
                         </div>
                     </div>
 

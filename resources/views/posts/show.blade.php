@@ -76,13 +76,13 @@
                 <hr />
 
                 <div class="card-block">
-                    <form method="POST" action="{{ route('comments.store', $post->id) }}">
+                    <form method="POST" action="{{ route('post-comments.store', $post->id) }}">
                         @csrf
                         <div class="form-group">
                             <div class="floating-label">
                                 <label for="comment-body">Tvůj komentář</label>
                                 <textarea class="form-control" rows="3" id="comment-body" name="body"
-                                    required></textarea>
+                                    required>{{ old('body') }}</textarea>
                             </div>
                         </div>
 
