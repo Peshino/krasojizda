@@ -19,7 +19,7 @@ class ImportantDayController extends Controller
      */
     public function index()
     {
-        return view('krasojizda.important-day');
+        return view('important-days.index');
     }
 
     /**

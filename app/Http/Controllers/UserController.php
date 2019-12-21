@@ -87,7 +87,7 @@ class UserController extends Controller
         $attributes = $request->validate([
             'firstname' => 'required|min:2|max:20',
             'lastname' => 'required|min:2|max:20',
-            'nickname' => 'min:2|max:20',
+            'nickname' => 'max:20',
             'color_id' => 'required',
         ]);
 
