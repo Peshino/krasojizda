@@ -10,6 +10,7 @@
 
 body {
     font-family: "EncodeSans-Regular", sans-serif;
+    background-color: #1b1e21;
 }
 
 html {
@@ -51,6 +52,7 @@ html {
 
 @import 'cookie-bar';
 @import 'introduction';
+@import 'welcome';
 @import 'navbar';
 @import 'main';
 @import 'footer';

@@ -37,27 +37,14 @@
             <div class="container mt-3">
                 <div class="row">
                     <div class="col">
-                        <div class="card">
-                            <div class="card-body text-right">
-                                <img class="img-fluid" src="{{ asset('img/me_2.jpg') }}" alt="Card image cap">
-                                <h5 class="card-title pt-3">Jiří Pešek</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <div class="card-body text-left">
-                                <img class="img-fluid" src="{{ asset('img/me_2.jpg') }}" alt="Card image cap">
-                                <h5 class="card-title pt-3">Marie Drahošová</h5>
-                            </div>
-                        </div>
+                        <img class="img-fluid" src="{{ asset('img/me_and_masa.jpg') }}" alt="Jirka a Máša">
                     </div>
                 </div>
             </div>
             @else
             @if ($invitationReceiver !== null)
             <p>Pozvánka odeslána na uživatele {{ $invitationReceiver->fullname }} s IDčkem pozvánky
-            {{ $loggedUserInviterInvitation->id }}</p>
+                {{ $loggedUserInviterInvitation->id }}</p>
             @if ($invitationReceiver->krasojizda_id !== null)
             - Uživatel už má svoji Krasojízdu
             @endif
@@ -72,7 +59,7 @@
             </form>
             @elseif ($invitationInviter !== null)
             <p>Obdržena pozvánka od uživatele {{ $invitationInviter->fullname }} s IDčkem pozvánky
-            {{ $loggedUserReceiverInvitation->id }}</p>
+                {{ $loggedUserReceiverInvitation->id }}</p>
 
             <form method="POST" action="{{ route('invitations.update', $loggedUserReceiverInvitation->id) }}">
                 @method('PATCH')
@@ -117,7 +104,8 @@
                         <div class="form-group text-center">
                             <input id="inviter-id" name="inviter_id" type="hidden" value="{{ Auth::user()->id }}" />
                             <input id="receiver-id" name="receiver_id" type="hidden" value="" />
-                            <button id="invite-partner-to-krasojizda-button" type="submit" class="btn btn-primary mx-auto">
+                            <button id="invite-partner-to-krasojizda-button" type="submit"
+                                class="btn btn-primary mx-auto">
                                 @lang('messages.invite_partner_to_krasojizda')
                             </button>
                         </div>

@@ -11112,6 +11112,7 @@ a.text-dark:focus {
 
 body {
   font-family: "EncodeSans-Regular", sans-serif;
+  background-color: #1b1e21;
 }
 
 html {
@@ -11343,6 +11344,22 @@ html {
   background: #ffffff;
 }
 
+#welcome {
+  position: relative;
+  min-height: 100vh;
+  background-color: #1b1e21;
+}
+
+#welcome a {
+  color: #dddddd;
+  text-decoration: none;
+}
+
+#welcome a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
 .navbar {
   background-color: #1b1e21;
 }
@@ -11452,6 +11469,7 @@ html {
 #main {
   position: relative;
   min-height: 100vh;
+  background-color: #1b1e21;
 }
 
 #main a {
@@ -11462,6 +11480,14 @@ html {
 #main a:hover {
   color: #ffffff;
   text-decoration: none;
+}
+
+#main .proceed-link {
+  background: #ed2f65;
+  background: linear-gradient(135deg, #ed2f65 0%, #2bbcff 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ed2f65", endColorstr="#2bbcff", GradientType=1);
+  padding: 1rem 2rem;
+  border-radius: 0.25rem;
 }
 
 #main .krasojizda-bg {

@@ -5,6 +5,8 @@ return [
 
     'krasojizda_name' => 'Krasojízda',
     'krasojizda_description' => 'Appka pro páry',
+    
+    'welcome_proceed_link' => 'Pokračovat do Krasojízdy',
 
     'footer_rights' => 'Všechna práva vyhrazena',
 

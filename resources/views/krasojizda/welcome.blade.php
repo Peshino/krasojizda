@@ -16,26 +16,42 @@
 <body>
     <div id="main" class="text-white bg-dark">
         <main class="py-4">
-            <div class="container">
-                <p>- úvodní slovo appky
-                    - uvítání a popis toho, co je vlastně Krasojízda, jak se k ní chovat a co vyjadřuje ve spojení se
-                    svou druhou drahou polovičkou
-                    - na Homepage?, jako popup? (spíš ne), samostatná stránka s tlačítkem Pokračovat na Krasojízdu?
-                    (spíš ano)</p>
-                <a href="{{ url('/') }}">
-                    @lang('messages.krasojizda_name')
-                </a>
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col">
+                        <h2>Vítej v Krasojízdě</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p>- úvodní slovo appky
+                            - uvítání a popis toho, co je vlastně Krasojízda, jak se k ní chovat a co vyjadřuje ve
+                            spojení se
+                            svou druhou drahou polovičkou
+                            - na Homepage?, jako popup? (spíš ne), samostatná stránka s tlačítkem Pokračovat na
+                            Krasojízdu?
+                            (spíš ano)</p>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col">
+                        <a href="{{ url('/') }}" class="proceed-link">
+                            @lang('messages.welcome_proceed_link')
+                        </a>
+                    </div>
+                </div>
+
                 @include('partials/flash-messages')
             </div>
         </main>
+
+        @include('partials/footer')
 
         @include('partials/cookie-bar')
 
         <script src="{{ asset('js/app.js') }}" defer></script>
         @yield('scripts')
     </div>
-
-    @include('partials/footer')
 </body>
 
 </html>

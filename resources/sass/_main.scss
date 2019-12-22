@@ -1,6 +1,7 @@
 #main {
     position: relative;
     min-height: 100vh;
+    background-color: #1b1e21;
 
     a {
         color: #dddddd;
@@ -10,6 +11,16 @@
     a:hover {
         color: #ffffff;
         text-decoration: none;
+    }
+
+    .proceed-link {
+        background: #ed2f65;
+        background: -moz-linear-gradient(-45deg, #ed2f65 0%, #2bbcff 100%);
+        background: -webkit-linear-gradient(-45deg, #ed2f65 0%, #2bbcff 100%);
+        background: linear-gradient(135deg, #ed2f65 0%, #2bbcff 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ed2f65', endColorstr='#2bbcff', GradientType=1);
+        padding: 1rem 2rem;
+        border-radius: 0.25rem;
     }
 
     .krasojizda-bg {

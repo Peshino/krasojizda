@@ -6,6 +6,8 @@ return [
     'krasojizda_name' => 'Krasojizda',
     'krasojizda_description' => 'App for couples',
 
+    'welcome_proceed_link' => 'Proceed to Krasojizda',
+
     'footer_rights' => 'All rights reserved',
 
     'sign_in_tab' => 'Sign In',

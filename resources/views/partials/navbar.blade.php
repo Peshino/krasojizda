@@ -18,11 +18,13 @@
             @if (Auth::user()->krasojizda_id !== null)
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-map-marker-alt align-middle"></i>&nbsp;
+                    <a class="nav-link" href="{{ route('our-places.index') }}"><i
+                            class="fas fa-map-marker-alt align-middle"></i>&nbsp;
                         <span class="align-middle">@lang('messages.our_places')</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="far fa-heart align-middle"></i>&nbsp;
+                    <a class="nav-link" href="{{ route('life-events.index') }}"><i
+                            class="far fa-heart align-middle"></i>&nbsp;
                         <span class="align-middle">@lang('messages.life_events')</span></a>
                 </li>
                 <li class="nav-item">

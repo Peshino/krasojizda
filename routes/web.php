@@ -14,11 +14,15 @@ Route::resource('users', 'UserController');
 
 Route::resource('invitations', 'InvitationController');
 
+Route::resource('our-places', 'OurPlaceController');
+
+Route::resource('life-events', 'LifeEventController');
+
 Route::resource('important-days', 'ImportantDayController');
 
-Route::resource('posts', 'PostController');
-
 Route::resource('conversations', 'ConversationController');
+
+Route::resource('posts', 'PostController');
 
 Route::prefix('posts/{post}')->group(function () {
     Route::resource('post-comments', 'CommentController');
