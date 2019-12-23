@@ -13,9 +13,9 @@
     <div class="card-body">
         <div class="content text-center">
             @if ($loggedUserInviterResultInvitation !== null)
-            <div id="invitation-result" class="mb-3">
-                {{ $loggedUserInviterResultInvitation->id }}
-                {{ $loggedUserInviterResultInvitation->result }}
+            <div id="invitation-result" class="mb-3 border-bottom border-gray">
+                <p>Pozvánka byla
+                    {{ $loggedUserInviterResultInvitation->result === 'accepted' ? 'přijata' : 'odmítnuta' }}.</p>
 
                 <form id="invitation-result-form"
                     action="{{ route('invitations.update', $loggedUserInviterResultInvitation->id) }}">
@@ -43,8 +43,7 @@
             </div>
             @else
             @if ($invitationReceiver !== null)
-            <p>Pozvánka odeslána na uživatele {{ $invitationReceiver->fullname }} s IDčkem pozvánky
-                {{ $loggedUserInviterInvitation->id }}</p>
+            <p>Pozvánka odeslána na uživatele {{ $invitationReceiver->fullname }}.</p>
             @if ($invitationReceiver->krasojizda_id !== null)
             - Uživatel už má svoji Krasojízdu
             @endif
@@ -58,20 +57,24 @@
                 </div>
             </form>
             @elseif ($invitationInviter !== null)
-            <p>Obdržena pozvánka od uživatele {{ $invitationInviter->fullname }} s IDčkem pozvánky
-                {{ $loggedUserReceiverInvitation->id }}</p>
+            <p>Obdržena pozvánka od uživatele {{ $invitationInviter->fullname }}.</p>
 
             <form method="POST" action="{{ route('invitations.update', $loggedUserReceiverInvitation->id) }}">
                 @method('PATCH')
                 @csrf
-                <div class="form-group text-center">
-                    <button name="result" type="submit" value="accepted" class="btn btn-primary">
-                        Přijmout
-                    </button>
-                    :
-                    <button name="result" type="submit" value="rejected" class="btn btn-primary">
-                        Odmítnout
-                    </button>
+                <div class="form-group">
+                    <div class="row text-center">
+                        <div class="col text-right">
+                            <button name="result" type="submit" value="accepted" class="btn btn-primary">
+                                Přijmout
+                            </button>
+                        </div>
+                        <div class="col text-left">
+                            <button name="result" type="submit" value="rejected" class="btn btn-primary">
+                                Odmítnout
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </form>
             @else

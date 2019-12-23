@@ -22,18 +22,27 @@
                         <h2>Vítej v Krasojízdě</h2>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row mt-3">
                     <div class="col">
-                        <p>- úvodní slovo appky
-                            - uvítání a popis toho, co je vlastně Krasojízda, jak se k ní chovat a co vyjadřuje ve
-                            spojení se
-                            svou druhou drahou polovičkou
-                            - na Homepage?, jako popup? (spíš ne), samostatná stránka s tlačítkem Pokračovat na
-                            Krasojízdu?
-                            (spíš ano)</p>
+                        <img src="{{ asset('img/logo_small.png') }}" class="align-middle" alt="logo">
                     </div>
                 </div>
-                <div class="row mt-4">
+                <div class="row mt-4 mb-4">
+                    <div class="col">
+                        <p class="p-1">
+                            Ahoj, jsi na místě sloužícím tobě a tvé drahé druhé polovičce, se kterou tvoříš Vaši
+                            Krasojízdu.
+                        </p>
+                        <p class="p-1">
+                            Krasojízdou je myšlen Váš vztah, na kterém je potřeba neustále pracovat, udržovat vzájemnou
+                            komunikaci a připomínat si důležité dny a zážitky společně s tvorbou nových.
+                        </p>
+                        <p class="p-1">
+                            Pokračuj tedy dále na Vaší společné cestě životem a bav se :)
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
                     <div class="col">
                         <a href="{{ url('/') }}" class="proceed-link">
                             @lang('messages.welcome_proceed_link')
