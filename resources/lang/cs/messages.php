@@ -5,7 +5,7 @@ return [
 
     'krasojizda_name' => 'Krasojízda',
     'krasojizda_description' => 'Appka pro páry',
-    
+
     'welcome_proceed_link' => 'Pokračovat do Krasojízdy',
 
     'footer_rights' => 'Všechna práva vyhrazena',
@@ -35,6 +35,7 @@ return [
     'life_events' => 'Životní události',
     'important_days' => 'Důležité dny',
     'conversations' => 'Rozhovory',
+    'entertainment' => 'Zábava',
     'blog' => 'Blog',
     'my_corner' => 'Můj koutek',
 

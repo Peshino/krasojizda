@@ -38,6 +38,11 @@
                         <span class="align-middle">@lang('messages.conversations')</span></a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="{{ route('conversations.index') }}"><i
+                            class="fas fa-film align-middle"></i>&nbsp;
+                        <span class="align-middle">@lang('messages.entertainment')</span></a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="{{ route('posts.index') }}"><i
                             class="fas fa-pencil-alt align-middle"></i>&nbsp;
                         <span class="align-middle">@lang('messages.blog')</span></a>

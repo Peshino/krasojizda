@@ -35,6 +35,7 @@ return [
     'life_events' => 'Life events',
     'important_days' => 'Important days',
     'conversations' => 'Conversations',
+    'entertainment' => 'Entertainment',
     'blog' => 'Blog',
     'my_corner' => 'My corner',
 
