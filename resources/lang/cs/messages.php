@@ -27,7 +27,6 @@ return [
     'sign_up_placeholder_password_confirm' => 'Heslo znovu',
     'sign_up_button' => 'Zaregistrovat se',
 
-    'user_profile' => 'Profil',
     'user_logout' => 'Odhlásit se',
 
     'homepage' => 'Domovská stránka',
@@ -37,6 +36,7 @@ return [
     'conversations' => 'Rozhovory',
     'entertainment' => 'Zábava',
     'blog' => 'Blog',
+    'posts' => 'Články',
     'my_corner' => 'Můj koutek',
 
     'search_partner' => 'Vyhledej partnera',
@@ -45,6 +45,28 @@ return [
     'search_partner_not_found' => 'Partner nenalezen',
     'search_myself_error' => 'Nehledejte sebe',
     'search_partner_found' => 'Partner nalezen',
+
+    'title' => 'Titulek',
+    'text' => 'Text',
+    'create' => 'Vytvořit',
+    'edit' => 'Upravit',
+    'delete' => 'Smazat',
+    'really_delete' => 'Opravdu smazat?',
+    'your_comment' => 'Tvůj komentář',
+    'add_comment' => 'Přidej komentář',
+
+    'conversation' => 'Rozhovor',
+    'create_conversation' => 'Vytvořit rozhovor',
+    'edit_conversation' => 'Upravit rozhovor',
+    'post' => 'Článek',
+    'create_post' => 'Vytvořit článek',
+    'edit_post' => 'Upravit článek',
+    'profile' => 'Profil',
+    'edit_profile' => 'Upravit profil',
+    'email' => 'E-mail',
+    'firstname' => 'Jméno',
+    'lastname' => 'Příjmení',
+    'nickname' => 'Přezdívka',
 
 
     'flash_error' => 'Něco se pokazilo',

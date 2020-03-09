@@ -1,11 +1,15 @@
 @extends('layouts.master')
 
+@section('title')
+@lang('messages.conversations') | @lang('messages.krasojizda_name')
+@endsection
+
 @section('content')
 <div class="card mb-4">
     <div class="card-header krasojizda-bg">
         <div class="row">
             <div class="col col-left">
-                Rozhovory
+                @lang('messages.conversations')
             </div>
             <div class="col">
                 <ul class="list-inline justify-content-end">
@@ -27,7 +31,7 @@
                 @include('conversations.conversation')
                 @endforeach
                 @else
-                Žádné rozhovory
+                -----
                 @endif
             </div>
         </div>

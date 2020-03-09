@@ -1,11 +1,15 @@
 @extends('layouts.master')
 
+@section('title')
+@lang('messages.posts') | @lang('messages.krasojizda_name')
+@endsection
+
 @section('content')
 <div class="card mb-4">
     <div class="card-header krasojizda-bg">
         <div class="row">
             <div class="col col-left">
-                Články
+                @lang('messages.posts')
             </div>
             <div class="col">
                 <ul class="list-inline justify-content-end">
@@ -27,7 +31,7 @@
                 @include('posts.post')
                 @endforeach
                 @else
-                Žádné články
+                -----
                 @endif
             </div>
         </div>

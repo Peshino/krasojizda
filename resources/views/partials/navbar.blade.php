@@ -38,7 +38,7 @@
                         <span class="align-middle">@lang('messages.conversations')</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('conversations.index') }}"><i
+                    <a class="nav-link" href="#"><i
                             class="fas fa-film align-middle"></i>&nbsp;
                         <span class="align-middle">@lang('messages.entertainment')</span></a>
                 </li>
@@ -65,7 +65,7 @@
 
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{ route('users.edit', Auth::user()->id) }}">
-                            <i class="far fa-user-circle"></i>&nbsp; @lang('messages.user_profile')
+                            <i class="far fa-user-circle"></i>&nbsp; @lang('messages.profile')
                         </a>
                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">

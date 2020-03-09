@@ -1,11 +1,15 @@
 @extends('layouts.master')
 
+@section('title')
+{{ $post->title }} | @lang('messages.krasojizda_name')
+@endsection
+
 @section('content')
 <div class="card mb-4">
     <div class="card-header krasojizda-bg">
         <div class="row">
             <div class="col col-left">
-                Článek
+                @lang('messages.post')
             </div>
             @can('manipulate', $post)
             <div class="col">
@@ -27,13 +31,17 @@
                                 <div class="modal-dialog modal-dialog-centered" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="modal-post-delete-title">Opravdu smazat?</h5>
+                                            <h5 class="modal-title" id="modal-post-delete-title">
+                                                @lang('messages.really_delete')
+                                            </h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="submit" class="btn btn-primary">Smazat</button>
+                                            <button type="submit" class="btn btn-primary">
+                                                @lang('messages.delete')
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -80,14 +88,14 @@
                         @csrf
                         <div class="form-group">
                             <div class="floating-label">
-                                <label for="comment-body">Tvůj komentář</label>
+                                <label for="comment-body">@lang('messages.your_comment')</label>
                                 <textarea class="form-control" rows="3" id="comment-body" name="body"
                                     required>{{ old('body') }}</textarea>
                             </div>
                         </div>
 
                         <div class="form-group text-center">
-                            <button type="submit" class="btn btn-primary">Přidej komentář</button>
+                            <button type="submit" class="btn btn-primary">@lang('messages.add_comment')</button>
                         </div>
                     </form>
                     @include('partials.errors')

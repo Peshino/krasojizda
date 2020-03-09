@@ -27,7 +27,6 @@ return [
     'sign_up_placeholder_password_confirm' => 'Confirm Password',
     'sign_up_button' => 'Register',
 
-    'user_profile' => 'Profile',
     'user_logout' => 'Logout',
 
     'homepage' => 'Homepage',
@@ -37,6 +36,7 @@ return [
     'conversations' => 'Conversations',
     'entertainment' => 'Entertainment',
     'blog' => 'Blog',
+    'posts' => 'Posts',
     'my_corner' => 'My corner',
 
     'search_partner' => 'Search partner',
@@ -45,6 +45,28 @@ return [
     'search_partner_not_found' => 'Partner not found',
     'search_myself_error' => 'Don\'t look for yourself',
     'search_partner_found' => 'Partner found',
+
+    'title' => 'Title',
+    'text' => 'Text',
+    'create' => 'Create',
+    'edit' => 'Edit',
+    'delete' => 'Delete',
+    'really_delete' => 'Really delete?',
+    'your_comment' => 'Your comment',
+    'add_comment' => 'Add comment',
+
+    'conversation' => 'Conversation',
+    'create_conversation' => 'Create conversation',
+    'edit_conversation' => 'Edit conversation',
+    'post' => 'Post',
+    'create_post' => 'Create post',
+    'edit_post' => 'Edit post',
+    'profile' => 'Profile',
+    'edit_profile' => 'Edit profile',
+    'email' => 'E-mail',
+    'firstname' => 'Firstname',
+    'lastname' => 'Lastname',
+    'nickname' => 'Nickname',
 
 
     'flash_error' => 'Something went wrong',
