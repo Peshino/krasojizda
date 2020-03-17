@@ -17,7 +17,7 @@
     <div class="card-body">
         <div class="content text-center">
             <div class="blog-main">
-                <form method="POST" action="{{ route('posts.update', $post->id) }}">
+                <form method="POST" action="{{ route('posts.update', $post->id) }}" autocomplete="off">
                     @csrf
                     @method('PATCH')
                     <div class="form-group">

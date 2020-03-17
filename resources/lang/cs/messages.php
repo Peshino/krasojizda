@@ -63,10 +63,14 @@ return [
     'edit_post' => 'Upravit článek',
     'profile' => 'Profil',
     'edit_profile' => 'Upravit profil',
+    'date' => 'Datum',
     'email' => 'E-mail',
     'firstname' => 'Jméno',
     'lastname' => 'Příjmení',
     'nickname' => 'Přezdívka',
+    'life_event' => 'Životní událost',
+    'create_life_event' => 'Vytvořit životní událost',
+    'edit_life_event' => 'Upravit životní událost',
 
 
     'flash_error' => 'Něco se pokazilo',

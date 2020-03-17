@@ -17,7 +17,7 @@
     <div class="card-body">
         <div class="content text-center">
             <div class="blog-main">
-                <form method="POST" action="{{ route('posts.store') }}">
+                <form method="POST" action="{{ route('posts.store') }}" autocomplete="off">
                     @csrf
                     <div class="form-group">
                         <div class="floating-label">

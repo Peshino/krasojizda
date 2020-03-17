@@ -63,10 +63,14 @@ return [
     'edit_post' => 'Edit post',
     'profile' => 'Profile',
     'edit_profile' => 'Edit profile',
+    'date' => 'Date',
     'email' => 'E-mail',
     'firstname' => 'Firstname',
     'lastname' => 'Lastname',
     'nickname' => 'Nickname',
+    'life_event' => 'Life event',
+    'create_life_event' => 'Create life event',
+    'edit_life_event' => 'Edit life event',
 
 
     'flash_error' => 'Something went wrong',

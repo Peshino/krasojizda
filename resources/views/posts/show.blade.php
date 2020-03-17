@@ -20,7 +20,7 @@
                         </a>
                     </li>
                     <li class="list-inline-item">
-                        <form method="POST" action="{{ route('posts.destroy', $post->id) }}">
+                        <form method="POST" action="{{ route('posts.destroy', $post->id) }}" autocomplete="off">
                             @csrf
                             @method('DELETE')
                             <button class="crud-button" type="button" data-toggle="modal"
@@ -84,7 +84,7 @@
                 <hr />
 
                 <div class="card-block">
-                    <form method="POST" action="{{ route('post-comments.store', $post->id) }}">
+                    <form method="POST" action="{{ route('post-comments.store', $post->id) }}" autocomplete="off">
                         @csrf
                         <div class="form-group">
                             <div class="floating-label">

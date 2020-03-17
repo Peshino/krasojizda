@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\LifeEvent;
+use App\Repositories\LifeEvents;
 use Illuminate\Http\Request;
 
 class LifeEventController extends Controller
@@ -10,16 +11,20 @@ class LifeEventController extends Controller
     public function __construct()
     {
         $this->middleware(['auth', 'check.krasojizda']);
+        $this->middleware('can:manipulate,life-event')->except(['index', 'show', 'store', 'create']);
     }
 
     /**
      * Display a listing of the resource.
      *
+     * @param  \App\Repositories\LifeEvents  $lifeEvents
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(LifeEvents $lifeEvents)
     {
-        return view('life-events.index');
+        $lifeEvents = $lifeEvents->getKrasojizdalifeEvents();
+
+        return view('life-events.index', compact('lifeEvents'));
     }
 
     /**
@@ -29,7 +34,7 @@ class LifeEventController extends Controller
      */
     public function create()
     {
-        //
+        return view('life-events.create');
     }
 
     /**
@@ -40,7 +45,18 @@ class LifeEventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $attributes = $request->validate([
+            'title' => 'required|min:2|max:100',
+            'date' => 'required|date|date_format:Y-m-d',
+        ]);
+
+        if (auth()->user()->addLifeEvent($attributes)) {
+            session()->flash('flash_message_success', __('messages.flash_created'));
+        } else {
+            session()->flash('flash_message_danger', __('messages.flash_error'));
+        }
+
+        return redirect('life-events');
     }
 
     /**
@@ -51,7 +67,7 @@ class LifeEventController extends Controller
      */
     public function show(LifeEvent $lifeEvent)
     {
-        //
+        return view('life-events.show', compact('lifeEvent'));
     }
 
     /**
@@ -62,7 +78,7 @@ class LifeEventController extends Controller
      */
     public function edit(LifeEvent $lifeEvent)
     {
-        //
+        return view('life-events.edit', compact('lifeEvent'));
     }
 
     /**
@@ -74,7 +90,18 @@ class LifeEventController extends Controller
      */
     public function update(Request $request, LifeEvent $lifeEvent)
     {
-        //
+        $attributes = $request->validate([
+            'title' => 'required|min:2|max:100',
+            'date' => 'required',
+        ]);
+
+        if ($lifeEvent->update($attributes)) {
+            session()->flash('flash_message_success', __('messages.flash_updated'));
+        } else {
+            session()->flash('flash_message_danger', __('messages.flash_error'));
+        }
+
+        return redirect()->route('life-events.show', ['lifeEvent' => $lifeEvent->id]);
     }
 
     /**
@@ -85,6 +112,12 @@ class LifeEventController extends Controller
      */
     public function destroy(LifeEvent $lifeEvent)
     {
-        //
+        if ($lifeEvent->delete()) {
+            session()->flash('flash_message_success', __('messages.flash_deleted'));
+        } else {
+            session()->flash('flash_message_danger', __('messages.flash_error'));
+        }
+
+        return redirect('life-events');
     }
 }

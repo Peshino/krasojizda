@@ -10,6 +10,7 @@
 
     <link href="{{ asset('img/favicon.png') }}" rel="shortcut icon">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/datepicker-bs4.min.css') }}" rel="stylesheet">
     @yield('styles')
 </head>
 
@@ -31,6 +32,9 @@
         @include('partials/cookie-bar')
 
         <script src="{{ asset('js/app.js') }}" defer></script>
+        <script src="{{ asset('js/datepicker.min.js') }}"></script>
+        {{-- <script src="{{ asset('js/datepicker-full.min.js') }}"></script> --}}
+        <script src="{{ asset('js/datepicker-locales/cs.js') }}"></script>
         @yield('scripts')
     </div>
 </body>

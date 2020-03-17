@@ -26,14 +26,13 @@
     <div class="card-body">
         <div class="content text-center">
             <div class="blog-main">
-                {{-- @if (count($lifeEvents) > 0)
+                @if (count($lifeEvents) > 0)
                 @foreach ($lifeEvents as $lifeEvent)
                 @include('life-events.life-event')
                 @endforeach
                 @else
-                Žádné důležité dny
-                @endif --}}
-                @include('life-events.life-event')
+                -----
+                @endif
             </div>
         </div>
     </div>

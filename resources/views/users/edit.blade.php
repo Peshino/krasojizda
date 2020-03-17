@@ -16,7 +16,7 @@
 
     <div class="card-body">
         <div class="content">
-            <form method="POST" action="{{ route('users.update', $user->id) }}">
+            <form method="POST" action="{{ route('users.update', $user->id) }}" autocomplete="off">
                 @csrf
                 @method('PATCH')
                 <div class="row">
@@ -69,7 +69,8 @@
                                 <div class="form-group color-radio-buttons mt-2">
                                     @foreach ($colors as $color)
                                     <input type="radio" class="color-radio" id="color-radio-{{ $color->id }}"
-                                        name="color_id" value="{{ $color->id }}" {{ $user->color_id === $color->id ? ' checked' : '' }} />
+                                        name="color_id" value="{{ $color->id }}"
+                                        {{ $user->color_id === $color->id ? ' checked' : '' }} />
                                     <label for="color-radio-{{ $color->id }}"
                                         style="background-color: {{ $color->hex_code }}"></label>
                                     @endforeach

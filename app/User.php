@@ -47,6 +47,11 @@ class User extends Authenticatable
         return $this->hasMany(Conversation::class);
     }
 
+    public function lifeEvents()
+    {
+        return $this->hasMany(LifeEvent::class);
+    }
+
     public function color()
     {
         return $this->belongsTo(Color::class);
@@ -60,5 +65,10 @@ class User extends Authenticatable
     public function addConversation($conversation)
     {
         return $this->conversations()->create($conversation) !== null ? true : false;
+    }
+
+    public function addLifeEvent($lifeEvent)
+    {
+        return $this->lifeEvents()->create($lifeEvent) !== null ? true : false;
     }
 }

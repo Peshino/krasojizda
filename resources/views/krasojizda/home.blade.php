@@ -1,5 +1,9 @@
 @extends('layouts.master')
 
+@section('title')
+@if ($loggedUserKrasojizdaId !== null) {{ $loggedUserKrasojizdaName }} @endif | @lang('messages.krasojizda_name')
+@endsection
+
 @section('content')
 <div class="card mb-4">
     <div class="card-header krasojizda-bg">
@@ -81,7 +85,7 @@
             <p>Nyní je třeba vytvořit Krasojízdu se svou drahou druhou polovičkou.</p>
             <p>Vyhledejte partnera dle emailu, na který má registrovaný svůj profil:</p>
 
-            <form id="search-partner-form" action="{{ route('searchPartnerAjaxPost') }}">
+            <form id="search-partner-form" action="{{ route('searchPartnerAjaxPost') }}" autocomplete="off">
                 @csrf
                 <div class="form-group">
                     <div class="floating-label">
