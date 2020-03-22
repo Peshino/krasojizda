@@ -22,7 +22,7 @@ class LifeEventController extends Controller
      */
     public function index(LifeEvents $lifeEvents)
     {
-        $lifeEvents = $lifeEvents->getKrasojizdalifeEvents();
+        $lifeEvents = $lifeEvents->getKrasojizdaLifeEvents();
 
         return view('life-events.index', compact('lifeEvents'));
     }

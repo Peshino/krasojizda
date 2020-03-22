@@ -31,10 +31,10 @@
 
         @include('partials/cookie-bar')
 
-        <script src="{{ asset('js/app.js') }}" defer></script>
-        <script src="{{ asset('js/datepicker.min.js') }}"></script>
+        <script src="{{ mix('js/app.js') }}"></script>
+        <script src="{{ asset('js/datepicker.min.js') }}" defer></script>
         {{-- <script src="{{ asset('js/datepicker-full.min.js') }}"></script> --}}
-        <script src="{{ asset('js/datepicker-locales/cs.js') }}"></script>
+        <script src="{{ asset('js/datepicker-locales/cs.js') }}" defer></script>
         @yield('scripts')
     </div>
 </body>

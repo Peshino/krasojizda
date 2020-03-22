@@ -12,12 +12,12 @@ class lifeEvents
         return lifeEvent::all();
     }
 
-    public function getKrasojizdalifeEvents()
+    public function getKrasojizdaLifeEvents()
     {
         $krasojizda = new Krasojizda();
 
         $users = $krasojizda->getUserIdsArray();
 
-        return lifeEvent::whereIn('user_id', $users)->get();
+        return lifeEvent::whereIn('user_id', $users)->orderBy('date', 'desc')->get();
     }
 }

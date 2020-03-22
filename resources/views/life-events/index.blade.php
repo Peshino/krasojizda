@@ -27,14 +27,33 @@
         <div class="content text-center">
             <div class="blog-main">
                 @if (count($lifeEvents) > 0)
+                @php
+                $years = [];
+                @endphp
                 @foreach ($lifeEvents as $lifeEvent)
-                @include('life-events.life-event')
-                @endforeach
-                @else
-                -----
-                @endif
+                <div class="life-event">
+                    @php
+                    $currentCycleYear = $lifeEvent->date->isoFormat('YYYY');
+                    @endphp
+                    @if (in_array($currentCycleYear, $years))
+                    @else
+                    <div @if (!empty($years)) class="pt-2 pb-1" style="border-top: 1px solid grey;" @else class="pb-1"
+                        @endif>
+                        <h3 class="life-event-title">
+                            {{ $currentCycleYear }}
+                        </h3>
+                    </div>
+                    @php
+                    $years[] = $currentCycleYear;
+                    @endphp
+                    @endif
+                    @include('life-events.life-event')
+                    @endforeach
+                    @else
+                    -----
+                    @endif
+                </div>
             </div>
         </div>
     </div>
-</div>
-@endsection
+    @endsection
