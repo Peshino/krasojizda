@@ -16,7 +16,7 @@
 
     <div class="card-body">
         <div class="content text-center">
-            <div class="blog-main">
+            <div class="content-block">
                 <form method="POST" action="{{ route('conversations.store') }}" autocomplete="off">
                     @csrf
                     <div class="form-group">

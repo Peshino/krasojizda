@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-@lang('messages.edit') {{ $conversation->title }} | @lang('messages.krasojizda_name')
+@lang('messages.edit') {{ $lifeEvent->title }} | @lang('messages.krasojizda_name')
 @endsection
 
 @section('content')
@@ -9,34 +9,34 @@
     <div class="card-header krasojizda-bg">
         <div class="row">
             <div class="col col-left">
-                @lang('messages.edit_conversation')
+                @lang('messages.edit_life_event')
             </div>
         </div>
     </div>
 
     <div class="card-body">
         <div class="content text-center">
-            <div class="blog-main">
-                <form method="POST" action="{{ route('conversations.update', $conversation->id) }}" autocomplete="off">
+            <div class="content-block">
+                <form method="POST" action="{{ route('life-events.update', $lifeEvent->id) }}" autocomplete="off">
                     @csrf
                     @method('PATCH')
                     <div class="form-group">
                         <div class="floating-label">
-                            <label for="conversation-title">@lang('messages.title')</label>
-                            <input type="text" class="form-control" id="conversation-title" name="title"
-                                value="{{ $conversation->title }}" required />
+                            <label for="life-event-date">@lang('messages.date')</label>
+                            <input type="text" class="form-control input-datepicker" id="life-event-date" name="date"
+                                value="{{ $lifeEvent->date->isoFormat('YYYY-MM-DD') }}" required />
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="floating-label">
-                            <label for="conversation-body">@lang('messages.text')</label>
-                            <textarea class="form-control" rows="10" id="conversation-body" name="body"
-                                required>{{ $conversation->body }}</textarea>
+                            <label for="life-event-title">@lang('messages.title')</label>
+                            <input type="text" class="form-control" id="life-event-title" name="title"
+                                value="{{ $lifeEvent->title }}" required />
                         </div>
                     </div>
 
                     <div class="form-group text-center">
-                        <button type="submit" class="btn btn-primary">@lang('messages.edit_conversation')</button>
+                        <button type="submit" class="btn btn-primary">@lang('messages.edit_life_event')</button>
                     </div>
 
                     @include('partials.errors')

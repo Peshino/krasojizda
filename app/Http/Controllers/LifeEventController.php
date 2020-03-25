@@ -11,7 +11,7 @@ class LifeEventController extends Controller
     public function __construct()
     {
         $this->middleware(['auth', 'check.krasojizda']);
-        $this->middleware('can:manipulate,life-event')->except(['index', 'show', 'store', 'create']);
+        // $this->middleware('can:manipulate,life-event')->except(['index', 'show', 'store', 'create']);
     }
 
     /**
@@ -101,7 +101,7 @@ class LifeEventController extends Controller
             session()->flash('flash_message_danger', __('messages.flash_error'));
         }
 
-        return redirect()->route('life-events.show', ['lifeEvent' => $lifeEvent->id]);
+        return redirect()->route('life-events.index');
     }
 
     /**
@@ -113,11 +113,15 @@ class LifeEventController extends Controller
     public function destroy(LifeEvent $lifeEvent)
     {
         if ($lifeEvent->delete()) {
+            $status = 'success';
             session()->flash('flash_message_success', __('messages.flash_deleted'));
         } else {
+            $status = 'error';
             session()->flash('flash_message_danger', __('messages.flash_error'));
         }
 
-        return redirect('life-events');
+        return response()->json([
+            'status' => $status,
+        ]);
     }
 }

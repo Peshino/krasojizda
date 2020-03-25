@@ -25,7 +25,7 @@
 
     <div class="card-body">
         <div class="content text-center">
-            <div class="blog-main">
+            <div class="content-block">
                 {{-- @if (count($importantDays) > 0)
                 @foreach ($importantDays as $importantDay)
                 @include('important-days.important-day')

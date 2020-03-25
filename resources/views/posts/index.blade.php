@@ -25,7 +25,7 @@
 
     <div class="card-body">
         <div class="content text-center">
-            <div class="blog-main">
+            <div class="content-block">
                 @if (count($posts) > 0)
                 @foreach ($posts as $post)
                 @include('posts.post')

@@ -40834,7 +40834,7 @@ $('form#search-partner-form').submit(function (e) {
       }
     },
     error: function error(errorMessage) {
-      $('#search-partner-result').html('Error: ' + errorMessage.responseText);
+      $('#search-partner-result').html('Error: ' + errorMessage.responseJSON.message);
     }
   });
 });
@@ -40859,7 +40859,7 @@ $('form#invitation-result-form').submit(function (e) {
       }
     },
     error: function error(errorMessage) {
-      $('#invitation-result').html('Error: ' + errorMessage.responseText);
+      $('#invitation-result').html('Error: ' + errorMessage.responseJSON.message);
     }
   });
 });

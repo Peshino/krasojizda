@@ -25,7 +25,7 @@
 
     <div class="card-body">
         <div class="content text-center">
-            <div class="blog-main">
+            <div class="content-block">
                 @if (count($lifeEvents) > 0)
                 @php
                 $years = [];
@@ -48,12 +48,13 @@
                     @endphp
                     @endif
                     @include('life-events.life-event')
-                    @endforeach
-                    @else
-                    -----
-                    @endif
                 </div>
+                @endforeach
+                @else
+                -----
+                @endif
             </div>
         </div>
     </div>
-    @endsection
+</div>
+@endsection

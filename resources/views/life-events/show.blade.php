@@ -20,7 +20,8 @@
                         </a>
                     </li>
                     <li class="list-inline-item">
-                        <form method="POST" action="{{ route('conversations.destroy', $conversation->id) }}" autocomplete="off">
+                        <form method="POST" action="{{ route('conversations.destroy', $conversation->id) }}"
+                            autocomplete="off">
                             @csrf
                             @method('DELETE')
                             <button class="crud-button" type="button" data-toggle="modal"
@@ -56,7 +57,7 @@
 
     <div class="card-body">
         <div class="content">
-            <div class="blog-main">
+            <div class="content-block">
                 <h3 class="text-center" style="color: {{ $conversation->user->color->hex_code }};">
                     {{ $conversation->title }}
                 </h3>
@@ -84,7 +85,8 @@
                 <hr />
 
                 <div class="card-block">
-                    <form method="POST" action="{{ route('conversation-comments.store', $conversation->id) }}" autocomplete="off">
+                    <form method="POST" action="{{ route('conversation-comments.store', $conversation->id) }}"
+                        autocomplete="off">
                         @csrf
                         <div class="form-group">
                             <div class="floating-label">

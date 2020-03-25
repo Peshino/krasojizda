@@ -1,5 +1,5 @@
 <div class="life-event mt-2 mb-2">
-    <a href="#" class="life-event-link" id="{{ $lifeEvent->id }}" data-toggle="modal" data-target="#modal-life-event">
+    <a href="#" class="modal-link" id="{{ $lifeEvent->id }}" data-toggle="modal" data-target="#modal-life-event">
         {{ $lifeEvent->date->isoFormat('D. MMMM') }} - {{ $lifeEvent->title }}
     </a>
 </div>
@@ -17,8 +17,8 @@
                             </a>
                         </li>
                         <li class="list-inline-item">
-                            <form method="POST" action="{{ route('life-events.destroy', $lifeEvent->id) }}"
-                                autocomplete="off">
+                            <form id="life-event-delete-form" method="POST"
+                                action="{{ route('life-events.destroy', $lifeEvent->id) }}" autocomplete="off">
                                 @csrf
                                 @method('DELETE')
                                 <button class="crud-button" type="button" data-toggle="modal"
@@ -61,13 +61,43 @@
 @section('scripts')
 <script>
     $(document).ready(function () {
-        $('.life-event-link').click(function () {
-            var url = '{{ route("life-events.edit", ":id") }}',
+        $('.modal-link').click(function () {
+            var urlEdit = '{{ route("life-events.edit", ":id") }}',
+                urlDelete = '{{ route("life-events.destroy", ":id") }}',
+                urlRedirect = '{{ route("life-events.index") }}',
                 id = this.id;
-            url = url.replace(':id', id);
+                urlEdit = urlEdit.replace(':id', id);
+                urlDelete = urlDelete.replace(':id', id);
+
             $('.href-by-js').click(function (e) {
                 e.preventDefault();
-                window.location.href = url;
+                window.location.href = urlEdit;
+            });
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $('form#life-event-delete-form').submit(function (e) {
+                e.preventDefault();
+                var form = $(this),
+                    url = urlDelete;
+
+                $.ajax({
+                    type: 'DELETE',
+                    url: url,
+                    data: {
+                    },
+                    success: function (data) {
+                        // let status = data.status;
+                        window.location.href = urlRedirect;
+                    },
+                    error: function (errorMessage) {
+                        $('.modal-title').html('Error: ' + errorMessage.responseJSON.message);
+                    }
+                });
             });
         });
     });

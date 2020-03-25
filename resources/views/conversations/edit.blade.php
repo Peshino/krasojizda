@@ -16,7 +16,7 @@
 
     <div class="card-body">
         <div class="content text-center">
-            <div class="blog-main">
+            <div class="content-block">
                 <form method="POST" action="{{ route('conversations.update', $conversation->id) }}" autocomplete="off">
                     @csrf
                     @method('PATCH')

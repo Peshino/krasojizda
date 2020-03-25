@@ -25,7 +25,7 @@
 
     <div class="card-body">
         <div class="content text-center">
-            <div class="blog-main">
+            <div class="content-block">
                 {{-- @if (count($ourPlaces) > 0)
                 @foreach ($ourPlaces as $ourPlace)
                 @include('our-places.our-place')

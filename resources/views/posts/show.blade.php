@@ -56,7 +56,7 @@
 
     <div class="card-body">
         <div class="content">
-            <div class="blog-main">
+            <div class="content-block">
                 <h3 class="text-center" style="color: {{ $post->user->color->hex_code }};">
                     {{ $post->title }}
                 </h3>

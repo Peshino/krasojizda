@@ -24,6 +24,6 @@ class LifeEventPolicy
 
         $users = $krasojizda->getUserIdsArray();
 
-        return in_array($lifeEvent->user_id, $users) && $lifeEvent->user_id === $user->id;
+        return in_array($lifeEvent->user_id, $users);
     }
 }
