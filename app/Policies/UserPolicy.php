@@ -12,10 +12,10 @@ class UserPolicy
 
     /**
      * Determine whether the logged in user can manipulate the model (User).
-     * 
+     *
      * @param  \App\User  $user
      * @param  \App\User  $model
-     * @return mixed
+     * @return boolean
      */
     public function manipulate(User $user, User $model)
     {
@@ -27,7 +27,7 @@ class UserPolicy
      *
      * @param  \App\User  $user
      * @param  \App\User  $model
-     * @return mixed
+     * @return boolean
      */
     public function view(User $user, User $model)
     {

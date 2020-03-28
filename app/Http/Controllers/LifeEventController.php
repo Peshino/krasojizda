@@ -11,7 +11,9 @@ class LifeEventController extends Controller
     public function __construct()
     {
         $this->middleware(['auth', 'check.krasojizda']);
-        // $this->middleware('can:manipulate,life-event')->except(['index', 'show', 'store', 'create']);
+        $this->middleware('can:viewAllAndCreate,App\LifeEvent')->only(['index', 'store', 'create']);
+        $this->middleware('can:view,life_event')->only('show');
+        $this->middleware('can:manipulate,life_event')->except(['index', 'show', 'store', 'create']);
     }
 
     /**

@@ -11,6 +11,8 @@ class PostController extends Controller
     public function __construct()
     {
         $this->middleware(['auth', 'check.krasojizda']);
+        $this->middleware('can:viewAllAndCreate,App\Post')->only(['index', 'store', 'create']);
+        $this->middleware('can:view,post')->only('show');
         $this->middleware('can:manipulate,post')->except(['index', 'show', 'store', 'create']);
     }
 

@@ -11,6 +11,8 @@ class ConversationController extends Controller
     public function __construct()
     {
         $this->middleware(['auth', 'check.krasojizda']);
+        $this->middleware('can:viewAllAndCreate,App\Conversation')->only(['index', 'store', 'create']);
+        $this->middleware('can:view,conversation')->only('show');
         $this->middleware('can:manipulate,conversation')->except(['index', 'show', 'store', 'create']);
     }
 
