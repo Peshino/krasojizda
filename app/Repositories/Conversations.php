@@ -18,6 +18,6 @@ class Conversations
 
         $users = $krasojizda->getUserIdsArray();
 
-        return Conversation::whereIn('user_id', $users)->get();
+        return Conversation::whereIn('user_id', $users)->orderBy('id', 'desc')->get();
     }
 }

@@ -18,6 +18,6 @@ class Posts
 
         $users = $krasojizda->getUserIdsArray();
 
-        return Post::whereIn('user_id', $users)->get();
+        return Post::whereIn('user_id', $users)->orderBy('id', 'desc')->get();
     }
 }

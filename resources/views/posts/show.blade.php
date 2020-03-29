@@ -67,7 +67,7 @@
 
                 <div class="comments">
                     <ul class="list-group">
-                        @foreach ($post->comments as $comment)
+                        @foreach ($post->comments->sortByDesc('created_at') as $comment)
                         <div class="d-flex">
                             <li class="list-group-item w-90 {{ Auth::user()->id === $comment->user->id ? 'ml-auto' : '' }}"
                                 style="border-bottom: 1px solid {{ $comment->user->color->hex_code }};">
