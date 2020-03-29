@@ -22,24 +22,38 @@
                             class="fas fa-map-marker-alt align-middle"></i>&nbsp;
                         <span class="align-middle">@lang('messages.our_places')</span></a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item dropdown">
+                    <a id="events-dropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <i class="far fa-calendar-alt"></i>&nbsp; @lang('messages.events')<span class="caret"></span>
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="events-dropdown">
+                        <a class="dropdown-item" href="{{ route('important-days.index') }}">
+                            <i class="far fa-star"></i>&nbsp; @lang('messages.important_days')
+                        </a>
+                        <a class="dropdown-item" href="{{ route('life-events.index') }}">
+                            <i class="far fa-heart"></i>&nbsp; @lang('messages.life_events')
+                        </a>
+                    </div>
+                </li>
+                {{-- <li class="nav-item">
                     <a class="nav-link" href="{{ route('life-events.index') }}"><i
-                            class="far fa-heart align-middle"></i>&nbsp;
-                        <span class="align-middle">@lang('messages.life_events')</span></a>
+                    class="far fa-heart align-middle"></i>&nbsp;
+                <span class="align-middle">@lang('messages.life_events')</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('important-days.index') }}"><i
                             class="far fa-calendar-alt align-middle"></i>&nbsp;
                         <span class="align-middle">@lang('messages.important_days')</span></a>
-                </li>
+                </li> --}}
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('conversations.index') }}"><i
                             class="far fa-comments align-middle"></i>&nbsp;
                         <span class="align-middle">@lang('messages.conversations')</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i
-                            class="fas fa-film align-middle"></i>&nbsp;
+                    <a class="nav-link" href="#"><i class="fas fa-film align-middle"></i>&nbsp;
                         <span class="align-middle">@lang('messages.entertainment')</span></a>
                 </li>
                 <li class="nav-item">
@@ -57,13 +71,13 @@
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                    <a id="profile-dropdown" class="nav-link dropdown-toggle" href="#" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         <i class="far fa-user"></i>&nbsp; {{ Auth::user()->firstname }}
                         {{ Auth::user()->lastname }}<span class="caret"></span>
                     </a>
 
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="profile-dropdown">
                         <a class="dropdown-item" href="{{ route('users.edit', Auth::user()->id) }}">
                             <i class="far fa-user-circle"></i>&nbsp; @lang('messages.profile')
                         </a>

@@ -31,6 +31,7 @@ return [
 
     'homepage' => 'Domovská stránka',
     'our_places' => 'Naše místa',
+    'events' => 'Události',
     'life_events' => 'Životní události',
     'important_days' => 'Důležité dny',
     'conversations' => 'Rozhovory',

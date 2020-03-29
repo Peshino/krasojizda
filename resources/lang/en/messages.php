@@ -31,6 +31,7 @@ return [
 
     'homepage' => 'Homepage',
     'our_places' => 'Our places',
+    'events' => 'Events',
     'life_events' => 'Life events',
     'important_days' => 'Important days',
     'conversations' => 'Conversations',
