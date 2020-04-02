@@ -37,7 +37,7 @@
                     @endphp
                     @if (in_array($currentCycleYear, $years))
                     @else
-                    <div @if (!empty($years)) class="pt-2 pb-1" style="border-top: 1px solid grey;" @else class="pb-1"
+                    <div @if (!empty($years)) class="pt-2 pb-1 border-top-grey" @else class="pb-1"
                         @endif>
                         <h3 class="life-event-title">
                             {{ $currentCycleYear }}

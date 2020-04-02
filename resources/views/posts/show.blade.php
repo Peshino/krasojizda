@@ -61,27 +61,9 @@
                     {{ $post->title }}
                 </h3>
 
-                <p class="text-justify">{{ $post->body }}</p>
-
-                <hr />
-
-                <div class="comments">
-                    <ul class="list-group">
-                        @foreach ($post->comments->sortByDesc('created_at') as $comment)
-                        <div class="d-flex">
-                            <li class="list-group-item w-90 {{ Auth::user()->id === $comment->user->id ? 'ml-auto' : '' }}"
-                                style="border-bottom: 1px solid {{ $comment->user->color->hex_code }};">
-                                {{ $comment->body }}
-                            </li>
-                        </div>
-                        <span
-                            class="text-right unimportant-text {{ Auth::user()->id === $comment->user->id ? '' : 'w-90' }}"><small>{{ $comment->created_at->isoFormat('D. MMMM YYYY H:mm') }}</small>
-                        </span>
-                        @endforeach
-                    </ul>
+                <div class="text-justify mb-2 border-bottom-grey">
+                    <p>{{ $post->body }}</p>
                 </div>
-
-                <hr />
 
                 <div class="card-block">
                     <form method="POST" action="{{ route('post-comments.store', $post->id) }}" autocomplete="off">
@@ -99,6 +81,22 @@
                         </div>
                     </form>
                     @include('partials.errors')
+                </div>
+
+                <div class="comments">
+                    <ul class="list-group">
+                        @foreach ($post->comments->sortByDesc('created_at') as $comment)
+                        <div class="d-flex">
+                            <li class="list-group-item w-90 {{ Auth::user()->id === $comment->user->id ? 'ml-auto' : '' }}"
+                                style="border-bottom: 1px solid {{ $comment->user->color->hex_code }};">
+                                {{ $comment->body }}
+                            </li>
+                        </div>
+                        <span
+                            class="text-right unimportant-text {{ Auth::user()->id === $comment->user->id ? '' : 'w-90' }}"><small>{{ $comment->created_at->isoFormat('D. MMMM YYYY H:mm') }}</small>
+                        </span>
+                        @endforeach
+                    </ul>
                 </div>
             </div>
         </div>

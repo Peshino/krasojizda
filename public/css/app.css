@@ -11872,6 +11872,14 @@ html {
   background-color: #2a2f33;
 }
 
+#main .border-top-grey {
+  border-top: 1px solid grey;
+}
+
+#main .border-bottom-grey {
+  border-bottom: 1px solid grey;
+}
+
 #main .list-group-item {
   background-color: transparent;
   border: 0px solid rgba(0, 0, 0, 0.125);

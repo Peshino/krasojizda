@@ -131,6 +131,14 @@
         background-color: #2a2f33;
     }
 
+    .border-top-grey {
+        border-top: 1px solid grey;
+    }
+
+    .border-bottom-grey {
+        border-bottom: 1px solid grey;
+    }
+
     .list-group-item {
         background-color: transparent;
         border: 0px solid rgba(0, 0, 0, 0.125);
