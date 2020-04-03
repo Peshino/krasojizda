@@ -53,9 +53,9 @@ class ConversationController extends Controller
         ]);
 
         if (auth()->user()->addConversation($attributes)) {
-            session()->flash('flash_message_success', __('messages.flash_created'));
+            session()->flash('flash_message_success', '<i class="fas fa-check"></i>');
         } else {
-            session()->flash('flash_message_danger', __('messages.flash_error'));
+            session()->flash('flash_message_danger', '<i class="fas fa-times"></i>');
         }
 
         return redirect('conversations');
@@ -98,9 +98,9 @@ class ConversationController extends Controller
         ]);
 
         if ($conversation->update($attributes)) {
-            session()->flash('flash_message_success', __('messages.flash_updated'));
+            session()->flash('flash_message_success', '<i class="fas fa-check"></i>');
         } else {
-            session()->flash('flash_message_danger', __('messages.flash_error'));
+            session()->flash('flash_message_danger', '<i class="fas fa-times"></i>');
         }
 
         return redirect()->route('conversations.show', ['conversation' => $conversation->id]);
@@ -115,9 +115,9 @@ class ConversationController extends Controller
     public function destroy(Conversation $conversation)
     {
         if ($conversation->delete()) {
-            session()->flash('flash_message_success', __('messages.flash_deleted'));
+            session()->flash('flash_message_success', '<i class="fas fa-check"></i>');
         } else {
-            session()->flash('flash_message_danger', __('messages.flash_error'));
+            session()->flash('flash_message_danger', '<i class="fas fa-times"></i>');
         }
 
         return redirect('conversations');

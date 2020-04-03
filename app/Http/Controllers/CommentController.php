@@ -48,17 +48,17 @@ class CommentController extends Controller
 
         if ($post->id !== null) {
             if ($post->addComment($request->input('body'))) {
-                session()->flash('flash_message_success', __('messages.flash_created'));
+                session()->flash('flash_message_success', '<i class="fas fa-check"></i>');
             } else {
-                session()->flash('flash_message_danger', __('messages.flash_error'));
+                session()->flash('flash_message_danger', '<i class="fas fa-times"></i>');
             }
 
             return redirect()->route('posts.show', ['post' => $post->id]);
         } elseif ($conversation->id !== null) {
             if ($conversation->addComment($request->input('body'))) {
-                session()->flash('flash_message_success', __('messages.flash_created'));
+                session()->flash('flash_message_success', '<i class="fas fa-check"></i>');
             } else {
-                session()->flash('flash_message_danger', __('messages.flash_error'));
+                session()->flash('flash_message_danger', '<i class="fas fa-times"></i>');
             }
 
             return redirect()->route('conversations.show', ['conversation' => $conversation->id]);

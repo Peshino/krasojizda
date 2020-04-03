@@ -94,9 +94,9 @@ class UserController extends Controller
         $attributes['fullname'] = $request['firstname'] . ' ' . $request['lastname'];
 
         if ($user->update($attributes)) {
-            session()->flash('flash_message_success', __('messages.flash_updated'));
+            session()->flash('flash_message_success', '<i class="fas fa-check"></i>');
         } else {
-            session()->flash('flash_message_danger', __('messages.flash_error'));
+            session()->flash('flash_message_danger', '<i class="fas fa-times"></i>');
         }
 
         return redirect()->route('users.show', ['user' => $user->id]);

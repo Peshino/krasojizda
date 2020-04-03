@@ -41,7 +41,7 @@ class InvitationController extends Controller
             'receiver_id' => 'required|min:1',
         ]));
 
-        session()->flash('flash_message_info', __('messages.flash_invitation_created'));
+        session()->flash('flash_message_info', '<i class="fas fa-info-circle"></i>' . '&nbsp;&nbsp;' . __('messages.flash_invitation_created'));
 
         return redirect('home');
     }
@@ -86,21 +86,21 @@ class InvitationController extends Controller
                     $krasojizda = new Krasojizda;
 
                     if ($krasojizda->create($invitation)) {
-                        session()->flash('flash_message_info', __('messages.flash_krasojizda_created'));
+                        session()->flash('flash_message_info', '<i class="fas fa-info-circle"></i>' . '&nbsp;&nbsp;' . __('messages.flash_krasojizda_created'));
                     } else {
                         session()->flash('flash_message_danger', __('messages.flash_krasojizda_create_error'));
                     }
                     break;
                 case 'rejected':
                     $invitation->update(['result' => $resultValue]);
-                    session()->flash('flash_message_info', __('messages.flash_invitation_rejected'));
+                    session()->flash('flash_message_info', '<i class="fas fa-info-circle"></i>' . '&nbsp;&nbsp;' . __('messages.flash_invitation_rejected'));
                     break;
                 case 'withdrawn':
                     $invitation->update(['result' => $resultValue]);
-                    session()->flash('flash_message_info', __('messages.flash_invitation_withdrawn'));
+                    session()->flash('flash_message_info', '<i class="fas fa-info-circle"></i>' . '&nbsp;&nbsp;' . __('messages.flash_invitation_withdrawn'));
                     break;
                 default:
-                    session()->flash('flash_message_danger', __('messages.flash_error'));
+                    session()->flash('flash_message_danger', '<i class="fas fa-times"></i>');
                     break;
             }
         }

@@ -53,9 +53,9 @@ class LifeEventController extends Controller
         ]);
 
         if (auth()->user()->addLifeEvent($attributes)) {
-            session()->flash('flash_message_success', __('messages.flash_created'));
+            session()->flash('flash_message_success', '<i class="fas fa-check"></i>');
         } else {
-            session()->flash('flash_message_danger', __('messages.flash_error'));
+            session()->flash('flash_message_danger', '<i class="fas fa-times"></i>');
         }
 
         return redirect('life-events');
@@ -98,9 +98,9 @@ class LifeEventController extends Controller
         ]);
 
         if ($lifeEvent->update($attributes)) {
-            session()->flash('flash_message_success', __('messages.flash_updated'));
+            session()->flash('flash_message_success', '<i class="fas fa-check"></i>');
         } else {
-            session()->flash('flash_message_danger', __('messages.flash_error'));
+            session()->flash('flash_message_danger', '<i class="fas fa-times"></i>');
         }
 
         return redirect()->route('life-events.index');
@@ -116,10 +116,10 @@ class LifeEventController extends Controller
     {
         if ($lifeEvent->delete()) {
             $status = 'success';
-            session()->flash('flash_message_success', __('messages.flash_deleted'));
+            session()->flash('flash_message_success', '<i class="fas fa-check"></i>');
         } else {
             $status = 'error';
-            session()->flash('flash_message_danger', __('messages.flash_error'));
+            session()->flash('flash_message_danger', '<i class="fas fa-times"></i>');
         }
 
         return response()->json([
