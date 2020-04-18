@@ -25,7 +25,8 @@
                 <li class="nav-item dropdown">
                     <a id="events-dropdown" class="nav-link dropdown-toggle" href="#" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        <i class="far fa-calendar-alt"></i>&nbsp; @lang('messages.events')<span class="caret"></span>
+                        <i class="far fa-calendar-alt align-middle"></i>&nbsp; <span
+                            class="caret align-middle">@lang('messages.events')</span>
                     </a>
 
                     <div class="dropdown-menu" aria-labelledby="events-dropdown">
@@ -73,8 +74,9 @@
                 <li class="nav-item dropdown">
                     <a id="profile-dropdown" class="nav-link dropdown-toggle" href="#" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        <i class="far fa-user"></i>&nbsp; {{ Auth::user()->firstname }}
-                        {{ Auth::user()->lastname }}<span class="caret"></span>
+                        <i class="far fa-user align-middle"></i>&nbsp; <span
+                            class="caret align-middle">{{ Auth::user()->firstname }}
+                            {{ Auth::user()->lastname }}</span>
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="profile-dropdown">
