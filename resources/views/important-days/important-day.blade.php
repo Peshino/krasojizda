@@ -1,24 +1,105 @@
-{{-- <div class="important-day" style="border-bottom: 1px solid {{ $importantDay->user->color->hex_code }};">
-<h3 class="important-day-title">
-    <a href="{{ route('important-days.show', $importantDay->id) }}">
-        {{ $importantDay->title }}
+<div class="important-day mt-2 mb-2">
+    <a href="#" class="modal-link" id="{{ $importantDay->id }}" data-toggle="modal" data-target="#modal-important-day">
+        {{ $importantDay->date->isoFormat('D. MMMM') }} - {{ $importantDay->title }}
     </a>
-</h3>
 </div>
-<p class="important-day-meta text-right unimportant-text">
-    <small>{{ $importantDay->updated_at->isoFormat('D. MMMM YYYY H:mm') }}</small>
-</p> --}}
 
-<h3 class="important-day-title">
-    2019
-</h3>
+<div class="modal fade" id="modal-important-day" tabindex="-1" role="dialog" aria-labelledby="modal-important-day-title"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="col">
+                    <ul class="list-inline justify-content-center">
+                        <li class="list-inline-item">
+                            <a class="crud-button href-by-js" href="#">
+                                <i class="fas fa-pencil-alt"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <form id="important-day-delete-form" method="POST"
+                                action="{{ route('important-days.destroy', $importantDay->id) }}" autocomplete="off">
+                                @csrf
+                                @method('DELETE')
+                                <button class="crud-button" type="button" data-toggle="modal"
+                                    data-target="#modal-important-day-delete"><i class="far fa-trash-alt"></i></button>
 
-<div class="mt-3">
-    <div class="important-day mt-4" style="border-bottom: 1px solid grey;">
-        <p>so 24. srpen - Martin Sodomka svatba - za 21 dnů (neopakující se)</p>
-    </div>
+                                <div class="modal fade" id="modal-important-day-delete" tabindex="-1" role="dialog"
+                                    aria-labelledby="modal-important-day-delete-title" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="modal-important-day-delete-title">
+                                                    @lang('messages.really_delete')
+                                                </h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn btn-primary">
+                                                    @lang('messages.delete')
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
 
-    <div class="important-day mt-4" style="border-bottom: 1px solid grey;">
-        <p>čt 17. říjen - Mášenka narozeniny - za 255 dnů (opakující se)</p>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
     </div>
 </div>
+
+@section('scripts')
+<script>
+    $(document).ready(function () {
+        $('.modal-link').click(function () {
+            var urlEdit = '{{ route("important-days.edit", ":id") }}',
+                urlDelete = '{{ route("important-days.destroy", ":id") }}',
+                urlRedirect = '{{ route("important-days.index") }}',
+                id = this.id;
+                urlEdit = urlEdit.replace(':id', id);
+                urlDelete = urlDelete.replace(':id', id);
+
+            $('.href-by-js').click(function (e) {
+                e.preventDefault();
+                window.location.href = urlEdit;
+            });
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $('form#important-day-delete-form').submit(function (e) {
+                e.preventDefault();
+                var form = $(this),
+                    url = urlDelete;
+
+                $.ajax({
+                    type: 'DELETE',
+                    url: url,
+                    data: {
+                    },
+                    success: function (data) {
+                        // let status = data.status;
+                        window.location.href = urlRedirect;
+                    },
+                    error: function (errorMessage) {
+                        $('.modal-title').html('Error: ' + errorMessage.responseJSON.message);
+                    }
+                });
+            });
+        });
+    });
+</script>
+@endsection

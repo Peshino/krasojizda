@@ -72,6 +72,9 @@ return [
     'life_event' => 'Life event',
     'create_life_event' => 'Create life event',
     'edit_life_event' => 'Edit life event',
+    'important_day' => 'Important day',
+    'create_important_day' => 'Create important day',
+    'edit_important_day' => 'Edit important day',
 
 
     'flash_error' => 'Something went wrong',

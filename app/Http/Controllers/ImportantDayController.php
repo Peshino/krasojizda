@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\ImportantDay;
+use App\Repositories\ImportantDays;
 use Illuminate\Http\Request;
 
 class ImportantDayController extends Controller
@@ -10,16 +11,22 @@ class ImportantDayController extends Controller
     public function __construct()
     {
         $this->middleware(['auth', 'check.krasojizda']);
+        $this->middleware('can:viewAllAndCreate,App\ImportantDay')->only(['index', 'store', 'create']);
+        $this->middleware('can:view,important_day')->only('show');
+        $this->middleware('can:manipulate,important_day')->except(['index', 'show', 'store', 'create']);
     }
 
     /**
      * Display a listing of the resource.
      *
+     * @param  \App\Repositories\ImportantDays  $importantDays
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(ImportantDays $importantDays)
     {
-        return view('important-days.index');
+        $importantDays = $importantDays->getKrasojizdaImportantDays();
+
+        return view('important-days.index', compact('importantDays'));
     }
 
     /**
@@ -29,7 +36,7 @@ class ImportantDayController extends Controller
      */
     public function create()
     {
-        //
+        return view('important-days.create');
     }
 
     /**
@@ -40,7 +47,18 @@ class ImportantDayController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $attributes = $request->validate([
+            'title' => 'required|min:2|max:100',
+            'date' => 'required|date|date_format:Y-m-d',
+        ]);
+
+        if (auth()->user()->addImportantDay($attributes)) {
+            session()->flash('flash_message_success', '<i class="fas fa-check"></i>');
+        } else {
+            session()->flash('flash_message_danger', '<i class="fas fa-times"></i>');
+        }
+
+        return redirect('important-days');
     }
 
     /**
@@ -51,7 +69,7 @@ class ImportantDayController extends Controller
      */
     public function show(ImportantDay $importantDay)
     {
-        //
+        return view('important-days.show', compact('importantDay'));
     }
 
     /**
@@ -62,7 +80,7 @@ class ImportantDayController extends Controller
      */
     public function edit(ImportantDay $importantDay)
     {
-        //
+        return view('important-days.edit', compact('importantDay'));
     }
 
     /**
@@ -74,7 +92,18 @@ class ImportantDayController extends Controller
      */
     public function update(Request $request, ImportantDay $importantDay)
     {
-        //
+        $attributes = $request->validate([
+            'title' => 'required|min:2|max:100',
+            'date' => 'required',
+        ]);
+
+        if ($importantDay->update($attributes)) {
+            session()->flash('flash_message_success', '<i class="fas fa-check"></i>');
+        } else {
+            session()->flash('flash_message_danger', '<i class="fas fa-times"></i>');
+        }
+
+        return redirect()->route('important-days.index');
     }
 
     /**
@@ -85,6 +114,16 @@ class ImportantDayController extends Controller
      */
     public function destroy(ImportantDay $importantDay)
     {
-        //
+        if ($importantDay->delete()) {
+            $status = 'success';
+            session()->flash('flash_message_success', '<i class="fas fa-check"></i>');
+        } else {
+            $status = 'error';
+            session()->flash('flash_message_danger', '<i class="fas fa-times"></i>');
+        }
+
+        return response()->json([
+            'status' => $status,
+        ]);
     }
 }

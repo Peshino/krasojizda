@@ -26,14 +26,32 @@
     <div class="card-body">
         <div class="content text-center">
             <div class="content-block">
-                {{-- @if (count($importantDays) > 0)
+                @if (count($importantDays) > 0)
+                @php
+                $years = [];
+                @endphp
                 @foreach ($importantDays as $importantDay)
-                @include('important-days.important-day')
+                <div class="important-day">
+                    @php
+                    $currentCycleYear = $importantDay->date->isoFormat('YYYY');
+                    @endphp
+                    @if (in_array($currentCycleYear, $years))
+                    @else
+                    <div @if (!empty($years)) class="pt-2 pb-1 border-top-grey" @else class="pb-1" @endif>
+                        <h3 class="important-day-title">
+                            {{ $currentCycleYear }}
+                        </h3>
+                    </div>
+                    @php
+                    $years[] = $currentCycleYear;
+                    @endphp
+                    @endif
+                    @include('important-days.important-day')
+                </div>
                 @endforeach
                 @else
-                Žádné důležité dny
-                @endif --}}
-                @include('important-days.important-day')
+                -----
+                @endif
             </div>
         </div>
     </div>

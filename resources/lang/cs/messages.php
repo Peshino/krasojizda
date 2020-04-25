@@ -72,6 +72,9 @@ return [
     'life_event' => 'Životní událost',
     'create_life_event' => 'Vytvořit životní událost',
     'edit_life_event' => 'Upravit životní událost',
+    'important_day' => 'Důležitý den',
+    'create_important_day' => 'Vytvořit důležitý den',
+    'edit_important_day' => 'Upravit důležitý den',
 
 
     'flash_error' => 'Něco se pokazilo',

@@ -52,6 +52,11 @@ class User extends Authenticatable
         return $this->hasMany(LifeEvent::class);
     }
 
+    public function importantDays()
+    {
+        return $this->hasMany(ImportantDay::class);
+    }
+
     public function color()
     {
         return $this->belongsTo(Color::class);
@@ -70,5 +75,10 @@ class User extends Authenticatable
     public function addLifeEvent($lifeEvent)
     {
         return $this->lifeEvents()->create($lifeEvent) !== null ? true : false;
+    }
+
+    public function addImportantDay($importantDay)
+    {
+        return $this->importantDays()->create($importantDay) !== null ? true : false;
     }
 }
