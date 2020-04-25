@@ -2,14 +2,14 @@
 
 namespace App\Repositories;
 
-use App\lifeEvent;
+use App\LifeEvent;
 use App\Krasojizda;
 
-class lifeEvents
+class LifeEvents
 {
     public function all()
     {
-        return lifeEvent::all();
+        return LifeEvent::all();
     }
 
     public function getKrasojizdaLifeEvents()
@@ -18,6 +18,6 @@ class lifeEvents
 
         $users = $krasojizda->getUserIdsArray();
 
-        return lifeEvent::whereIn('user_id', $users)->orderBy('date', 'desc')->get();
+        return LifeEvent::whereIn('user_id', $users)->orderBy('date', 'desc')->get();
     }
 }
