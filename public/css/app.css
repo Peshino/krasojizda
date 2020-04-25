@@ -11479,7 +11479,7 @@ html {
 #introduction input {
   color: #ffffff;
   background: transparent;
-  border: 2px solid #ffffff;
+  border: 1px solid #ffffff;
 }
 
 #introduction ::-webkit-input-placeholder {
@@ -11527,7 +11527,7 @@ html {
   cursor: pointer;
   background: rgba(40, 40, 40, 0.2);
   color: #000000;
-  border: 2px solid #ffffff;
+  border: 1px solid #ffffff;
   border-radius: 0.25rem;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -11591,7 +11591,7 @@ html {
 #introduction .introduction-btn {
   color: #ffffff;
   background: transparent;
-  border: 2px solid #ffffff;
+  border: 1px solid #ffffff;
   width: 50%;
 }
 
