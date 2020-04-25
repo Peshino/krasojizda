@@ -15,7 +15,11 @@ class CreateImportantDaysTable extends Migration
     {
         Schema::create('important_days', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamps();
+            // $table->string('title');
+            // $table->date('date');
+            // $table->unsignedBigInteger('user_id');
+            // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            // $table->timestamps();
 
             $table->engine = 'InnoDB'; // if foreign keys are in use
         });
