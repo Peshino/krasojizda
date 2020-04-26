@@ -144,22 +144,6 @@
         border-bottom: 1px solid #535353;
     }
 
-    .text-warning {
-        color: #ffe988 !important;
-    }
-
-    .text-warning:hover {
-        color: #fff4c2 !important;
-    }
-
-    .text-secondary {
-        color: #a9b9c5 !important;
-    }
-
-    .text-secondary:hover {
-        color: #c5d7e6 !important;
-    }
-
     .list-group-item {
         background-color: transparent;
         border: 0px solid rgba(0, 0, 0, 0.125);
@@ -455,5 +439,29 @@
         [type="radio"] {
             display: none;
         }
+    }
+
+    .critical-period {
+        color: #62ff8f !important;
+    }
+
+    .critical-period:hover {
+        color: #ffffff !important;
+    }
+
+    .short-period {
+        color: #b9ffcd !important;
+    }
+
+    .short-period:hover {
+        color: #ffffff !important;
+    }
+
+    .long-period {
+        color: #afafaf !important;
+    }
+
+    .long-period:hover {
+        color: #ffffff !important;
     }
 }

@@ -29,10 +29,11 @@ class ImportantDayController extends Controller
 
         $now = Carbon::now();
         $todayDate = Carbon::now()->toDateString();
+        $criticalPeriod = Carbon::now()->addDays(3);
         $shortPeriod = Carbon::now()->addWeek();
         $longPeriod = Carbon::now()->addMonth();
 
-        return view('important-days.index', compact('importantDays', 'now', 'todayDate', 'shortPeriod', 'longPeriod'));
+        return view('important-days.index', compact('importantDays', 'now', 'todayDate', 'criticalPeriod', 'shortPeriod', 'longPeriod'));
     }
 
     /**

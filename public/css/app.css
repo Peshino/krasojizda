@@ -11896,22 +11896,6 @@ html {
   border-bottom: 1px solid #535353;
 }
 
-#main .text-warning {
-  color: #ffe988 !important;
-}
-
-#main .text-warning:hover {
-  color: #fff4c2 !important;
-}
-
-#main .text-secondary {
-  color: #a9b9c5 !important;
-}
-
-#main .text-secondary:hover {
-  color: #c5d7e6 !important;
-}
-
 #main .list-group-item {
   background-color: transparent;
   border: 0px solid rgba(0, 0, 0, 0.125);
@@ -12226,6 +12210,30 @@ html {
 
 #main .color-radio-buttons [type=radio] {
   display: none;
+}
+
+#main .critical-period {
+  color: #62ff8f !important;
+}
+
+#main .critical-period:hover {
+  color: #ffffff !important;
+}
+
+#main .short-period {
+  color: #b9ffcd !important;
+}
+
+#main .short-period:hover {
+  color: #ffffff !important;
+}
+
+#main .long-period {
+  color: #afafaf !important;
+}
+
+#main .long-period:hover {
+  color: #ffffff !important;
 }
 
 footer {
