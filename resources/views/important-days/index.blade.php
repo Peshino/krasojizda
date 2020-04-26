@@ -27,25 +27,20 @@
         <div class="content text-center">
             <div class="content-block">
                 @if (count($importantDays) > 0)
-                @php
-                $years = [];
-                @endphp
+                <div class="mb-2 border-bottom-grey">
+                    <h3 class="important-day-title">
+                        {{ $now->year }}
+                    </h3>
+                </div>
                 @foreach ($importantDays as $importantDay)
                 <div class="important-day">
                     @php
-                    $currentCycleYear = $importantDay->date->isoFormat('YYYY');
+                    $timeFromNow = $importantDay->date->diffForHumans($now, [
+                    'syntax' => \Carbon\CarbonInterface::DIFF_RELATIVE_TO_NOW,
+                    'options' => \Carbon\Carbon::JUST_NOW | \Carbon\Carbon::ONE_DAY_WORDS |
+                    \Carbon\Carbon::TWO_DAY_WORDS,
+                    ]);
                     @endphp
-                    @if (in_array($currentCycleYear, $years))
-                    @else
-                    <div @if (!empty($years)) class="pt-2 pb-1 border-top-grey" @else class="pb-1" @endif>
-                        <h3 class="important-day-title">
-                            {{ $currentCycleYear }}
-                        </h3>
-                    </div>
-                    @php
-                    $years[] = $currentCycleYear;
-                    @endphp
-                    @endif
                     @include('important-days.important-day')
                 </div>
                 @endforeach

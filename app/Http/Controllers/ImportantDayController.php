@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\ImportantDay;
 use App\Repositories\ImportantDays;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class ImportantDayController extends Controller
@@ -26,7 +27,12 @@ class ImportantDayController extends Controller
     {
         $importantDays = $importantDays->getKrasojizdaImportantDays();
 
-        return view('important-days.index', compact('importantDays'));
+        $now = Carbon::now();
+        $todayDate = Carbon::now()->toDateString();
+        $shortPeriod = Carbon::now()->addWeek();
+        $longPeriod = Carbon::now()->addMonth();
+
+        return view('important-days.index', compact('importantDays', 'now', 'todayDate', 'shortPeriod', 'longPeriod'));
     }
 
     /**

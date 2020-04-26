@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\ImportantDay;
 use App\Krasojizda;
+use Illuminate\Support\Carbon;
 
 class ImportantDays
 {
@@ -18,6 +19,8 @@ class ImportantDays
 
         $users = $krasojizda->getUserIdsArray();
 
-        return ImportantDay::whereIn('user_id', $users)->orderBy('date', 'desc')->get();
+        $now = Carbon::now();
+
+        return ImportantDay::whereIn('user_id', $users)->whereYear('date', $now->year)->whereDate('date', '>=', $now)->orderBy('date', 'asc')->get();
     }
 }

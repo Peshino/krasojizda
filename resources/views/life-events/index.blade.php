@@ -33,18 +33,18 @@
                 @foreach ($lifeEvents as $lifeEvent)
                 <div class="life-event">
                     @php
-                    $currentCycleYear = $lifeEvent->date->isoFormat('YYYY');
+                    $currentIterationYear = $lifeEvent->date->isoFormat('YYYY');
                     @endphp
-                    @if (in_array($currentCycleYear, $years))
+                    @if (in_array($currentIterationYear, $years))
                     @else
                     <div @if (!empty($years)) class="pt-2 pb-1 border-top-grey" @else class="pb-1"
                         @endif>
                         <h3 class="life-event-title">
-                            {{ $currentCycleYear }}
+                            {{ $currentIterationYear }}
                         </h3>
                     </div>
                     @php
-                    $years[] = $currentCycleYear;
+                    $years[] = $currentIterationYear;
                     @endphp
                     @endif
                     @include('life-events.life-event')

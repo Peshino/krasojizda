@@ -11749,6 +11749,11 @@ html {
   text-decoration: none;
 }
 
+#main p {
+  margin-top: 0;
+  margin-bottom: 0.3rem;
+}
+
 #main .proceed-link {
   background: #ed2f65;
   background: linear-gradient(135deg, #ed2f65 0%, #2bbcff 100%);
@@ -11884,11 +11889,27 @@ html {
 }
 
 #main .border-top-grey {
-  border-top: 1px solid grey;
+  border-top: 1px solid #535353;
 }
 
 #main .border-bottom-grey {
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid #535353;
+}
+
+#main .text-warning {
+  color: #ffe988 !important;
+}
+
+#main .text-warning:hover {
+  color: #fff4c2 !important;
+}
+
+#main .text-secondary {
+  color: #a9b9c5 !important;
+}
+
+#main .text-secondary:hover {
+  color: #c5d7e6 !important;
 }
 
 #main .list-group-item {
