@@ -18,7 +18,7 @@
             @if (Auth::user()->krasojizda_id !== null)
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('our-places.index') }}"><i
+                    <a class="nav-link text-muted" href="{{ route('our-places.index') }}"><i
                             class="fas fa-map-marker-alt align-middle"></i>&nbsp;
                         <span class="align-middle">@lang('messages.our_places')</span></a>
                 </li>
@@ -54,7 +54,7 @@
                         <span class="align-middle">@lang('messages.conversations')</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-film align-middle"></i>&nbsp;
+                    <a class="nav-link text-muted" href="#"><i class="fas fa-film align-middle"></i>&nbsp;
                         <span class="align-middle">@lang('messages.entertainment')</span></a>
                 </li>
                 <li class="nav-item">
@@ -63,7 +63,7 @@
                         <span class="align-middle">@lang('messages.blog')</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="far fa-clipboard align-middle"></i>&nbsp;
+                    <a class="nav-link text-muted" href="#"><i class="far fa-clipboard align-middle"></i>&nbsp;
                         <span class="align-middle">@lang('messages.my_corner')</span></a>
                 </li>
             </ul>
