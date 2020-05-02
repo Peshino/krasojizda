@@ -12177,6 +12177,10 @@ html {
   height: auto;
 }
 
+#main .smaller {
+  font-size: small;
+}
+
 @-webkit-keyframes fade {
   0%, 50% {
     opacity: 0;

@@ -395,8 +395,11 @@
         height: auto;
     }
 
-    .color-radio-buttons {
+    .smaller {
+        font-size: small;
+    }
 
+    .color-radio-buttons {
         @keyframes fade {
 
             0%,

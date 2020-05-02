@@ -1,13 +1,14 @@
 <div class="important-day m-1 border-bottom-grey">
-    <a href="#"
-        class="modal-link 
+    <a href="#" class="modal-link 
         @if ($importantDay->date < $criticalPeriod) critical-period @endif 
         @if ($importantDay->date > $criticalPeriod && $importantDay->date < $shortPeriod) short-period @endif 
-        @if ($importantDay->date > $longPeriod) long-period @endif"
-        id="{{ $importantDay->id }}" data-toggle="modal" data-target="#modal-important-day">
-        <p>{{ $importantDay->date->isoFormat('D. MMMM') }} @if ($importantDay->date->isoFormat('YYYY-MM-DD') !==
-            $todayDate) - {{ $timeFromNow }}
-            @endif</p>
+        @if ($importantDay->date > $longPeriod) long-period @endif" id="{{ $importantDay->id }}" data-toggle="modal"
+        data-target="#modal-important-day">
+        <p class="smaller">{{ $importantDay->date->isoFormat('D. MMMM') }}
+            @if ($importantDay->date->isoFormat('YYYY-MM-DD') !== $todayDate)
+            - {{ $timeFromNow }}
+            @endif
+        </p>
         <p>{{ $importantDay->title }}</p>
     </a>
 </div>
