@@ -18,7 +18,9 @@ class CreateConversationsTable extends Migration
             $table->string('title');
             $table->text('body');
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('seen_by_user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('seen_by_user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
 
             $table->engine = 'InnoDB'; // if foreign keys are in use

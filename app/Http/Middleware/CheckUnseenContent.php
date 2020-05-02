@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Support\Facades\View;
 use App\Repositories\Posts;
+use App\Repositories\Conversations;
 
 class CheckUnseenContent
 {
@@ -24,7 +25,12 @@ class CheckUnseenContent
             $unseenPostsCommentsCount = $posts->getKrasojizdaUnseenPostsCommentsCount();
             $unseenPostsCommentsTotal = (int) $unseenPostsCount + (int) $unseenPostsCommentsCount;
 
-            View::share(compact('unseenPostsCommentsTotal'));
+            $conversations = new Conversations();
+            $unseenConversationsCount = $conversations->getKrasojizdaUnseenConversationsCount();
+            $unseenConversationsCommentsCount = $conversations->getKrasojizdaUnseenConversationsCommentsCount();
+            $unseenConversationsCommentsTotal = (int) $unseenConversationsCount + (int) $unseenConversationsCommentsCount;
+
+            View::share(compact('unseenPostsCommentsTotal', 'unseenConversationsCommentsTotal'));
         }
         return $next($request);
     }

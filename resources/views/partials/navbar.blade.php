@@ -51,7 +51,10 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('conversations.index') }}"><i
                             class="far fa-comments align-middle"></i>&nbsp;
-                        <span class="align-middle">@lang('messages.conversations')</span></a>
+                        <span class="align-middle">@lang('messages.conversations')</span> @if ($unseenConversationsCommentsTotal !== 0)
+                        <sup><span class="badge badge-color"
+                                style="background-color: {{ Auth::user()->color->hex_code }};">{{ $unseenConversationsCommentsTotal }}</span></sup>
+                        @endif</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-muted" href="#"><i class="fas fa-film align-middle"></i>&nbsp;

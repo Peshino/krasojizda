@@ -24,7 +24,8 @@ class ConversationController extends Controller
      */
     public function index(Conversations $conversations)
     {
-        $conversations = $conversations->getKrasojizdaConversations();
+        $withUnseenCommentsCount = true;
+        $conversations = $conversations->getKrasojizdaConversations($withUnseenCommentsCount);
 
         return view('conversations.index', compact('conversations'));
     }
@@ -69,6 +70,20 @@ class ConversationController extends Controller
      */
     public function show(Conversation $conversation)
     {
+        $attributes = [
+            'seen_by_user_id' => auth()->user()->id,
+        ];
+
+        if ($conversation->seen_by_user_id === null && auth()->user()->id !== $conversation->user_id) {
+            $conversation->update($attributes);
+        }
+
+        foreach ($conversation->comments as $comment) {
+            if ($comment->seen_by_user_id === null && auth()->user()->id !== $comment->user_id) {
+                $comment->update($attributes);
+            }
+        }
+
         return view('conversations.show', compact('conversation'));
     }
 
