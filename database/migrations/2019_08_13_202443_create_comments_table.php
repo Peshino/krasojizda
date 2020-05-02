@@ -19,9 +19,11 @@ class CreateCommentsTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('post_id')->nullable();
             $table->unsignedBigInteger('conversation_id')->nullable();
+            $table->unsignedBigInteger('seen_by_user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
             $table->foreign('conversation_id')->references('id')->on('conversations')->onDelete('cascade');
+            $table->foreign('seen_by_user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
 
             $table->engine = 'InnoDB'; // if foreign keys are in use

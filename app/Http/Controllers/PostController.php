@@ -10,7 +10,7 @@ class PostController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['auth', 'check.krasojizda']);
+        $this->middleware(['auth', 'check.krasojizda', 'check.unseenContent']);
         $this->middleware('can:viewAllAndCreate,App\Post')->only(['index', 'store', 'create']);
         $this->middleware('can:view,post')->only('show');
         $this->middleware('can:manipulate,post')->except(['index', 'show', 'store', 'create']);
@@ -24,7 +24,8 @@ class PostController extends Controller
      */
     public function index(Posts $posts)
     {
-        $posts = $posts->getKrasojizdaPosts();
+        $withUnseenCommentsCount = true;
+        $posts = $posts->getKrasojizdaPosts($withUnseenCommentsCount);
 
         return view('posts.index', compact('posts'));
     }
@@ -69,6 +70,20 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
+        $attributes = [
+            'seen_by_user_id' => auth()->user()->id,
+        ];
+
+        if ($post->seen_by_user_id === null && auth()->user()->id !== $post->user_id) {
+            $post->update($attributes);
+        }
+
+        foreach ($post->comments as $comment) {
+            if ($comment->seen_by_user_id === null && auth()->user()->id !== $comment->user_id) {
+                $comment->update($attributes);
+            }
+        }
+
         return view('posts.show', compact('post'));
     }
 

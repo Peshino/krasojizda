@@ -60,7 +60,10 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('posts.index') }}"><i
                             class="fas fa-pencil-alt align-middle"></i>&nbsp;
-                        <span class="align-middle">@lang('messages.blog')</span></a>
+                        <span class="align-middle">@lang('messages.blog')</span> @if ($unseenPostsCommentsTotal !== 0)
+                        <sup><span class="badge badge-color"
+                                style="background-color: {{ Auth::user()->color->hex_code }};">{{ $unseenPostsCommentsTotal }}</span></sup>
+                        @endif</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-muted" href="#"><i class="far fa-clipboard align-middle"></i>&nbsp;

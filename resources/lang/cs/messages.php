@@ -76,6 +76,8 @@ return [
     'create_important_day' => 'Vytvořit důležitý den',
     'edit_important_day' => 'Upravit důležitý den',
 
+    'new' => 'nový',
+
 
     'flash_error' => 'Něco se pokazilo',
     'flash_krasojizda_created' => 'Krasojízda vytvořena',

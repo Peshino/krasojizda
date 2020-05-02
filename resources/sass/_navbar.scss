@@ -2,6 +2,38 @@
     background-color: #1b1e21;
 }
 
+.navbar {
+    sup {
+        top: -0.5em;
+    }
+
+    sub,
+    sup {
+        position: relative;
+        font-size: 85%;
+        line-height: 0;
+        vertical-align: baseline;
+    }
+
+    .badge {
+        display: inline-block;
+        padding: 0.2em 0.4em;
+        font-size: 85%;
+        font-weight: bolder;
+        line-height: 1;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: baseline;
+        border-radius: 0.2rem;
+        -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+
+    .badge-color {
+        color: #000000;
+    }
+}
+
 .nav-link {
     padding: 0.75rem 1rem;
 }

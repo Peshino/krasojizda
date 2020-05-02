@@ -9,7 +9,7 @@ class ImageController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['auth', 'check.krasojizda']);
+        $this->middleware(['auth', 'check.krasojizda', 'check.unseenContent']);
     }
 
     /**

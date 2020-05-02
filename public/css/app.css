@@ -11620,6 +11620,36 @@ html {
   background-color: #1b1e21;
 }
 
+.navbar sup {
+  top: -0.5em;
+}
+
+.navbar sub,
+.navbar sup {
+  position: relative;
+  font-size: 85%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+.navbar .badge {
+  display: inline-block;
+  padding: 0.2em 0.4em;
+  font-size: 85%;
+  font-weight: bolder;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.2rem;
+  -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.navbar .badge-color {
+  color: #000000;
+}
+
 .nav-link {
   padding: 0.75rem 1rem;
 }
@@ -11774,6 +11804,36 @@ html {
   background-clip: border-box;
   border: 0px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
+}
+
+#main .card-body sup {
+  top: -0.7em;
+}
+
+#main .card-body sub,
+#main .card-body sup {
+  position: relative;
+  font-size: 70%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+#main .card-body .badge {
+  display: inline-block;
+  padding: 0.2em 0.4em;
+  font-size: 70%;
+  font-weight: bolder;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.2rem;
+  -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+#main .card-body .badge-color {
+  color: #000000;
 }
 
 #main .card-header {

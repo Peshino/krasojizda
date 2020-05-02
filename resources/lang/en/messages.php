@@ -76,6 +76,8 @@ return [
     'create_important_day' => 'Create important day',
     'edit_important_day' => 'Edit important day',
 
+    'new' => 'new',
+
 
     'flash_error' => 'Something went wrong',
     'flash_krasojizda_created' => 'Krasojizda vytvořena',

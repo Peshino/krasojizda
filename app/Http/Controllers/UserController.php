@@ -10,7 +10,7 @@ class UserController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware(['auth', 'check.unseenContent']);
         $this->middleware('can:manipulate,user')->except(['show']);
         $this->middleware('can:view,user')->only(['show']);
     }

@@ -11,7 +11,7 @@ class ImportantDayController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['auth', 'check.krasojizda']);
+        $this->middleware(['auth', 'check.krasojizda', 'check.unseenContent']);
         $this->middleware('can:viewAllAndCreate,App\ImportantDay')->only(['index', 'store', 'create']);
         $this->middleware('can:view,important_day')->only('show');
         $this->middleware('can:manipulate,important_day')->except(['index', 'show', 'store', 'create']);
