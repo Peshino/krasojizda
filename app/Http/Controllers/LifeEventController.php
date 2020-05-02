@@ -26,6 +26,16 @@ class LifeEventController extends Controller
     {
         $lifeEvents = $lifeEvents->getKrasojizdaLifeEvents();
 
+        $attributes = [
+            'seen_by_user_id' => auth()->user()->id,
+        ];
+
+        foreach ($lifeEvents as $lifeEvent) {
+            if ($lifeEvent->seen_by_user_id === null && auth()->user()->id !== $lifeEvent->user_id) {
+                $lifeEvent->update($attributes);
+            }
+        }
+
         return view('life-events.index', compact('lifeEvents'));
     }
 

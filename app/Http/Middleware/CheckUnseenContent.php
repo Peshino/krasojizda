@@ -6,6 +6,8 @@ use Closure;
 use Illuminate\Support\Facades\View;
 use App\Repositories\Posts;
 use App\Repositories\Conversations;
+use App\Repositories\ImportantDays;
+use App\Repositories\LifeEvents;
 
 class CheckUnseenContent
 {
@@ -30,7 +32,18 @@ class CheckUnseenContent
             $unseenConversationsCommentsCount = $conversations->getKrasojizdaUnseenConversationsCommentsCount();
             $unseenConversationsCommentsTotal = (int) $unseenConversationsCount + (int) $unseenConversationsCommentsCount;
 
-            View::share(compact('unseenPostsCommentsTotal', 'unseenConversationsCommentsTotal'));
+            $importantDays = new ImportantDays();
+            $unseenImportantDaysCount = $importantDays->getKrasojizdaUnseenImportantDaysCount();
+
+            $lifeEvents = new LifeEvents();
+            $unseenLifeEventsCount = $lifeEvents->getKrasojizdaUnseenLifeEventsCount();
+
+            View::share(compact(
+                'unseenPostsCommentsTotal',
+                'unseenConversationsCommentsTotal',
+                'unseenImportantDaysCount',
+                'unseenLifeEventsCount'
+            ));
         }
         return $next($request);
     }

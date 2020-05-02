@@ -23,4 +23,17 @@ class ImportantDays
 
         return ImportantDay::whereIn('user_id', $users)->whereYear('date', $now->year)->whereDate('date', '>=', $now)->orderBy('date', 'asc')->get();
     }
+
+    public function getKrasojizdaUnseenImportantDaysCount()
+    {
+        $krasojizda = new Krasojizda();
+
+        $users = $krasojizda->getUserIdsArray();
+
+        $now = Carbon::now();
+
+        $unseenImportantDaysCount = ImportantDay::whereIn('user_id', $users)->whereYear('date', $now->year)->whereDate('date', '>=', $now)->where('user_id', '!=', auth()->user()->id)->whereNull('seen_by_user_id')->count();
+
+        return $unseenImportantDaysCount;
+    }
 }

@@ -9,7 +9,14 @@ ALTER TABLE `posts` ADD constraint `posts_seen_by_user_id_foreign` foreign key (
 ALTER TABLE `comments` ADD `seen_by_user_id` BIGINT UNSIGNED NULL DEFAULT NULL AFTER `conversation_id`;
 ALTER TABLE `comments` ADD constraint `comments_seen_by_user_id_foreign` foreign key (`seen_by_user_id`) references `users` (`id`) on delete cascade;
 
-
--- QUERIES TO BE EXECUTED at production
 ALTER TABLE `conversations` ADD `seen_by_user_id` BIGINT UNSIGNED NULL DEFAULT NULL AFTER `user_id`;
 ALTER TABLE `conversations` ADD constraint `conversations_seen_by_user_id_foreign` foreign key (`seen_by_user_id`) references `users` (`id`) on delete cascade;
+
+ALTER TABLE `important_days` ADD `seen_by_user_id` BIGINT UNSIGNED NULL DEFAULT NULL AFTER `user_id`;
+ALTER TABLE `important_days` ADD constraint `important_days_seen_by_user_id_foreign` foreign key (`seen_by_user_id`) references `users` (`id`) on delete cascade;
+
+ALTER TABLE `life_events` ADD `seen_by_user_id` BIGINT UNSIGNED NULL DEFAULT NULL AFTER `user_id`;
+ALTER TABLE `life_events` ADD constraint `life_events_seen_by_user_id_foreign` foreign key (`seen_by_user_id`) references `users` (`id`) on delete cascade;
+
+
+-- QUERIES TO BE EXECUTED at production

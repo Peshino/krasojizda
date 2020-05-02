@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ImportantDay extends Model
 {
-    protected $fillable = ['title', 'date', 'user_id'];
+    protected $fillable = ['title', 'date', 'user_id', 'seen_by_user_id'];
 
     /**
      * The attributes that should be mutated to dates.

@@ -33,6 +33,16 @@ class ImportantDayController extends Controller
         $shortPeriod = Carbon::now()->addWeek();
         $longPeriod = Carbon::now()->addMonth();
 
+        $attributes = [
+            'seen_by_user_id' => auth()->user()->id,
+        ];
+
+        foreach ($importantDays as $importantDay) {
+            if ($importantDay->seen_by_user_id === null && auth()->user()->id !== $importantDay->user_id) {
+                $importantDay->update($attributes);
+            }
+        }
+
         return view('important-days.index', compact('importantDays', 'now', 'todayDate', 'criticalPeriod', 'shortPeriod', 'longPeriod'));
     }
 

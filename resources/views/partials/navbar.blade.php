@@ -31,10 +31,28 @@
 
                     <div class="dropdown-menu" aria-labelledby="events-dropdown">
                         <a class="dropdown-item" href="{{ route('important-days.index') }}">
-                            <i class="far fa-star"></i>&nbsp; @lang('messages.important_days')
+                            <i class="far fa-star align-middle"></i>&nbsp; <span
+                                class="caret align-middle">@lang('messages.important_days')</span>
+                            @if ($unseenImportantDaysCount !== 0)
+                            <sup>
+                                <span class="badge badge-color"
+                                    style="background-color: {{ Auth::user()->color->hex_code }};">
+                                    {{ $unseenImportantDaysCount }}
+                                </span>
+                            </sup>
+                            @endif
                         </a>
                         <a class="dropdown-item" href="{{ route('life-events.index') }}">
-                            <i class="far fa-heart"></i>&nbsp; @lang('messages.life_events')
+                            <i class="far fa-heart align-middle"></i>&nbsp; <span
+                                class="caret align-middle">@lang('messages.life_events')</span>
+                            @if ($unseenLifeEventsCount !== 0)
+                            <sup>
+                                <span class="badge badge-color"
+                                    style="background-color: {{ Auth::user()->color->hex_code }};">
+                                    {{ $unseenLifeEventsCount }}
+                                </span>
+                            </sup>
+                            @endif
                         </a>
                     </div>
                 </li>
@@ -51,10 +69,16 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('conversations.index') }}"><i
                             class="far fa-comments align-middle"></i>&nbsp;
-                        <span class="align-middle">@lang('messages.conversations')</span> @if ($unseenConversationsCommentsTotal !== 0)
-                        <sup><span class="badge badge-color"
-                                style="background-color: {{ Auth::user()->color->hex_code }};">{{ $unseenConversationsCommentsTotal }}</span></sup>
-                        @endif</a>
+                        <span class="align-middle">@lang('messages.conversations')</span>
+                        @if ($unseenConversationsCommentsTotal !== 0)
+                        <sup>
+                            <span class="badge badge-color"
+                                style="background-color: {{ Auth::user()->color->hex_code }};">
+                                {{ $unseenConversationsCommentsTotal }}
+                            </span>
+                        </sup>
+                        @endif
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-muted" href="#"><i class="fas fa-film align-middle"></i>&nbsp;
@@ -63,10 +87,16 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('posts.index') }}"><i
                             class="fas fa-pencil-alt align-middle"></i>&nbsp;
-                        <span class="align-middle">@lang('messages.blog')</span> @if ($unseenPostsCommentsTotal !== 0)
-                        <sup><span class="badge badge-color"
-                                style="background-color: {{ Auth::user()->color->hex_code }};">{{ $unseenPostsCommentsTotal }}</span></sup>
-                        @endif</a>
+                        <span class="align-middle">@lang('messages.blog')</span>
+                        @if ($unseenPostsCommentsTotal !== 0)
+                        <sup>
+                            <span class="badge badge-color"
+                                style="background-color: {{ Auth::user()->color->hex_code }};">
+                                {{ $unseenPostsCommentsTotal }}
+                            </span>
+                        </sup>
+                        @endif
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-muted" href="#"><i class="far fa-clipboard align-middle"></i>&nbsp;
