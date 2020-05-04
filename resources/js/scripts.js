@@ -24,4 +24,24 @@ $(document).ready(function () {
     }, 2500);
 
     $('.floating-label .custom-select, .floating-label .form-control').floatinglabel();
+
+    if ($('body textarea').length) {
+        const textareaId = $('body textarea').attr('id');
+        const $textarea = $('#' + textareaId);
+        const $div = $textarea.closest('div');
+
+        if (localStorage.getItem(textareaId) !== null) {
+            $textarea.val(localStorage.getItem(textareaId));
+
+            if ($textarea.val().length > 0) {
+                $div.addClass('has-value');
+            } else {
+                $div.removeClass('has-value');
+            }
+        }
+
+        $textarea.on('input', (event) => {
+            localStorage.setItem(textareaId, $textarea.val())
+        });
+    }
 });

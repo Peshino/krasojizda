@@ -41219,6 +41219,26 @@ $(document).ready(function () {
     $('.alert').fadeOut(750);
   }, 2500);
   $('.floating-label .custom-select, .floating-label .form-control').floatinglabel();
+
+  if ($('body textarea').length) {
+    var textareaId = $('body textarea').attr('id');
+    var $textarea = $('#' + textareaId);
+    var $div = $textarea.closest('div');
+
+    if (localStorage.getItem(textareaId) !== null) {
+      $textarea.val(localStorage.getItem(textareaId));
+
+      if ($textarea.val().length > 0) {
+        $div.addClass('has-value');
+      } else {
+        $div.removeClass('has-value');
+      }
+    }
+
+    $textarea.on('input', function (event) {
+      localStorage.setItem(textareaId, $textarea.val());
+    });
+  }
 });
 
 /***/ }),
