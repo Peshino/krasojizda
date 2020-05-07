@@ -16,7 +16,6 @@ class CheckUnseenContent
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Closure  $next
-     * @param  \App\Repositories\Posts  $posts
      * @return mixed
      */
     public function handle($request, Closure $next)
