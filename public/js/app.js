@@ -41197,6 +41197,8 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+var _this = this;
+
 $(document).ready(function () {
   if (Cookies.get('gdpr_cookie_bar') === '1') {
     $('#cookie-bar').addClass('d-none').removeClass('d-flex');
@@ -41213,7 +41215,7 @@ $(document).ready(function () {
   });
   $('.navbar-nav .nav-link').click(function () {
     $('.navbar-nav .nav-link').removeClass('active');
-    $(this).addClass('active');
+    $(_this).addClass('active');
   });
   setTimeout(function () {
     $('.alert').fadeOut(750);
@@ -41237,6 +41239,12 @@ $(document).ready(function () {
 
     $textarea.on('input', function (event) {
       localStorage.setItem(textareaId, $textarea.val());
+    });
+    $('body form').submit(function (event) {
+      var $inputs = $('body form textarea');
+      $inputs.each(function (item) {
+        localStorage.removeItem($inputs[item].id);
+      });
     });
   }
 });

@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(() => {
     if (Cookies.get('gdpr_cookie_bar') === '1') {
         $('#cookie-bar').addClass('d-none').removeClass('d-flex');
     } else {
@@ -7,19 +7,19 @@ $(document).ready(function () {
 
     $('[data-toggle="tooltip"]').tooltip();
 
-    $('#cookie-bar-button').click(function () {
+    $('#cookie-bar-button').click(() => {
         Cookies.set('gdpr_cookie_bar', '1', {
             expires: 365
         });
         $('#cookie-bar').addClass('d-none').removeClass('d-flex');
     });
 
-    $('.navbar-nav .nav-link').click(function () {
+    $('.navbar-nav .nav-link').click(() => {
         $('.navbar-nav .nav-link').removeClass('active');
         $(this).addClass('active');
     });
 
-    setTimeout(function () {
+    setTimeout(() => {
         $('.alert').fadeOut(750);
     }, 2500);
 
@@ -42,6 +42,13 @@ $(document).ready(function () {
 
         $textarea.on('input', (event) => {
             localStorage.setItem(textareaId, $textarea.val())
+        });
+
+        $('body form').submit((event) => {
+            const $inputs = $('body form textarea');
+            $inputs.each((item) => {
+                localStorage.removeItem($inputs[item].id);
+            });
         });
     }
 });
