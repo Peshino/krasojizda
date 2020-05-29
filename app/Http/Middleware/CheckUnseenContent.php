@@ -44,6 +44,7 @@ class CheckUnseenContent
                 'unseenLifeEventsCount'
             ));
         }
+        
         return $next($request);
     }
 }

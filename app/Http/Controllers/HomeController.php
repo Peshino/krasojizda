@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use \App\User;
-use \App\Invitation;
-use \App\Krasojizda;
 use Illuminate\Http\Request;
+use App\User;
+use App\Invitation;
+use App\Krasojizda;
+use App\Repositories\ImportantDays;
 
 class HomeController extends Controller
 {
@@ -35,8 +36,17 @@ class HomeController extends Controller
         $loggedUserReceiverInvitation = Invitation::where('receiver_id', auth()->user()->id)->whereNull('result')->first();
         $loggedUserInviterResultInvitation = $invitation->getLastNotConfirmedInvitation();
 
+        $importantDays = new ImportantDays();
+
         if ($loggedUserKrasojizdaId !== null) {
             $loggedUserKrasojizdaName = (Krasojizda::find($loggedUserKrasojizdaId))->name;
+            $closingImportantDays = $importantDays->getKrasojizdaClosingImportantDays();
+
+            if (session()->has('closingImportantDays') && session()->has('closingImportantDaysDisplayed')) {
+                session()->forget('closingImportantDays');
+            } else {
+                session(['closingImportantDays' => $closingImportantDays]);
+            }
         }
 
         if ($loggedUserInviterInvitation !== null) {
