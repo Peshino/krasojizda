@@ -14,5 +14,5 @@
     </h3>
 </div>
 <p class="blog-post-meta text-right unimportant-text">
-    <small>{{ $post->updated_at->isoFormat('D. MMMM YYYY H:mm') }}</small>
+    <small>{{ $post->created_at->isoFormat('D. MMMM YYYY H:mm') }}</small>
 </p>
