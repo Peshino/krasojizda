@@ -28,9 +28,24 @@
             <div class="content-block">
                 @if (count($importantDays) > 0)
                 <div class="mb-2 border-bottom-grey">
-                    <h3 class="important-day-title">
-                        {{ $now->year }}
-                    </h3>
+                    @if ($importantDayYears !== null)
+                    <div class="dropdown p-1 mb-2">
+                        <button class="btn dropdown-toggle" type="button" id="important-day-year" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            {{ $importantDayYearSelected }}
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-center" aria-labelledby="important-day-year">
+                            <a class="dropdown-item" href="{{ route('important-days.index') }}">
+                                @lang('messages.current')
+                            </a>
+                            @foreach ($importantDayYears as $importantDayYear)
+                            <a class="dropdown-item" href="{{ route('filter-by-year', $importantDayYear) }}">
+                                {{ $importantDayYear ?? '' }}
+                            </a>
+                            @endforeach
+                        </div>
+                    </div>
+                    @endif
                 </div>
                 @foreach ($importantDays as $importantDay)
                 <div class="important-day">

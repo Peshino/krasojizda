@@ -20,12 +20,27 @@ class ImportantDayController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param  $filterByYear
      * @param  \App\Repositories\ImportantDays  $importantDays
      * @return \Illuminate\Http\Response
      */
-    public function index(ImportantDays $importantDays)
+    public function index($filterByYear = null, ImportantDays $importantDaysRepository)
     {
-        $importantDays = $importantDays->getKrasojizdaImportantDays();
+        $importantDays = $importantDaysRepository->getKrasojizdaImportantDays();
+        $importantDayYearSelected = null;
+        $importantDayYears = null;
+
+        if ($importantDays !== null) {
+            $importantDayYears = $importantDaysRepository->getKrasojizdaImportantDayYears();
+
+            if ($filterByYear !== null) {
+                $importantDays = $importantDaysRepository->getKrasojizdaImportantDaysByYear($filterByYear);
+            }
+
+            if ($importantDayYears !== null) {
+                $importantDayYearSelected = $filterByYear === null ? $importantDayYears[array_key_first($importantDayYears)] : $filterByYear;
+            }
+        }
 
         $now = Carbon::now();
         $todayDate = Carbon::now()->toDateString();
@@ -43,7 +58,7 @@ class ImportantDayController extends Controller
             }
         }
 
-        return view('important-days.index', compact('importantDays', 'now', 'todayDate', 'criticalPeriod', 'shortPeriod', 'longPeriod'));
+        return view('important-days.index', compact('importantDays', 'now', 'todayDate', 'criticalPeriod', 'shortPeriod', 'longPeriod', 'importantDayYearSelected', 'importantDayYears'));
     }
 
     /**

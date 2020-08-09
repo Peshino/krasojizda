@@ -19,6 +19,7 @@ Route::resource('our-places', 'OurPlaceController');
 Route::resource('life-events', 'LifeEventController');
 
 Route::resource('important-days', 'ImportantDayController');
+Route::get('important-days/filter/{year}', 'ImportantDayController@index')->name('filter-by-year');
 
 Route::resource('conversations', 'ConversationController');
 

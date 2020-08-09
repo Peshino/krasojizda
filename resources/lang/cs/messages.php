@@ -77,6 +77,7 @@ return [
     'edit_important_day' => 'Upravit důležitý den',
 
     'new' => 'nový',
+    'current' => 'aktuální',
 
 
     'flash_error' => 'Něco se pokazilo',

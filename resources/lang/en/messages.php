@@ -77,6 +77,7 @@ return [
     'edit_important_day' => 'Edit important day',
 
     'new' => 'new',
+    'current' => 'current',
 
 
     'flash_error' => 'Something went wrong',
