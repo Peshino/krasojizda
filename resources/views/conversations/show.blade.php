@@ -63,7 +63,7 @@
                 </h3>
 
                 <div class="text-justify mb-2 border-bottom-grey">
-                    <p>{{ $conversation->body }}</p>
+                    <p>{!! $conversation->body !!}</p>
                 </div>
 
                 <div class="card-block">
@@ -91,7 +91,7 @@
                         <div class="d-flex">
                             <li class="list-group-item w-90 {{ Auth::user()->id === $comment->user->id ? 'ml-auto' : '' }}"
                                 style="border-bottom: 1px solid {{ $comment->user->color->hex_code }};">
-                                {{ $comment->body }}
+                                {!! $comment->body !!}
                             </li>
                         </div>
                         <span
