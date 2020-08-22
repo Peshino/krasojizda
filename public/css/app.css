@@ -11656,6 +11656,8 @@ html {
 
 .navbar-dark .navbar-nav .nav-link {
   color: #cccccc;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
 .navbar-dark .navbar-nav .nav-link:hover {
@@ -11753,14 +11755,6 @@ html {
 .navbar-toggler.collapsed .bottom-bar {
   -webkit-transform: rotate(0);
           transform: rotate(0);
-}
-
-@media (min-width: 1200px) {
-  .navbar-expand-md .navbar-nav .nav-link,
-  .navbar-expand-lg .navbar-nav .nav-link {
-    padding-right: 1rem;
-    padding-left: 1rem;
-  }
 }
 
 .toasts-position-relative {
