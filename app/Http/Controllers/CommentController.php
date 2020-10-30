@@ -43,7 +43,7 @@ class CommentController extends Controller
     public function store(Post $post, Conversation $conversation, Request $request)
     {
         $request->validate([
-            'body' => 'required|min:2|max:500',
+            'body' => 'required|min:2|max:5000',
         ]);
 
         if ($post->id !== null) {
