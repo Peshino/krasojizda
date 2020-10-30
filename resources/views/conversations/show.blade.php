@@ -66,6 +66,10 @@
                     <p>{!! $conversation->body !!}</p>
                 </div>
 
+                <div class="text-right unimportant-text">
+                    <small>{{ $conversation->created_at->isoFormat('D. MMMM YYYY H:mm') }}</small>
+                </div>
+
                 <div class="card-block">
                     <form method="POST" action="{{ route('conversation-comments.store', $conversation->id) }}"
                         autocomplete="off">

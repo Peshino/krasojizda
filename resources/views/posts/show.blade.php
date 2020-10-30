@@ -65,6 +65,10 @@
                     <p>{!! $post->body !!}</p>
                 </div>
 
+                <div class="text-right unimportant-text">
+                    <small>{{ $post->created_at->isoFormat('D. MMMM YYYY H:mm') }}</small>
+                </div>
+
                 <div class="card-block">
                     <form method="POST" action="{{ route('post-comments.store', $post->id) }}" autocomplete="off">
                         @csrf
